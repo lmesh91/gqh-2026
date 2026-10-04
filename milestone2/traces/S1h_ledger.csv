@@ -1,0 +1,5 @@
+t_h,actor,event,detail
+0.000278,Alice,LOCAL_INSTRUCTION,"{""where"":""Earth"",""msg"":{""type"":""FUND"",""req"":""F1-Alice-fund"",""asset"":""ND"",""amount"":160000,""dst"":""Mars""}}"
+0.000278,Earth,REJECTED,"{""owner"":""Alice"",""what"":""FUND"",""reason"":""insufficient available ND: have 150000, need 160000"",""ref"":""F1-Alice-fund""}"
+0.000278,Cara,LOCAL_INSTRUCTION,"{""where"":""Ceres"",""msg"":{""type"":""FUND"",""req"":""F1-Cara-fund"",""asset"":""ND"",""amount"":160000,""dst"":""Mars""}}"
+0.000278,Ceres,REJECTED,"{""owner"":""Cara"",""what"":""FUND"",""reason"":""insufficient available ND: have 100000, need 160000"",""ref"":""F1-Cara-fund""}"

@@ -1,0 +1,40 @@
+{
+  "design_version": 2,
+  "scenario": "neptune_mars",
+  "buyer_home": "Neptune",
+  "market": "Mars",
+  "reset": "Original opening book; relocate Alice only for S3 non-Earth buyer cases",
+  "conditions": "No random loss; cold on-demand session; no closure encountered; no batching",
+  "backbone_originations": 5,
+  "originations_by_institution": {
+    "Mars": 3,
+    "Neptune": 2
+  },
+  "backbone_launches": 44,
+  "direct_launches": 1,
+  "total_launches": 45,
+  "direct_order_success_probability": 0.09364013514337875,
+  "backed_claim_hour": 16.448862544226067,
+  "discharge_hour": 20.564853117699386,
+  "seller_spendable_hour": 20.564853117699386,
+  "buyer_spendable_hour": 24.68083909157734,
+  "complete_hour": 24.68083909157734,
+  "complete_known_hour": 28.79749738335825,
+  "cash_asset_hours": 2056457.5339921606,
+  "share_asset_hours": 24680.56131379956,
+  "peak_cash_encumbered": 100000,
+  "peak_trade_shares_encumbered": 1000,
+  "capital_utilization": 0.2,
+  "capital_efficiency": 1,
+  "types": {
+    "SYN": 2,
+    "HOP_RECEIPT": 22,
+    "SYN_ACK": 2,
+    "ACK": 2,
+    "PAY_REQUEST": 2,
+    "DATA_ACK": 8,
+    "PAYMENT": 2,
+    "DELIVERY": 2,
+    "RECEIVED": 2
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "edge": [
+    "Mercury",
+    "Relay A"
+  ],
+  "initial_bracket_s": [
+    7135200.0,
+    7138800.0
+  ],
+  "refined_bracket_s": [
+    7138362.320137024,
+    7138362.320995331
+  ],
+  "tolerance_s": 0.001,
+  "state_before": true,
+  "sample_hours": 1,
+  "years": 200,
+  "samples": 1753201,
+  "route_range_method": "simultaneous link geometry screening; exact sequential re-evaluation required for E4 Tier 3"
+}

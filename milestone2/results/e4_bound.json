@@ -1,0 +1,113 @@
+{
+ "relay_radius": 2.8284271247461903,
+ "relay_separation": 4.000000000000001,
+ "aphelion": {
+  "Mercury": 0.46669959475427086,
+  "Venus": 0.7282319146726237,
+  "Earth": 1.0165519928342808,
+  "Mars": 1.6659918406195768,
+  "Ceres": 2.986552799088567,
+  "Jupiter": 5.453457011255455,
+  "Saturn": 10.066882667761176,
+  "Uranus": 20.178834311449677,
+  "Neptune": 30.357889919101275
+ },
+ "routes": {
+  "Mercury->Mars": {
+   "bound_min": 98.13698479436577,
+   "observed_max": 86.41937694152196
+  },
+  "Mercury->Ceres": {
+   "bound_min": 109.12009028595234,
+   "observed_max": 90.74903911749522
+  },
+  "Mercury->Earth": {
+   "bound_min": 92.73559358033546,
+   "observed_max": 83.978155819575
+  },
+  "Venus->Mars": {
+   "bound_min": 100.31214909912669,
+   "observed_max": 86.59664612611135
+  },
+  "Venus->Ceres": {
+   "bound_min": 111.29525459071328,
+   "observed_max": 91.13191208839416
+  },
+  "Venus->Earth": {
+   "bound_min": 94.9107578850964,
+   "observed_max": 84.52517311573028
+  },
+  "Earth->Mars": {
+   "bound_min": 102.7101071891972,
+   "observed_max": 87.49919055302938
+  },
+  "Earth->Ceres": {
+   "bound_min": 113.69321268078379,
+   "observed_max": 91.7509017308553
+  },
+  "Mars->Ceres": {
+   "bound_min": 119.0946038948141,
+   "observed_max": 94.06603926817576
+  },
+  "Mars->Earth": {
+   "bound_min": 102.7101071891972,
+   "observed_max": 87.48506153424582
+  },
+  "Ceres->Mars": {
+   "bound_min": 119.0946038948141,
+   "observed_max": 94.05620706478754
+  },
+  "Ceres->Earth": {
+   "bound_min": 113.6932126807838,
+   "observed_max": 91.76132269303004
+  },
+  "Jupiter->Mars": {
+   "bound_min": 139.61184622740612,
+   "observed_max": 112.40291918118795
+  },
+  "Jupiter->Ceres": {
+   "bound_min": 150.59495171899272,
+   "observed_max": 105.57076331774394
+  },
+  "Jupiter->Earth": {
+   "bound_min": 134.21045501337582,
+   "observed_max": 110.1463543832302
+  },
+  "Saturn->Mars": {
+   "bound_min": 177.98170741256416,
+   "observed_max": 147.53671232859293
+  },
+  "Saturn->Ceres": {
+   "bound_min": 188.96481290415076,
+   "observed_max": 143.91796278953552
+  },
+  "Saturn->Earth": {
+   "bound_min": 172.5803161985339,
+   "observed_max": 144.86275160312653
+  },
+  "Uranus->Mars": {
+   "bound_min": 262.08280923312145,
+   "observed_max": 226.800789642334
+  },
+  "Uranus->Ceres": {
+   "bound_min": 273.065914724708,
+   "observed_max": 229.53212683200837
+  },
+  "Uranus->Earth": {
+   "bound_min": 256.68141801909115,
+   "observed_max": 227.41159633000692
+  },
+  "Neptune->Mars": {
+   "bound_min": 346.7420147219598,
+   "observed_max": 314.8657151937485
+  },
+  "Neptune->Ceres": {
+   "bound_min": 357.7251202135464,
+   "observed_max": 308.9440501610438
+  },
+  "Neptune->Earth": {
+   "bound_min": 341.3406235079295,
+   "observed_max": 311.59605226516726
+  }
+ }
+}

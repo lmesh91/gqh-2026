@@ -1,0 +1,11 @@
+{
+  "light_residual_checks": 12,
+  "maintenance_boundary_assertions": 5,
+  "serialization_launches_checked": 68,
+  "packet_layouts_checked": 8,
+  "static_quota_total": 600,
+  "audited_book_checkpoints": 6,
+  "cash_total": 500000,
+  "share_total": 5000,
+  "status": "PASS"
+}

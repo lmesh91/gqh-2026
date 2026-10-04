@@ -1,0 +1,35 @@
+{
+  "scenario": "Separate reset of original book; Alice buys all 1000 Cara Belt Works shares at $100 each; Mars clears",
+  "assumptions": "No random loss; three cold sessions opened in parallel at 1 s; no closures encountered; no optional client reply",
+  "backbone_originations": 17,
+  "originations_by_institution": {
+    "Earth": 6,
+    "Ceres": 5,
+    "Mars": 6
+  },
+  "backbone_launches": 148,
+  "direct_launches": 1,
+  "total_launches": 149,
+  "direct_order_success_probability": 0.8024973804778736,
+  "spendable_hours": {
+    "Ceres": 4.924203981038567,
+    "Earth": 4.99350402209501
+  },
+  "complete_hour": 4.99350402209501,
+  "clearer_knows_complete_hour": 5.5591058942756755,
+  "types": {
+    "SYN": 6,
+    "HOP_RECEIPT": 74,
+    "SYN_ACK": 6,
+    "ACK": 6,
+    "RESERVATION": 2,
+    "DATA_ACK": 28,
+    "PROPOSE": 2,
+    "PREPARE": 4,
+    "PREPARED": 4,
+    "COMMIT": 4,
+    "APPLIED": 4,
+    "RELEASE": 4,
+    "RELEASED": 4
+  }
+}

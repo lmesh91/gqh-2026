@@ -1,0 +1,62 @@
+[
+  {
+    "clearers": 1,
+    "sites": [
+      "Mars"
+    ],
+    "mean_one_way_minutes": 77.85758080913463,
+    "worst_sample_minutes": 286.03655533653995,
+    "assignment": {
+      "Mercury": "Mars",
+      "Venus": "Mars",
+      "Earth": "Mars",
+      "Mars": "Mars",
+      "Ceres": "Mars",
+      "Jupiter": "Mars",
+      "Saturn": "Mars",
+      "Uranus": "Mars",
+      "Neptune": "Mars"
+    }
+  },
+  {
+    "clearers": 2,
+    "sites": [
+      "Mars",
+      "Neptune"
+    ],
+    "mean_one_way_minutes": 48.957666068064015,
+    "worst_sample_minutes": 181.5851465980212,
+    "assignment": {
+      "Mercury": "Mars",
+      "Venus": "Mars",
+      "Earth": "Mars",
+      "Mars": "Mars",
+      "Ceres": "Mars",
+      "Jupiter": "Mars",
+      "Saturn": "Mars",
+      "Uranus": "Mars",
+      "Neptune": "Neptune"
+    }
+  },
+  {
+    "clearers": 3,
+    "sites": [
+      "Mars",
+      "Uranus",
+      "Neptune"
+    ],
+    "mean_one_way_minutes": 31.39245876229974,
+    "worst_sample_minutes": 117.03422776317845,
+    "assignment": {
+      "Mercury": "Mars",
+      "Venus": "Mars",
+      "Earth": "Mars",
+      "Mars": "Mars",
+      "Ceres": "Mars",
+      "Jupiter": "Mars",
+      "Saturn": "Mars",
+      "Uranus": "Uranus",
+      "Neptune": "Neptune"
+    }
+  }
+]

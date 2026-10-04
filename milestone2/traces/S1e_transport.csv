@@ -1,0 +1,5 @@
+t_h,at,event,peer,ref,detail
+0.000278,Earth,SESSION_OPEN,Mars,8,Earth>Relay A>Mars
+0.000278,Ceres,SESSION_OPEN,Mars,9,Ceres>Relay A>Mars
+326.502373,Mars,SESSION_OPEN,Earth,10,Mars>Relay A>Earth
+326.502373,Mars,SESSION_OPEN,Ceres,11,Mars>Relay A>Ceres

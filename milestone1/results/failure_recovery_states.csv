@@ -1,0 +1,13 @@
+hour,event,participant,state
+0,prepare,0,"(('PREPARED', 'FREE'), None, (), (False, False))"
+0,prepare,1,"(('PREPARED', 'PREPARED'), None, (), (False, False))"
+1,decide,0,"(('PREPARED', 'PREPARED'), 'COMMIT', (), (False, False))"
+2,apply,0,"(('APPLIED', 'PREPARED'), 'COMMIT', (), (False, False))"
+2,ack,0,"(('APPLIED', 'PREPARED'), 'COMMIT', (0,), (False, False))"
+3,release,0,"(('APPLIED', 'PREPARED'), 'COMMIT', (0,), (False, False))"
+4,reset,1,"(('APPLIED', 'PREPARED'), 'COMMIT', (0,), (False, False))"
+720,expiry,1,"(('APPLIED', 'PREPARED'), 'COMMIT', (0,), (False, False))"
+721,apply,1,"(('APPLIED', 'APPLIED'), 'COMMIT', (0,), (False, False))"
+722,ack,1,"(('APPLIED', 'APPLIED'), 'COMMIT', (0, 1), (False, False))"
+723,release,0,"(('APPLIED', 'APPLIED'), 'COMMIT', (0, 1), (True, False))"
+724,release,1,"(('APPLIED', 'APPLIED'), 'COMMIT', (0, 1), (True, True))"

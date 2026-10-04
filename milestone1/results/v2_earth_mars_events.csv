@@ -1,0 +1,7 @@
+hour,actor,event,financial_state
+0.0002777777777777778,Earth,RESERVED,Local buyer reservation; seller standing sell order already reserves 1000 shares
+0.23999885471252372,Mars,PROVISIONAL_MATCH,Seller shares promised for this request; backing not yet verified
+1.936176915218368,Earth,PAYMENT_RECORDED,Single-use reservation consumed; payment exported; buyer holds backed delivery claim
+2.501871929949106,Mars,SPENDABLE_SELLER,"Atomic payment import, seller credit and share debit/export; payment obligation discharged"
+3.067461109131703,Earth,SPENDABLE_BUYER,Matching cash debit and share export recorded; buyer receives local custody
+3.633121629441456,Mars,COMPLETE_KNOWN,Authoritative home receipt confirms buyer spendability; close recovery work

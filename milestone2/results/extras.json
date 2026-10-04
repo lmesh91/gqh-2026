@@ -1,0 +1,815 @@
+{
+ "s3_direct": {
+  "Mercury|Mars|0": {
+   "delay": 16.614369999087934,
+   "p_loss": 0.1472852874094973,
+   "copies": 3,
+   "burst": 0.9968049467573777,
+   "avail": 0.9520833333333333,
+   "open": true
+  },
+  "Mercury|Ceres|0": {
+   "delay": 26.002920089198753,
+   "p_loss": 0.2209167117978884,
+   "copies": 4,
+   "burst": 0.9976181506917788,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mercury|Earth|0": {
+   "delay": 10.671205860265466,
+   "p_loss": 0.0971183681144594,
+   "copies": 2,
+   "burst": 0.9905680225747844,
+   "avail": 1.0,
+   "open": true
+  },
+  "Venus|Mars|0": {
+   "delay": 15.333406217100592,
+   "p_loss": 0.1367136514829037,
+   "copies": 3,
+   "burst": 0.9974447367492919,
+   "avail": 1.0,
+   "open": true
+  },
+  "Venus|Ceres|0": {
+   "delay": 24.404149396358722,
+   "p_loss": 0.20884310588272725,
+   "copies": 3,
+   "burst": 0.9908912154455878,
+   "avail": 1.0,
+   "open": true
+  },
+  "Venus|Earth|0": {
+   "delay": 3.3978363876565956,
+   "p_loss": 0.0316893714498333,
+   "copies": 2,
+   "burst": 0.9989957837371145,
+   "avail": 1.0,
+   "open": true
+  },
+  "Earth|Mars|0": {
+   "delay": 14.39993128275338,
+   "p_loss": 0.12892733531606293,
+   "copies": 3,
+   "burst": 0.9978569365959794,
+   "avail": 1.0,
+   "open": true
+  },
+  "Earth|Ceres|0": {
+   "delay": 22.924524570466374,
+   "p_loss": 0.19750261952212655,
+   "copies": 3,
+   "burst": 0.9922959590877295,
+   "avail": 1.0,
+   "open": true
+  },
+  "Earth|Earth|0": {
+   "delay": 0.016666666666666666,
+   "p_loss": 0.0,
+   "copies": 0,
+   "burst": 1.0,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mars|Mars|0": {
+   "delay": 0.016666666666666666,
+   "p_loss": 0.0,
+   "copies": 0,
+   "burst": 1.0,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mars|Ceres|0": {
+   "delay": 9.484839722961016,
+   "p_loss": 0.08675613940484694,
+   "copies": 2,
+   "burst": 0.9924733722755668,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mars|Earth|0": {
+   "delay": 14.397921520534908,
+   "p_loss": 0.12891049591865944,
+   "copies": 3,
+   "burst": 0.9978577762127203,
+   "avail": 1.0,
+   "open": true
+  },
+  "Ceres|Mars|0": {
+   "delay": 9.484765085522026,
+   "p_loss": 0.08675548376259723,
+   "copies": 2,
+   "burst": 0.9924734860371177,
+   "avail": 1.0,
+   "open": true
+  },
+  "Ceres|Ceres|0": {
+   "delay": 0.016666666666666666,
+   "p_loss": 0.0,
+   "copies": 0,
+   "burst": 1.0,
+   "avail": 1.0,
+   "open": true
+  },
+  "Ceres|Earth|0": {
+   "delay": 22.92192059959022,
+   "p_loss": 0.19748251894761648,
+   "copies": 3,
+   "burst": 0.9922983110548436,
+   "avail": 1.0,
+   "open": true
+  },
+  "Jupiter|Mars|0": {
+   "delay": 37.14194495275199,
+   "p_loss": 0.3000749101717336,
+   "copies": 4,
+   "burst": 0.99189190667072,
+   "avail": 1.0,
+   "open": true
+  },
+  "Jupiter|Ceres|0": {
+   "delay": 33.795856083007656,
+   "p_loss": 0.27718099526408435,
+   "copies": 4,
+   "burst": 0.9940972580260413,
+   "avail": 1.0,
+   "open": true
+  },
+  "Jupiter|Earth|0": {
+   "delay": 50.10970964189767,
+   "p_loss": 0.3821545822196837,
+   "copies": 5,
+   "burst": 0.99184929158703,
+   "avail": 1.0,
+   "open": true
+  },
+  "Saturn|Mars|0": {
+   "delay": 75.20610111301826,
+   "p_loss": 0.5146647962573276,
+   "copies": 7,
+   "burst": 0.9904353024684496,
+   "avail": 1.0,
+   "open": true
+  },
+  "Saturn|Ceres|0": {
+   "delay": 74.52625527910594,
+   "p_loss": 0.5114806259159025,
+   "copies": 7,
+   "burst": 0.9908419224715992,
+   "avail": 1.0,
+   "open": true
+  },
+  "Saturn|Earth|0": {
+   "delay": 70.39713362348841,
+   "p_loss": 0.4916874343508252,
+   "copies": 7,
+   "burst": 0.9930525766063795,
+   "avail": 1.0,
+   "open": true
+  },
+  "Uranus|Mars|0": {
+   "delay": 149.59657353027316,
+   "p_loss": 0.7627086339300204,
+   "copies": 8,
+   "burst": 0.8854831742802893,
+   "avail": 1.0,
+   "open": true
+  },
+  "Uranus|Ceres|0": {
+   "delay": 140.9269985191296,
+   "p_loss": 0.7420720851856695,
+   "copies": 8,
+   "burst": 0.9080463952657987,
+   "avail": 1.0,
+   "open": true
+  },
+  "Uranus|Earth|0": {
+   "delay": 158.2474138146045,
+   "p_loss": 0.781654729799499,
+   "copies": 8,
+   "burst": 0.8606459223365092,
+   "avail": 1.0,
+   "open": true
+  },
+  "Neptune|Mars|0": {
+   "delay": 246.2639929790795,
+   "p_loss": 0.9063598648566212,
+   "copies": 8,
+   "burst": 0.54458710035859,
+   "avail": 1.0,
+   "open": true
+  },
+  "Neptune|Ceres|0": {
+   "delay": 245.42567932786412,
+   "p_loss": 0.9056017342601373,
+   "copies": 8,
+   "burst": 0.5476256581431496,
+   "avail": 1.0,
+   "open": true
+  },
+  "Neptune|Earth|0": {
+   "delay": 240.22014427761002,
+   "p_loss": 0.9007547581096527,
+   "copies": 8,
+   "burst": 0.5666363113186629,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mercury|Mars|300": {
+   "delay": 16.815527172452615,
+   "p_loss": 0.14893361100454672,
+   "copies": 3,
+   "burst": 0.9966964707364049,
+   "avail": 0.0,
+   "open": false
+  },
+  "Mercury|Ceres|300": {
+   "delay": 25.99960650493546,
+   "p_loss": 0.22089187977417923,
+   "copies": 4,
+   "burst": 0.9976192214331695,
+   "avail": 0.36527777777777776,
+   "open": false
+  },
+  "Mercury|Earth|300": {
+   "delay": 9.430844824237283,
+   "p_loss": 0.08628170567003957,
+   "copies": 2,
+   "burst": 0.9925554672666687,
+   "avail": 1.0,
+   "open": true
+  },
+  "Venus|Mars|300": {
+   "delay": 14.197609291885358,
+   "p_loss": 0.12723048544177662,
+   "copies": 3,
+   "burst": 0.9979404442486163,
+   "avail": 1.0,
+   "open": true
+  },
+  "Venus|Ceres|300": {
+   "delay": 22.63419936366845,
+   "p_loss": 0.1952584368821173,
+   "copies": 3,
+   "burst": 0.9925556047234827,
+   "avail": 1.0,
+   "open": true
+  },
+  "Venus|Earth|300": {
+   "delay": 2.7871099675423467,
+   "p_loss": 0.02598430186782341,
+   "copies": 2,
+   "burst": 0.9993248160564419,
+   "avail": 1.0,
+   "open": true
+  },
+  "Earth|Mars|300": {
+   "delay": 13.700773133469434,
+   "p_loss": 0.12304954282044622,
+   "copies": 3,
+   "burst": 0.9981368834941796,
+   "avail": 1.0,
+   "open": true
+  },
+  "Earth|Ceres|300": {
+   "delay": 21.49127107358072,
+   "p_loss": 0.1863625729764523,
+   "copies": 3,
+   "burst": 0.9935274398740433,
+   "avail": 1.0,
+   "open": true
+  },
+  "Earth|Earth|300": {
+   "delay": 0.016666666666666666,
+   "p_loss": 0.0,
+   "copies": 0,
+   "burst": 1.0,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mars|Mars|300": {
+   "delay": 0.016666666666666666,
+   "p_loss": 0.0,
+   "copies": 0,
+   "burst": 1.0,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mars|Ceres|300": {
+   "delay": 9.292365141434129,
+   "p_loss": 0.0850638076018082,
+   "copies": 2,
+   "burst": 0.9927641486362826,
+   "avail": 1.0,
+   "open": true
+  },
+  "Mars|Earth|300": {
+   "delay": 13.69880318051437,
+   "p_loss": 0.12303292560258328,
+   "copies": 3,
+   "burst": 0.9981376382056087,
+   "avail": 1.0,
+   "open": true
+  },
+  "Ceres|Mars|300": {
+   "delay": 9.292444019741378,
+   "p_loss": 0.08506450178087,
+   "copies": 2,
+   "burst": 0.9927640305367723,
+   "avail": 1.0,
+   "open": true
+  },
+  "Ceres|Ceres|300": {
+   "delay": 0.016666666666666666,
+   "p_loss": 0.0,
+   "copies": 0,
+   "burst": 1.0,
+   "avail": 1.0,
+   "open": true
+  },
+  "Ceres|Earth|300": {
+   "delay": 21.488753337226807,
+   "p_loss": 0.18634286828163993,
+   "copies": 3,
+   "burst": 0.9935294927487466,
+   "avail": 1.0,
+   "open": true
+  },
+  "Jupiter|Mars|300": {
+   "delay": 36.06592692616784,
+   "p_loss": 0.2927930251110924,
+   "copies": 4,
+   "burst": 0.9926507519277242,
+   "avail": 1.0,
+   "open": true
+  },
+  "Jupiter|Ceres|300": {
+   "delay": 33.15834404932102,
+   "p_loss": 0.2727349539732593,
+   "copies": 4,
+   "burst": 0.9944669677135609,
+   "avail": 1.0,
+   "open": true
+  },
+  "Jupiter|Earth|300": {
+   "delay": 48.94321438050053,
+   "p_loss": 0.3751831045607007,
+   "copies": 5,
+   "burst": 0.9925661060055229,
+   "avail": 1.0,
+   "open": true
+  },
+  "Saturn|Mars|300": {
+   "delay": 76.46418446232177,
+   "p_loss": 0.5205025984586217,
+   "copies": 8,
+   "burst": 0.9946125504595178,
+   "avail": 1.0,
+   "open": true
+  },
+  "Saturn|Ceres|300": {
+   "delay": 75.42902236906035,
+   "p_loss": 0.5157043597673332,
+   "copies": 7,
+   "burst": 0.9902992431155297,
+   "avail": 1.0,
+   "open": true
+  },
+  "Saturn|Earth|300": {
+   "delay": 70.19854844759296,
+   "p_loss": 0.4907155472692265,
+   "copies": 7,
+   "burst": 0.9931481361423349,
+   "avail": 1.0,
+   "open": true
+  },
+  "Uranus|Mars|300": {
+   "delay": 150.00252388106892,
+   "p_loss": 0.7636333970626967,
+   "copies": 8,
+   "burst": 0.8843676611517766,
+   "avail": 1.0,
+   "open": true
+  },
+  "Uranus|Ceres|300": {
+   "delay": 141.40443780139321,
+   "p_loss": 0.7432538823183208,
+   "copies": 8,
+   "burst": 0.9068683084653089,
+   "avail": 1.0,
+   "open": true
+  },
+  "Uranus|Earth|300": {
+   "delay": 156.71501519645875,
+   "p_loss": 0.7784125022650105,
+   "copies": 8,
+   "burst": 0.865203560489866,
+   "avail": 1.0,
+   "open": true
+  },
+  "Neptune|Mars|300": {
+   "delay": 247.63784969082724,
+   "p_loss": 0.907589171794087,
+   "copies": 8,
+   "burst": 0.5396221225116613,
+   "avail": 1.0,
+   "open": true
+  },
+  "Neptune|Ceres|300": {
+   "delay": 246.49110699756227,
+   "p_loss": 0.9065642056007482,
+   "copies": 8,
+   "burst": 0.5437650615276953,
+   "avail": 1.0,
+   "open": true
+  },
+  "Neptune|Earth|300": {
+   "delay": 240.32131372477548,
+   "p_loss": 0.9008512900555184,
+   "copies": 8,
+   "burst": 0.5662646307090722,
+   "avail": 1.0,
+   "open": true
+  }
+ },
+ "e5_routes": {
+  "+1 year": {
+   "t0_h": 8766.0,
+   "rows": [
+    {
+     "a": "Earth",
+     "b": "Mars",
+     "route": "Ea-B-Ma",
+     "delay": 47.184657138275604,
+     "avail": 1.0,
+     "direct_delay": 17.03730107937008,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.15074717979634134
+    },
+    {
+     "a": "Mars",
+     "b": "Earth",
+     "route": "Ma-B-Ea",
+     "delay": 47.18327377804865,
+     "avail": 1.0,
+     "direct_delay": 17.03921540286392,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.15076281745086206
+    },
+    {
+     "a": "Earth",
+     "b": "Ceres",
+     "route": "Ea-B-Ce",
+     "delay": 46.60872145096461,
+     "avail": 1.0,
+     "direct_delay": 29.49174382102986,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.24662774023060796
+    },
+    {
+     "a": "Ceres",
+     "b": "Earth",
+     "route": "Ce-B-Ea",
+     "delay": 46.61270906869322,
+     "avail": 1.0,
+     "direct_delay": 29.49131240217636,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.24662461391418677
+    },
+    {
+     "a": "Ceres",
+     "b": "Mars",
+     "route": "Ce-B-Ma",
+     "delay": 31.874489535950126,
+     "avail": 1.0,
+     "direct_delay": 22.737803364172578,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.1960600039436754
+    },
+    {
+     "a": "Mars",
+     "b": "Ceres",
+     "route": "Ma-B-Ce",
+     "delay": 31.87002937818567,
+     "avail": 1.0,
+     "direct_delay": 22.735423346733054,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.19604159910430752
+    },
+    {
+     "a": "Uranus",
+     "b": "Earth",
+     "route": "Ur-A-Ea",
+     "delay": 177.38322840649636,
+     "avail": 1.0,
+     "direct_delay": 158.22692534755916,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7816116950444998
+    },
+    {
+     "a": "Earth",
+     "b": "Uranus",
+     "route": "Ea-A-Ur",
+     "delay": 177.38698367401958,
+     "avail": 1.0,
+     "direct_delay": 158.24160543965797,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7816425305293222
+    }
+   ]
+  },
+  "+10 years": {
+   "t0_h": 87660.0,
+   "rows": [
+    {
+     "a": "Earth",
+     "b": "Mars",
+     "route": "Ea-B-Ma",
+     "delay": 41.948056262731555,
+     "avail": 1.0,
+     "direct_delay": 22.126505534847578,
+     "direct_avail": 0.0,
+     "direct_open": false,
+     "direct_p_loss": 0.19131892461093314
+    },
+    {
+     "a": "Mars",
+     "b": "Earth",
+     "route": "Ma-B-Ea",
+     "delay": 41.9465485672156,
+     "avail": 1.0,
+     "direct_delay": 22.126486178239187,
+     "direct_avail": 0.0,
+     "direct_open": false,
+     "direct_p_loss": 0.19131877404390796
+    },
+    {
+     "a": "Earth",
+     "b": "Ceres",
+     "route": "Ea-B-Ce",
+     "delay": 40.49184553821882,
+     "avail": 1.0,
+     "direct_delay": 28.742272119720777,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.24117701214796494
+    },
+    {
+     "a": "Ceres",
+     "b": "Earth",
+     "route": "Ce-B-Ea",
+     "delay": 40.49241489171982,
+     "avail": 1.0,
+     "direct_delay": 28.740989886720975,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.24116765306294596
+    },
+    {
+     "a": "Ceres",
+     "b": "Mars",
+     "route": "Ce-B-Ma",
+     "delay": 18.82405997812748,
+     "avail": 1.0,
+     "direct_delay": 11.224269727865854,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.10190880048431261
+    },
+    {
+     "a": "Mars",
+     "b": "Ceres",
+     "route": "Ma-B-Ce",
+     "delay": 18.822560500105222,
+     "avail": 1.0,
+     "direct_delay": 11.223149428764978,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.10189912260830558
+    },
+    {
+     "a": "Uranus",
+     "b": "Earth",
+     "route": "Ur-A-Ea",
+     "delay": 158.73930401702722,
+     "avail": 1.0,
+     "direct_delay": 158.5595516214768,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7823093081650918
+    },
+    {
+     "a": "Earth",
+     "b": "Uranus",
+     "route": "Ea-A-Ur",
+     "delay": 158.75569815238316,
+     "avail": 1.0,
+     "direct_delay": 158.57464254796506,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7823409052871981
+    }
+   ]
+  },
+  "+100 years": {
+   "t0_h": 876600.0,
+   "rows": [
+    {
+     "a": "Earth",
+     "b": "Mars",
+     "route": "Ea-B-Ma",
+     "delay": 38.50304822921753,
+     "avail": 1.0,
+     "direct_delay": 18.445312786102296,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.1621714625567241
+    },
+    {
+     "a": "Mars",
+     "b": "Earth",
+     "route": "Ma-B-Ea",
+     "delay": 38.50069950421651,
+     "avail": 1.0,
+     "direct_delay": 18.443390464782716,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.1621559705230584
+    },
+    {
+     "a": "Earth",
+     "b": "Ceres",
+     "route": "Ea-A-Ce",
+     "delay": 41.037658937772115,
+     "avail": 1.0,
+     "direct_delay": 18.40614398320516,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.16185574368095967
+    },
+    {
+     "a": "Ceres",
+     "b": "Earth",
+     "route": "Ce-A-Ea",
+     "delay": 41.0374219417572,
+     "avail": 1.0,
+     "direct_delay": 18.407707834243773,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.16186835133186728
+    },
+    {
+     "a": "Ceres",
+     "b": "Mars",
+     "route": "Ce-A-Ma",
+     "delay": 50.00016861756642,
+     "avail": 1.0,
+     "direct_delay": 36.56601819197337,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.29618673696015485
+    },
+    {
+     "a": "Mars",
+     "b": "Ceres",
+     "route": "Ma-A-Ce",
+     "delay": 49.99442412853241,
+     "avail": 1.0,
+     "direct_delay": 36.56431097984314,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.2961751792503481
+    },
+    {
+     "a": "Uranus",
+     "b": "Earth",
+     "route": "Ur-B-Ea",
+     "delay": 159.48698572317758,
+     "avail": 1.0,
+     "direct_delay": 156.4294567346573,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7778030212848905
+    },
+    {
+     "a": "Earth",
+     "b": "Uranus",
+     "route": "Ea-B-Ur",
+     "delay": 159.4954528013865,
+     "avail": 1.0,
+     "direct_delay": 156.44439713954927,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7778349508200785
+    }
+   ]
+  },
+  "Mars conjunction": {
+   "t0_h": 12470.027099609375,
+   "rows": [
+    {
+     "a": "Earth",
+     "b": "Mars",
+     "route": "Ea-A-Ma",
+     "delay": 50.22826196836929,
+     "avail": 1.0,
+     "direct_delay": 19.701042434200644,
+     "direct_avail": 0.0,
+     "direct_open": false,
+     "direct_p_loss": 0.17223045242735824
+    },
+    {
+     "a": "Mars",
+     "b": "Earth",
+     "route": "Ma-A-Ea",
+     "delay": 50.229036926850675,
+     "avail": 1.0,
+     "direct_delay": 19.701355534543595,
+     "direct_avail": 0.0,
+     "direct_open": false,
+     "direct_p_loss": 0.17223294538913725
+    },
+    {
+     "a": "Earth",
+     "b": "Ceres",
+     "route": "Ea-A-Ce",
+     "delay": 37.17238976160685,
+     "avail": 1.0,
+     "direct_delay": 18.547697729244828,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.16299617147918688
+    },
+    {
+     "a": "Ceres",
+     "b": "Earth",
+     "route": "Ce-A-Ea",
+     "delay": 37.170076522479455,
+     "avail": 1.0,
+     "direct_delay": 18.545427343746027,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.16297789236792126
+    },
+    {
+     "a": "Ceres",
+     "b": "Mars",
+     "route": "Ce-B-Ma",
+     "delay": 41.54644713612894,
+     "avail": 1.0,
+     "direct_delay": 31.04724689113597,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.2578159047305525
+    },
+    {
+     "a": "Mars",
+     "b": "Ceres",
+     "route": "Ma-B-Ce",
+     "delay": 41.54132182362179,
+     "avail": 1.0,
+     "direct_delay": 31.04546900615096,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.2578032123728097
+    },
+    {
+     "a": "Uranus",
+     "b": "Earth",
+     "route": "Ur-A-Ea",
+     "delay": 175.60189114138484,
+     "avail": 1.0,
+     "direct_delay": 160.617196741576,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7865755246517593
+    },
+    {
+     "a": "Earth",
+     "b": "Uranus",
+     "route": "Ea-A-Ur",
+     "delay": 175.59205834145348,
+     "avail": 1.0,
+     "direct_delay": 160.60071385602157,
+     "direct_avail": 1.0,
+     "direct_open": true,
+     "direct_p_loss": 0.7865416842757792
+    }
+   ]
+  }
+ },
+ "difficult": {
+  "close_h": 12446.027099609375,
+  "reopen_h": 13713.0,
+  "start_h": 12470.027099609375
+ }
+}

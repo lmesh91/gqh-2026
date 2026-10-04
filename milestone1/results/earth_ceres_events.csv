@@ -1,0 +1,17 @@
+hour,actor,event,financial_state
+0.0002777777777777778,Earth/Ceres,RESERVE_LOCAL,Alice reserves $100000; Cara reserves 1000 shares; neither has clearing authority
+0.3820754095077728,Ceres,ORDER,Client instruction or official reservation received
+1.6696610156362155,Ceres,RESERVATION,Client instruction or official reservation received
+1.6696610156362155,Ceres,MATCH,Alice $100000 reserved on Earth; Cara 1000 Belt Works shares reserved on Ceres
+2.1655020322804925,Mars,PROPOSE_RECEIVED,Ceres match known; request exact preparation from both authorities
+2.6616356852313423,Ceres,PREPARED,Exact outgoing debit and incoming destination bound to manifest
+2.7311014645344383,Earth,PREPARED,Exact outgoing debit and incoming destination bound to manifest
+3.296772228836701,Mars,COMMIT,Both exact debits and destinations prepared; decision irreversible
+3.7929542955376743,Ceres,APPLIED,Outgoing asset debited; incoming claim blocked
+3.8623371903926995,Earth,APPLIED,Outgoing asset debited; incoming claim blocked
+4.288886197413705,Mars,APPLIED_RECEIVED_Ceres,Debit certificate received; outputs remain blocked until release
+4.427973494514054,Mars,APPLIED_RECEIVED_Earth,Debit certificate received; outputs remain blocked until release
+4.427973494514054,Mars,RELEASE_READY,Both source debits known; obligation discharged
+4.924203981038567,Ceres,SPENDABLE,"{'cash': {'Alice': 50000, 'Cara': 200000}, 'shares': {'Alice': 0, 'Cara': 0}, 'cash_transit': 0, 'share_transit': 1000}"
+4.99350402209501,Earth,SPENDABLE,"{'cash': {'Alice': 50000, 'Cara': 200000}, 'shares': {'Alice': 1000, 'Cara': 0}, 'cash_transit': 0, 'share_transit': 0}"
+5.5591058942756755,Mars,COMPLETE_KNOWN,Both home releases acknowledged

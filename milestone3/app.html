@@ -1,0 +1,1171 @@
+<title>MPX Orrery</title>
+<meta name="description" content="Interactive simulator for the MultiPlanetary Exchange System: replay every required scenario and build your own.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an observatory console. Library on the left, the orrery (always a night sky) in the centre,
+   the ledger on the right; the trace and evidence sit underneath like a logbook. */
+:root {
+  --bg: #eef1f6; --panel: #ffffff; --panel-2: #f6f8fb; --line: #d5dbe7; --ink: #121829; --muted: #5b6580;
+  --accent: #3b5bdb; --accent-ink: #ffffff;
+  --cash: #b9770e; --cash-soft: #e8c98d; --share: #0f8199; --share-soft: #9fd6e2;
+  --hold: #8a7f6a; --margin: #b2456e; --transit: #d08f1e;
+  --direct: #d4512f; --ok: #1d8a57; --warn: #b7791f; --bad: #c2334d;
+  --sky: #070b18; --sky-2: #0e1530; --sky-line: #233056; --sky-ink: #dfe5f5; --sky-muted: #7d89ab;
+  --sky-cash: #f4b942; --sky-share: #6fd6ec; --sky-direct: #ff7a59; --sky-ctrl: #6f7aa0; --sky-bad: #ff4d6d;
+  --sky-relay: #b49cff; --sky-sun: #ffd27a;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0a0f1d; --panel: #111830; --panel-2: #0d1428; --line: #222c4a; --ink: #e3e8f5; --muted: #8f9abb;
+  --accent: #7c95ff; --accent-ink: #0a0f1d;
+  --cash: #f2b544; --cash-soft: #6b5221; --share: #64cfe6; --share-soft: #1f5866;
+  --hold: #a59a83; --margin: #e2729a; --transit: #f0a63a;
+  --direct: #ff7a59; --ok: #4fd08f; --warn: #f0b34a; --bad: #ff5c7a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0a0f1d; --panel: #111830; --panel-2: #0d1428; --line: #222c4a; --ink: #e3e8f5; --muted: #8f9abb;
+  --accent: #7c95ff; --accent-ink: #0a0f1d;
+  --cash: #f2b544; --cash-soft: #6b5221; --share: #64cfe6; --share-soft: #1f5866;
+  --hold: #a59a83; --margin: #e2729a; --transit: #f0a63a;
+  --direct: #ff7a59; --ok: #4fd08f; --warn: #f0b34a; --bad: #ff5c7a; color-scheme: dark }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { min-height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 var(--body); padding-inline: 16px; padding-block: 0 40px; }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+.mono, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.label { font: 600 11px/1.2 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------------- header */
+header.top { max-width: 1480px; margin: 0 auto; display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding: 22px 0 16px; }
+.brand { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.brand h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -.02em; line-height: 1; }
+.brand h1 span { color: var(--accent); }
+.brand p { margin: 0; color: var(--muted); max-width: 88ch; }
+.top .spacer { flex: 1; }
+.doc-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.doc-links a { display: inline-flex; align-items: baseline; gap: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; background: var(--panel); color: inherit; text-decoration: none; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.doc-links a:hover { border-color: var(--accent); color: var(--accent); }
+.doc-links small { font-weight: 500; color: var(--muted); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; }
+.pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; background: var(--panel); font-size: 12.5px; white-space: nowrap; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); }
+.dot.ok { background: var(--ok); } .dot.bad { background: var(--bad); }
+.dot.loading { animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .3; } }
+.theme-btn { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: 12.5px; }
+
+/* ---------------- main grid */
+main { max-width: 1480px; margin: 0 auto; display: grid; grid-template-columns: 290px minmax(0, 1fr) 330px; gap: 16px; align-items: start; }
+@media (max-width: 1180px) { main { grid-template-columns: minmax(0, 1fr) 320px; } aside.lib { grid-column: 1 / -1; order: 3; } }
+@media (max-width: 820px) { main { grid-template-columns: minmax(0, 1fr); } aside.lib { order: 3; } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); min-width: 0; }
+
+/* ---------------- library */
+aside.lib { padding: 14px; display: flex; flex-direction: column; gap: 14px; max-height: calc(100vh - 40px); overflow: auto; position: sticky; top: 12px; }
+@media (max-width: 1180px) { aside.lib { position: static; max-height: none; } }
+.lib-head { display: flex; gap: 8px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: 6px 12px; cursor: pointer; font-weight: 500; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.group { display: flex; flex-direction: column; gap: 6px; }
+.card { text-align: left; border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 9px 10px; cursor: pointer; display: grid; grid-template-columns: 66px 1fr; gap: 2px 8px; }
+.card:hover { border-color: var(--accent); }
+.card[aria-current="true"] { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); background: var(--panel); }
+.card .id { font: 500 11.5px var(--mono); color: var(--accent); grid-row: span 2; padding-top: 2px; }
+.card .t { font-weight: 600; font-size: 13.5px; line-height: 1.25; }
+.card .b { color: var(--muted); font-size: 12.5px; line-height: 1.35; }
+@media (min-width: 821px) and (max-width: 1180px) { .lib-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+.lib-groups { display: flex; flex-direction: column; gap: 14px; }
+
+/* ---------------- builder */
+.builder { display: flex; flex-direction: column; gap: 14px; }
+.builder fieldset { border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.builder legend { padding: 0 4px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.row > label { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--muted); flex: 1 1 70px; min-width: 0; }
+.row > label.chk { flex-direction: row; align-items: center; gap: 6px; color: var(--ink); font-size: 13px; flex: 1 1 100%; }
+.builder select, .builder input[type=number] { width: 100%; padding: 5px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel-2); min-width: 0; }
+.item { border: 1px dashed var(--line); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.item-head { display: flex; justify-content: space-between; align-items: center; }
+.x { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 18px; line-height: 1; padding: 0 4px; }
+.btn { border: 1px solid var(--line); background: var(--panel-2); border-radius: 8px; padding: 7px 12px; cursor: pointer; font-weight: 500; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.hint { font-size: 12.5px; color: var(--muted); margin: 0; }
+.err { color: var(--bad); font-size: 13px; margin: 0; }
+
+/* ---------------- stage */
+section.stage { display: flex; flex-direction: column; overflow: hidden; }
+.stage-head { padding: 14px 16px 10px; display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+.stage-head .ttl { flex: 1 1 260px; min-width: 0; }
+.stage-head h2 { font-size: 21px; font-weight: 700; letter-spacing: -.01em; }
+.stage-head p { margin: 2px 0 0; color: var(--muted); }
+.status { display: inline-flex; align-items: center; gap: 6px; font: 600 12px var(--body); padding: 4px 10px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.status.ok { color: var(--ok); } .status.warn { color: var(--warn); } .status.bad { color: var(--bad); }
+.sky { position: relative; background: radial-gradient(ellipse at 50% 50%, var(--sky-2), var(--sky) 70%); aspect-ratio: 16 / 10.5; max-width: 100%; }
+.sky canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.sky-hud { position: absolute; left: 12px; top: 10px; color: var(--sky-ink); font: 12px/1.5 var(--mono); pointer-events: none; text-shadow: 0 1px 2px #000; }
+.sky-hud .big { font: 700 26px/1 var(--display); letter-spacing: -.01em; }
+.sky-legend { position: absolute; right: 12px; bottom: 10px; display: flex; flex-direction: column; gap: 3px; color: var(--sky-muted); font: 11.5px var(--mono); pointer-events: none; text-align: right; }
+.sky-legend i { display: inline-block; width: 18px; height: 3px; border-radius: 2px; vertical-align: middle; margin-left: 6px; }
+.sky-views { position: absolute; right: 10px; top: 10px; display: flex; gap: 4px; }
+.sky-views button { border: 1px solid var(--sky-line); background: rgba(7, 11, 24, .7); color: var(--sky-ink); border-radius: 6px; padding: 3px 8px; font: 11.5px var(--mono); cursor: pointer; }
+.sky-views button[aria-pressed="true"] { border-color: var(--sky-share); color: var(--sky-share); }
+.transport { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.play { width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; display: grid; place-items: center; flex: none; }
+.play svg { width: 16px; height: 16px; fill: currentColor; }
+.transport label { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); }
+.transport select { padding: 3px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel-2); }
+.clock { font: 500 13px var(--mono); margin-left: auto; white-space: nowrap; }
+.timeline { padding: 4px 14px 14px; }
+.timeline svg { width: 100%; height: 64px; display: block; cursor: pointer; touch-action: none; }
+
+/* ---------------- ledger column */
+aside.ledger { display: flex; flex-direction: column; gap: 16px; }
+.box { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+.stat .v { font: 700 20px/1.1 var(--display); font-variant-numeric: tabular-nums; }
+.stat .s { font-size: 12px; color: var(--muted); }
+.acct { display: flex; flex-direction: column; gap: 5px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.acct:last-child { border-bottom: 0; padding-bottom: 0; }
+.acct-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.acct-head b { font-family: var(--display); font-size: 15px; }
+.acct-head span { font-size: 12px; color: var(--muted); }
+.bar { display: flex; height: 12px; border-radius: 4px; overflow: hidden; background: var(--panel-2); border: 1px solid var(--line); }
+.bar > div { height: 100%; transition: width .35s ease; }
+.seg-home { background: var(--cash); }
+.seg-remote { background: repeating-linear-gradient(135deg, var(--cash) 0 4px, var(--cash-soft) 4px 8px); }
+.seg-held { background: var(--hold); }
+.seg-escrow { background: var(--margin); }
+.seg-transit { background: repeating-linear-gradient(90deg, var(--transit) 0 6px, transparent 6px 10px); background-size: 20px 100%; animation: flow 0.8s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .seg-transit, .dot.loading { animation: none; } }
+@keyframes flow { to { background-position: 20px 0; } }
+.acct-lines { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12.5px; }
+.acct-lines .num { font-size: 12.5px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; }
+.chip i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); }
+.moments { display: flex; flex-direction: column; gap: 2px; max-height: 300px; overflow: auto; }
+.moment { display: grid; grid-template-columns: 70px 1fr; gap: 8px; border: 0; background: transparent; text-align: left; padding: 4px 6px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.moment:hover { background: var(--panel-2); }
+.moment .num { color: var(--muted); font-size: 12.5px; }
+.moment.past .num { color: var(--accent); }
+.moment.past { color: var(--ink); }
+.moment:not(.past) { color: var(--muted); }
+
+/* ---------------- lower tabs */
+section.lower { max-width: 1480px; margin: 16px auto 0; }
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs button { border: 0; background: transparent; padding: 10px 14px; cursor: pointer; font: 600 14px var(--body); color: var(--muted); border-bottom: 2px solid transparent; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabpane { padding: 16px; }
+.tablewrap { overflow-x: auto; max-height: 560px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+th { position: sticky; top: 0; background: var(--panel-2); font: 600 12px var(--body); color: var(--muted); letter-spacing: .03em; z-index: 1; }
+td.num, th.num { text-align: right; }
+table.trace td:first-child { font-family: var(--mono); white-space: nowrap; }
+table.trace td:nth-child(7) { min-width: 220px; font-size: 12.5px; }
+table.trace tbody tr { cursor: pointer; }
+table.trace tr.future td { opacity: .45; }
+table.trace tr.now td { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 16px; }
+.chart { border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.chart h3 { font-size: 16px; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart svg text { fill: var(--muted); font: 11px var(--mono); }
+.chart .axis { stroke: var(--line); }
+.progress { height: 6px; background: var(--panel-2); border-radius: 3px; overflow: hidden; width: 160px; }
+.progress > div { height: 100%; background: var(--accent); width: 0; transition: width .2s; }
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+footer { max-width: 1480px; margin: 24px auto 0; color: var(--muted); font-size: 12.5px; }
+footer p { max-width: 90ch; }
+</style>
+
+<header class="top">
+  <div class="brand">
+    <div class="label">A Safe and Reliable MultiPlanetary Exchange System</div>
+    <h1>MPX <span>Orrery</span></h1>
+    <p>A market for nine settlements, Mercury to Neptune, where messages take hours, packets get lost and the Sun can block a path for weeks. Each exchange trades only with assets already in its own ledger, so delay and loss can slow trades but never create or destroy value. Watch money and shares cross the solar system at the speed of light, replay the paper's scenarios or build your own; every run uses the same simulator as the paper (Kepler orbits, light time, solar exclusion, relays, loss, quotas and the exchanges' ledgers), running in your browser.</p>
+    <nav class="doc-links" aria-label="Paper">
+      <a href="../paper/design_paper.pdf">Design paper <small>PDF</small></a>
+      <a href="../paper/evidence_appendix.pdf">Evidence appendix <small>PDF</small></a>
+      <a href="../paper/supplement.pdf">Supplement <small>PDF</small></a>
+      <a href="https://github.com/lmesh91/gqh-2026">Source code <small>GitHub</small></a>
+    </nav>
+  </div>
+  <div class="spacer"></div>
+  <span class="pill" id="engine"><span class="dot loading"></span><span>Starting Python engine…</span></span>
+  <button class="theme-btn" id="themeBtn" type="button">Theme: system</button>
+</header>
+
+<main>
+  <aside class="lib panel" aria-label="Scenarios">
+    <div class="lib-head seg" role="group" aria-label="Library or builder">
+      <button type="button" id="modeLib" aria-pressed="true">Scenarios</button>
+      <button type="button" id="modeBuild" aria-pressed="false">Build your own</button>
+    </div>
+    <div id="libView" class="lib-groups"></div>
+    <form id="buildView" class="builder" hidden></form>
+  </aside>
+
+  <section class="stage panel" aria-label="Orrery">
+    <div class="stage-head">
+      <div class="ttl">
+        <div class="label" id="scnId">S1a</div>
+        <h2 id="scnTitle">Loading…</h2>
+        <p id="scnBlurb"></p>
+      </div>
+      <span class="status warn" id="scnStatus">…</span>
+    </div>
+    <div class="sky" id="sky">
+      <canvas id="cv"></canvas>
+      <div class="sky-hud"><div class="big" id="hudT">T+0.00 h</div><div id="hudDate"></div><div id="hudFlight"></div></div>
+      <div class="sky-views" role="group" aria-label="Scale">
+        <button type="button" data-view="log" aria-pressed="true">whole system</button>
+        <button type="button" data-view="inner" aria-pressed="false">inner</button>
+        <button type="button" data-view="true" aria-pressed="false">true scale</button>
+        <button type="button" id="lblBtn" aria-pressed="true" title="Show packet types">labels</button>
+      </div>
+      <div class="sky-legend">
+        <span>NeoDollars transfer<i style="background:var(--sky-cash)"></i></span>
+        <span>share transfer<i style="background:var(--sky-share)"></i></span>
+        <span>direct client packet<i style="background:var(--sky-direct)"></i></span>
+        <span>receipts, handshakes, ACKs<i style="background:var(--sky-ctrl)"></i></span>
+        <span>lost or killed<i style="background:var(--sky-bad)"></i></span>
+      </div>
+    </div>
+    <div class="transport">
+      <button class="play" id="playBtn" type="button" aria-label="Play"><svg viewBox="0 0 16 16" id="playIcon"><path d="M3 1.5v13l11-6.5z"/></svg></button>
+      <label for="speed">Speed
+        <select id="speed">
+          <option value="0.05">3 min / s</option><option value="0.15">9 min / s</option><option value="0.5" selected>30 min / s</option>
+          <option value="2">2 h / s</option><option value="8">8 h / s</option><option value="30">30 h / s</option>
+        </select></label>
+      <label><input type="checkbox" id="skip" checked> Skip quiet stretches</label>
+      <button class="btn" type="button" id="restart">Restart</button>
+      <span class="clock" id="clock">0.00 / 0 h</span>
+    </div>
+    <div class="timeline"><svg id="tl" viewBox="0 0 1000 64" preserveAspectRatio="none" aria-label="Timeline; click to jump"></svg></div>
+  </section>
+
+  <aside class="ledger">
+    <div class="panel box">
+      <div class="label">Outcome</div>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="panel box">
+      <div class="label">Accounts at this moment</div>
+      <div id="accts"></div>
+      <div class="legend">
+        <span class="chip"><i class="seg-home"></i>spendable at home</span>
+        <span class="chip"><i class="seg-remote"></i>free at host</span>
+        <span class="chip"><i class="seg-held"></i>held for an order</span>
+        <span class="chip"><i class="seg-escrow"></i>contract margin</span>
+        <span class="chip"><i style="background:var(--transit)"></i>in transit</span>
+      </div>
+    </div>
+    <div class="panel box">
+      <div class="label">Key moments · click to jump</div>
+      <div class="moments" id="moments"></div>
+    </div>
+  </aside>
+</main>
+
+<section class="lower panel">
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="trace">Trace</button>
+    <button role="tab" aria-selected="false" data-tab="net">Packets</button>
+    <button role="tab" aria-selected="false" data-tab="mc">Monte Carlo</button>
+    <button role="tab" aria-selected="false" data-tab="evidence">Evidence</button>
+    <button role="tab" aria-selected="false" data-tab="about">How it works</button>
+  </div>
+  <div class="tabpane" data-pane="trace">
+    <div class="toolbar"><span class="hint">The brief's seven columns, generated from the simulator's event stream. Rows ahead of the playhead are dimmed; click a row to jump.</span>
+      <label class="hint"><input type="checkbox" id="follow" checked> follow playhead</label></div>
+    <div class="tablewrap" id="traceWrap"></div>
+  </div>
+  <div class="tabpane" data-pane="net" hidden>
+    <div class="toolbar">
+      <label class="hint" for="pktFilter">Show</label>
+      <select id="pktFilter" class="btn"><option value="all">all packets</option><option value="data">data only</option><option value="direct">direct only</option><option value="lost">lost or killed</option></select>
+      <span class="hint" id="pktCount"></span>
+    </div>
+    <div class="charts">
+      <div class="chart"><h3>Traffic by kind</h3><div id="pktKinds"></div></div>
+      <div class="chart"><h3>Transport events</h3><p class="hint">Sessions, failures, resubmissions and restart notices from the courier.</p><div class="tablewrap" style="max-height:260px" id="courier"></div></div>
+    </div>
+    <div class="tablewrap" id="pkts" style="margin-top:16px"></div>
+  </div>
+  <div class="tabpane" data-pane="mc" hidden>
+    <div class="toolbar">
+      <button class="btn primary" type="button" id="mcRun">Run lossy repeats</button>
+      <select id="mcN" class="btn"><option>100</option><option selected>300</option><option>1000</option></select>
+      <div class="progress"><div id="mcProg"></div></div>
+      <span class="hint" id="mcNote"></span>
+    </div>
+    <div class="charts">
+      <div class="chart"><h3>Chance of completion by time t</h3><div id="mcChart"></div></div>
+      <div class="chart"><h3>Summary</h3><div class="kv" id="mcStats"></div><p class="hint" id="mcExplain">Each repeat draws every backbone launch and every direct copy against the brief's loss law with a new random seed. The thin line is the 2,000-run result from the evidence appendix where one exists.</p></div>
+    </div>
+  </div>
+  <div class="tabpane" data-pane="evidence" hidden>
+    <div class="charts" id="evCharts"></div>
+  </div>
+  <div class="tabpane" data-pane="about" hidden>
+    <div class="charts">
+      <div class="chart"><h3>What you are watching</h3>
+        <p>Nine settlements and two relays move on fixed Kepler ellipses from the epoch 2026-09-22 00:00 TDB. A packet leaves its sender at one position and meets the receiver where the receiver will be when the light arrives, so every dot flies a slightly bent path. A link is blocked when the straight path passes within 0.1 AU of the Sun.</p>
+        <p>Money moves only as a funded TRANSFER on the relay backbone: the sending exchange debits first, the receiving exchange imports once and answers RECEIVED. Orders and contract instructions are direct packets from the client to the host exchange; copies are sent 60 s apart so one usually gets through. The host reports contract status (HELD, OPEN) back as a batched STATUS record over the backbone to each client's home exchange, which tells its clients locally.</p>
+      </div>
+      <div class="chart"><h3>The rules in one paragraph</h3>
+        <p>Every account lives at its home exchange. To trade elsewhere a client first funds its own account at the market's host exchange. The host matches locally and atomically against funds it already holds, then ships shares or cash home automatically. Futures margin is posted at the host up front, so the contract can always pay. No exchange ever gives credit for money that is still in flight.</p>
+        <p class="hint">Rule R9 lets a third exchange forward a client's instruction while the client's own direct path is behind the Sun. Alternative A1 (not part of the design) makes a restarted exchange tell its recent peers, so they resend at once instead of waiting out their timers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Presets are pre-computed with the simulator and play instantly. Custom scenarios and Monte Carlo run the same Python code in your browser through Pyodide 0.27 (about 14 MB, loaded once). Times are hours from each scenario's start; dates are TDB.</p>
+</footer>
+
+<script>
+(() => {
+'use strict';
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const HOUR = 3600, EPOCH_MS = Date.UTC(2026, 8, 22, 0, 0, 0);
+const SETTLEMENTS = ['Mercury', 'Venus', 'Earth', 'Mars', 'Ceres', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+const RELAYS = ['Relay A', 'Relay B'];
+const NODES = SETTLEMENTS.concat(RELAYS);
+const ACCOUNTS = ['Alice', 'Bob', 'Cara', 'Dax', 'Eve', 'Fin'];
+const BOOK = { Alice: ['Earth', 150000, ''], Bob: ['Mars', 50000, '3,000 Ares'], Cara: ['Ceres', 100000, '1,000 Belt'],
+  Dax: ['Neptune', 100000, ''], Eve: ['Uranus', 50000, ''], Fin: ['Earth', 50000, '1,000 Terra'] };
+const BODY_COLOR = { Mercury: '#b9ab9b', Venus: '#e9c98d', Earth: '#5aa2ff', Mars: '#ff7350', Ceres: '#a9b79c', Jupiter: '#e3ac76',
+  Saturn: '#e8d391', Uranus: '#8fe6e2', Neptune: '#6a86ff', 'Relay A': '#b49cff', 'Relay B': '#b49cff' };
+const MAINT = [['Relay B', 'Neptune', 2, 26], ['Relay B', 'Ceres', 240, 264]];
+const fmtH = (x, d = 2) => x == null ? '—' : Number(x).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+const money = (v) => '$' + Math.round(v).toLocaleString('en-US');
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const store = { get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+
+// ------------------------------------------------------------------ theme
+const themeBtn = $('#themeBtn');
+const themes = ['system', 'light', 'dark'];
+let theme = store.get('mpx-theme', 'system');
+function applyTheme() {
+  if (theme === 'system') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme', theme);
+  themeBtn.textContent = 'Theme: ' + theme;
+}
+themeBtn.onclick = () => { theme = themes[(themes.indexOf(theme) + 1) % 3]; store.set('mpx-theme', theme); applyTheme(); };
+applyTheme();
+
+// ------------------------------------------------------------------ orbital mechanics (same equations as geom.pos)
+let EL = null;
+function pos(name, t) {
+  const el = EL[name];
+  let M = (el.M0 + el.n * t) % (2 * Math.PI);
+  const e = el.e;
+  let E = e < 0.8 ? M : Math.PI;
+  for (let i = 0; i < 30; i++) { const f = E - e * Math.sin(E) - M; E -= f / (1 - e * Math.cos(E)); if (Math.abs(f) < 1e-13) break; }
+  const x = el.a * (Math.cos(E) - e), y = el.b * Math.sin(E);
+  return [el.P[0] * x + el.Q[0] * y, el.P[1] * x + el.Q[1] * y];
+}
+function orbitPath(name) {
+  const el = EL[name], pts = [];
+  for (let i = 0; i <= 256; i++) {
+    const E = i / 256 * 2 * Math.PI;
+    const x = el.a * (Math.cos(E) - el.e), y = el.b * Math.sin(E);
+    pts.push([el.P[0] * x + el.Q[0] * y, el.P[1] * x + el.Q[1] * y]);
+  }
+  return pts;
+}
+function segClear(p, q) {
+  const vx = q[0] - p[0], vy = q[1] - p[1], vv = vx * vx + vy * vy;
+  const f = Math.max(0, Math.min(1, -(p[0] * vx + p[1] * vy) / vv));
+  return Math.hypot(p[0] + f * vx, p[1] + f * vy);
+}
+
+// ------------------------------------------------------------------ state
+let DATA = null, EVID = {}, cur = null;         // cur = {id, title, blurb, cfg, result, ...derived}
+let playH = 0, playing = false, lastTs = 0, lastH = 0, view = 'log';
+const flashes = [];
+let orbits = {};
+
+// ------------------------------------------------------------------ engine (Pyodide worker)
+let worker = null, engineReady = false, reqId = 0;
+const pending = new Map();
+function setEngine(state, text) {
+  const pill = $('#engine');
+  pill.innerHTML = `<span class="dot ${state}"></span><span>${esc(text)}</span>`;
+}
+function startEngine() {
+  try {
+    worker = new Worker('engine.js');
+  } catch (e) { setEngine('bad', 'Python engine unavailable here; presets still play'); return; }
+  worker.onmessage = (ev) => {
+    const m = ev.data;
+    if (m.status === 'loading') setEngine('loading', 'Loading Python engine…');
+    else if (m.status === 'ready') { engineReady = true; setEngine('ok', 'Python engine ready (Pyodide ' + m.version.split(' ')[0] + ')'); refreshButtons(); }
+    else if (m.status === 'error') { setEngine('bad', 'Python engine could not start; presets still play'); console.warn(m.error); }
+    else if (m.id != null && pending.has(m.id)) {
+      const p = pending.get(m.id);
+      if (m.progress != null) { p.onProgress && p.onProgress(m.progress); return; }
+      pending.delete(m.id);
+      m.ok ? p.resolve(m.result) : p.reject(new Error(m.error));
+    }
+  };
+  worker.onerror = () => setEngine('bad', 'Python engine could not start; presets still play');
+}
+function engine(op, payload, onProgress) {
+  return new Promise((resolve, reject) => {
+    if (!worker) return reject(new Error('The Python engine is not available in this view.'));
+    const id = ++reqId;
+    pending.set(id, { resolve, reject, onProgress });
+    worker.postMessage(Object.assign({ id, op }, payload));
+  });
+}
+
+// ------------------------------------------------------------------ labels
+const MOMENT = {
+  funding_imported_at_host: 'funding arrives at the host', funding_receipt_at_home: 'receipt back at home',
+  order_sent: 'order sent', first_fill: 'first fill', host_final_fill: 'order fully filled',
+  seller_spendable: 'seller paid, spendable', buyer_spendable: 'shares spendable at home',
+  deferred_for_access: 'funding deferred: no direct access', instr_sent: 'contract instruction sent',
+  report_HELD: 'margin-held report', report_OPEN: 'open report', open: 'contract opens', maturity: 'maturity',
+  discharge: 'obligations discharged', backed_claim: 'payouts backed by funded transfers',
+  payout_spendable: 'payout spendable at home', rejected_at_deadline: 'contract rejected at deadline',
+  returned_home: 'margin back home', funding_rejected_at_home: 'funding rejected at home',
+  suspended_no_access: 'suspended: no direct access', orders_sent: 'orders sent', sweep_ND_home: 'cash swept home',
+  sweep_ARES_home: 'Ares swept home'
+};
+function momentLabel(k) {
+  const parts = k.split(':');
+  const tail = parts[parts.length - 1];
+  const who = parts.length === 3 ? parts[1] + ': ' : '';
+  return who + (MOMENT[tail] || tail.replace(/_/g, ' '));
+}
+function packetColor(p) {
+  if (p.direct) return 'var(--sky-direct)';
+  if (p.kind === 'DATA') return p.label.includes('$') ? 'var(--sky-cash)' : (p.label.startsWith('TRANSFER') ? 'var(--sky-share)' : 'var(--sky-ink)');
+  return 'var(--sky-ctrl)';
+}
+
+// Short on-canvas packet names
+const DIRECT_NAME = { ORDER: 'order', CINSTR: 'contract instr.', WITHDRAW: 'withdraw request', CANCEL: 'cancel',
+  REPORT: 'status report', BATCH: 'order batch', CLOSE: 'close account' };
+const PURPOSE = { fund: 'funding', 'auto fill': 'delivery', payout: 'payout', withdraw: 'withdrawal',
+  'return late topup': 'top-up return', 'margin held': 'margin', 'margin released': 'margin release' };
+const CTRL_NAME = { SYN: 'SYN', SYNACK: 'SYN-ACK', ACK: 'ACK', RCPT: 'hop receipt', DACK: 'data ACK' };
+function shortAmount(a) {
+  const m = /^\$([\d,.]+)$/.exec(a);
+  if (!m) return a;
+  const v = +m[1].replace(/,/g, '');
+  return v >= 1000 ? '$' + (v / 1000).toLocaleString('en-US', { maximumFractionDigits: 1 }) + 'k' : '$' + v.toLocaleString('en-US');
+}
+function shortLabel(p) {
+  if (p.direct) {
+    const w = p.label.split(' ')[0];
+    if (w.startsWith('FWD:')) return 'fwd ' + (DIRECT_NAME[w.slice(4)] || w.slice(4).toLowerCase());
+    return DIRECT_NAME[w] || w.toLowerCase();
+  }
+  if (p.kind === 'DATA') {
+    const m = /^TRANSFER \S+ (.+) \((.+)\)$/.exec(p.label);
+    if (m) return shortAmount(m[1]) + ' ' + (PURPOSE[m[2]] || m[2]);
+    if (p.label.startsWith('RECEIVED')) return 'receipt';
+    if (p.label.startsWith('STATUS')) return 'status';
+    return 'data';
+  }
+  return CTRL_NAME[p.kind] || p.kind;
+}
+
+// ------------------------------------------------------------------ load a scenario
+function derive(sc) {
+  const r = sc.result;
+  const t0s = r.t0_h * HOUR;
+  const pk = r.packets.map(([te, ta, a, b, kind, st, label]) => ({ te, ta, a, b, kind, st, label, direct: false }))
+    .concat(r.direct.map(([te, ta, a, b, label, st, who]) => ({ te, ta, a, b, kind: 'DIRECT', st, label: label + ' from ' + who, direct: true })));
+  pk.sort((x, y) => x.te - y.te);
+  for (const p of pk) { p.pa = pos(p.a, t0s + p.te * HOUR); p.pb = pos(p.b, t0s + p.ta * HOUR); p.col = packetColor(p); p.short = shortLabel(p); }
+  const acts = pk.map((p) => p.te).concat(r.events.map((e) => e[0])).sort((a, b) => a - b);
+  const involved = new Set();
+  for (const [kind, , d] of r.kinds) {
+    if (kind === 'equity') { involved.add(d.buyer); involved.add(d.seller); }
+    else if (kind === 'futures') { involved.add(d.long); involved.add(d.short); }
+    else { involved.add('Alice'); involved.add('Bob'); }
+  }
+  let scale = 1;
+  for (const e of r.events) for (const a of involved) { const c = e[4][a].ND; scale = Math.max(scale, c.reduce((s, x) => s + x, 0)); }
+  for (const a of involved) scale = Math.max(scale, BOOK[a][1]);
+  sc.d = { pk, acts, involved: [...involved], scale, t0s };
+  return sc;
+}
+
+function load(sc, keepTime = false) {
+  cur = derive(sc);
+  $$('.card').forEach((c) => c.setAttribute('aria-current', String(c.dataset.id === sc.id)));
+  $('#scnId').textContent = sc.id === 'custom' ? 'Custom scenario' : sc.id + ' · ' + sc.group;
+  $('#scnTitle').textContent = sc.title;
+  $('#scnBlurb').textContent = sc.blurb;
+  const r = sc.result, st = $('#scnStatus');
+  if (r.completion != null) { st.className = 'status ok'; st.textContent = 'Complete at ' + fmtH(r.completion) + ' h'; }
+  else {
+    const t = r.times, keys = Object.keys(t).join(' ');
+    st.className = 'status ' + (/rejected|suspended|deferred/.test(keys) ? 'warn' : 'bad');
+    st.textContent = /rejected/.test(keys) ? 'Rejected safely' : /suspended|deferred/.test(keys) ? 'Deferred: no access' : 'Not complete in window';
+  }
+  playH = keepTime ? Math.min(playH, r.horizon_h) : 0; lastH = playH; flashes.length = 0;
+  buildTimeline(); renderStats(); renderMoments(); renderTrace(); renderPackets(); renderMC(); renderAccounts();
+  const homes = Object.values(r.homes);
+  const far = cur.d.pk.some((p) => ['Jupiter', 'Saturn', 'Uranus', 'Neptune'].includes(p.a) || ['Jupiter', 'Saturn', 'Uranus', 'Neptune'].includes(p.b));
+  setView(far ? 'log' : 'inner');
+  try { location.hash = sc.id === 'custom' ? '' : sc.id; } catch {}
+  draw();
+}
+
+// ------------------------------------------------------------------ library
+function renderLibrary() {
+  const groups = {};
+  for (const p of Object.values(DATA.presets)) (groups[p.group] = groups[p.group] || []).push(p);
+  $('#libView').innerHTML = Object.entries(groups).map(([g, ps]) => `<div class="group"><div class="label">${esc(g)}</div>${
+    ps.map((p) => `<button type="button" class="card" data-id="${esc(p.id)}" aria-current="false"><span class="id">${esc(p.id)}</span><span class="t">${esc(p.title)}</span><span class="b">${esc(p.blurb)}</span></button>`).join('')}</div>`).join('');
+  $$('#libView .card').forEach((c) => c.onclick = () => { load(DATA.presets[c.dataset.id]); playing = true; setPlayIcon(); });
+}
+
+// ------------------------------------------------------------------ builder
+const ASSETS = { ARES: 'Ares (Mars)', BELT: 'Belt (Ceres)', TERRA: 'Terra (Earth)' };
+let draft = store.get('mpx-draft', null) || {
+  trades: [{ type: 'equity', buyer: 'Dax', asset: 'BELT', qty: 500, price: 100 }, { type: 'futures', long: 'Alice', short: 'Cara', Q: 1500, path: 'falling' }],
+  homes: {}, loss: true, seed: 3, maintenance: true, incidents: [{ kind: 'isolation', node: 'Ceres', start_h: 20 }],
+  epoch_years: 0, t0_h: 0, until_h: 700, policy: { agent_relay: true, restart_notice: false, backoff: true, direct_cap: 8, fallback_slack_h: 6 } };
+const opt = (vals, sel, labels) => vals.map((v) => `<option value="${esc(v)}"${String(v) === String(sel) ? ' selected' : ''}>${esc(labels ? labels[v] || v : v)}</option>`).join('');
+function renderBuilder() {
+  const d = draft, f = $('#buildView');
+  const tradeHtml = d.trades.map((t, i) => {
+    let body = '';
+    if (t.type === 'equity') body = `<div class="row"><label>Buyer<select data-k="trades.${i}.buyer">${opt(ACCOUNTS.filter((a) => !['Bob', 'Cara', 'Fin'].includes(a) || true), t.buyer)}</select></label>
+      <label>Shares<select data-k="trades.${i}.asset">${opt(Object.keys(ASSETS), t.asset, ASSETS)}</select></label></div>
+      <div class="row"><label>Quantity<input type="number" min="1" step="1" data-k="trades.${i}.qty" value="${t.qty ?? 1000}"></label>
+      <label>Limit $<input type="number" min="1" step="1" data-k="trades.${i}.price" value="${t.price ?? 100}"></label>
+      <label>Start h<input type="number" min="0" step="0.5" data-k="trades.${i}.start_h" value="${t.start_h ?? 0}"></label></div>
+      <p class="hint">Seller: ${{ ARES: 'Bob at Mars', BELT: 'Cara at Ceres', TERRA: 'Fin at Earth' }[t.asset || 'ARES']}, selling at the same limit.</p>`;
+    else if (t.type === 'futures') body = `<div class="row"><label>Long<select data-k="trades.${i}.long">${opt(ACCOUNTS, t.long)}</select></label>
+      <label>Short<select data-k="trades.${i}.short">${opt(ACCOUNTS, t.short)}</select></label></div>
+      <div class="row"><label>Q (index units)<input type="number" min="1" step="1" data-k="trades.${i}.Q" value="${t.Q ?? 2000}"></label>
+      <label>Prices<select data-k="trades.${i}.path">${opt(['rising', 'falling', 'flat'], t.path)}</select></label>
+      <label>Start h<input type="number" min="0" step="0.5" data-k="trades.${i}.start_h" value="${t.start_h ?? 0}"></label></div>
+      <p class="hint">Margin Q × $40 each side, hosted at Mars; Bob publishes the index.</p>`;
+    else body = `<p class="hint">Alice's $10,000 Mars account: two orders, a partial fill, a cancel race and a sweep home.</p>`;
+    return `<div class="item"><div class="item-head"><select data-k="trades.${i}.type" class="btn" aria-label="Trade type">${opt(['equity', 'futures', 'repeat'], t.type, { equity: 'Share purchase', futures: 'Capped futures', repeat: 'Repeat trading ($10k)' })}</select>
+      <button type="button" class="x" data-del="trades.${i}" aria-label="Remove trade">×</button></div>${body}</div>`;
+  }).join('');
+  const incHtml = d.incidents.map((x, i) => `<div class="item"><div class="item-head"><select data-k="incidents.${i}.kind" class="btn" aria-label="Incident type">${opt(['isolation', 'forced_loss', 'reset'], x.kind, { isolation: 'Isolation (72 h)', forced_loss: 'Forced loss (6 h)', reset: 'Endpoint reset' })}</select>
+      <button type="button" class="x" data-del="incidents.${i}" aria-label="Remove incident">×</button></div>
+      <div class="row"><label>Node<select data-k="incidents.${i}.node">${opt(x.kind === 'forced_loss' ? NODES : SETTLEMENTS, x.node)}</select></label>
+      <label>Start h<input type="number" min="0" step="0.25" data-k="incidents.${i}.start_h" value="${x.start_h}"></label>
+      ${x.kind === 'reset' ? '' : `<label>Hours<input type="number" min="0.5" step="0.5" data-k="incidents.${i}.duration_h" value="${x.duration_h ?? (x.kind === 'isolation' ? 72 : 6)}"></label>`}</div></div>`).join('');
+  const p = d.policy;
+  f.innerHTML = `
+    <fieldset><legend class="label">Trades</legend>${tradeHtml}
+      <div class="row"><button type="button" class="btn" data-add="equity">+ Share purchase</button><button type="button" class="btn" data-add="futures">+ Futures</button></div></fieldset>
+    <fieldset><legend class="label">Where people live</legend>
+      <div class="row">${ACCOUNTS.map((a) => `<label>${a}<select data-k="homes.${a}">${opt(SETTLEMENTS, d.homes[a] || BOOK[a][0])}</select></label>`).join('')}</div>
+      <p class="hint">Opening book: Alice $150k · Bob $50k + 3,000 Ares · Cara $100k + 1,000 Belt · Dax $100k · Eve $50k · Fin $50k + 1,000 Terra. Sellers must stay at their market.</p></fieldset>
+    <fieldset><legend class="label">When and how noisy</legend>
+      <div class="row"><label>Years after 2026-09-22<input type="number" step="1" min="0" max="100000" data-k="epoch_years" value="${d.epoch_years}"></label>
+      <label>+ hours<input type="number" step="1" min="0" data-k="t0_h" value="${d.t0_h}"></label></div>
+      <div class="row"><button type="button" class="btn" id="conj">Jump to the 2028 Mars blackout</button></div>
+      <div class="row"><label>Run for (h)<input type="number" min="10" max="5000" step="10" data-k="until_h" value="${d.until_h}"></label>
+      <label>Seed<input type="number" min="0" step="1" data-k="seed" value="${d.seed}"></label></div>
+      <div class="row"><label class="chk"><input type="checkbox" data-k="loss" ${d.loss ? 'checked' : ''}> Random packet loss (brief's loss law)</label>
+      <label class="chk"><input type="checkbox" data-k="maintenance" ${d.maintenance ? 'checked' : ''}> Scheduled maintenance windows</label></div></fieldset>
+    <fieldset><legend class="label">Incidents</legend>${incHtml || '<p class="hint">None. Add one to stress the run.</p>'}
+      <div class="row"><button type="button" class="btn" data-add="incident">+ Incident</button></div></fieldset>
+    <fieldset><legend class="label">Design options</legend>
+      <div class="row"><label class="chk"><input type="checkbox" data-k="policy.agent_relay" ${p.agent_relay ? 'checked' : ''}> R9: forward via a third exchange when the direct path is closed (part of the design)</label>
+      <label class="chk"><input type="checkbox" data-k="policy.restart_notice" ${p.restart_notice ? 'checked' : ''}> A1: restart notice after an endpoint reset</label>
+      <label class="chk"><input type="checkbox" data-k="policy.backoff" ${p.backoff !== false ? 'checked' : ''}> Application backoff 24/48/96/168 h</label></div>
+      <div class="row"><label>Max direct copies<input type="number" min="1" max="12" step="1" data-k="policy.direct_cap" value="${p.direct_cap}"></label>
+      <label>Fallback slack (h)<input type="number" min="0" max="48" step="1" data-k="policy.fallback_slack_h" value="${p.fallback_slack_h}"></label></div></fieldset>
+    <div class="row"><button type="submit" class="btn primary" id="runBtn">Run scenario</button><button type="button" class="btn" id="resetDraft">Reset form</button></div>
+    <p class="hint" id="runNote"></p>`;
+  refreshButtons();
+}
+function setPath(obj, path, val) {
+  const ks = path.split('.');
+  let o = obj;
+  for (let i = 0; i < ks.length - 1; i++) { const k = /^\d+$/.test(ks[i]) ? +ks[i] : ks[i]; o[k] = o[k] ?? {}; o = o[k]; }
+  o[ks[ks.length - 1]] = val;
+}
+function wireBuilder() {
+  const f = $('#buildView');
+  f.addEventListener('change', (e) => {
+    const el = e.target, k = el.dataset.k;
+    if (!k) return;
+    let v = el.type === 'checkbox' ? el.checked : el.type === 'number' ? (el.value === '' ? '' : Number(el.value)) : el.value;
+    setPath(draft, k, v);
+    if (/^trades\.\d+\.type$/.test(k) || /^incidents\.\d+\.kind$/.test(k) || /asset$/.test(k)) renderBuilder();
+    store.set('mpx-draft', draft);
+  });
+  f.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t.dataset.add) {
+      if (t.dataset.add === 'incident') draft.incidents.push({ kind: 'isolation', node: 'Mars', start_h: 10 });
+      else if (draft.trades.length < 4) draft.trades.push(t.dataset.add === 'equity' ? { type: 'equity', buyer: 'Alice', asset: 'ARES', qty: 100, price: 100 } : { type: 'futures', long: 'Alice', short: 'Cara', Q: 1000, path: 'rising' });
+      renderBuilder(); store.set('mpx-draft', draft);
+    } else if (t.dataset.del) {
+      const [k, i] = t.dataset.del.split('.'); draft[k].splice(+i, 1); renderBuilder(); store.set('mpx-draft', draft);
+    } else if (t.id === 'conj') {
+      draft.epoch_years = 0; draft.t0_h = 12470; renderBuilder(); store.set('mpx-draft', draft);
+    } else if (t.id === 'resetDraft') {
+      try { localStorage.removeItem('mpx-draft'); } catch {}
+      location.reload();
+    }
+  });
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const note = $('#runNote');
+    if (!engineReady) { note.textContent = 'The Python engine is still loading. Try again in a few seconds.'; return; }
+    const cfg = JSON.parse(JSON.stringify(draft));
+    cfg.trades.forEach((t, i) => t.tag = 'T' + (i + 1));
+    for (const x of cfg.incidents) if (x.kind === 'reset') delete x.duration_h;
+    note.className = 'hint'; note.textContent = 'Running…';
+    const t = performance.now();
+    try {
+      const r = await engine('simulate', { cfg });
+      if (!r.ok) { note.className = 'err'; note.textContent = r.error; return; }
+      note.textContent = `Ran ${r.metrics.total} packets and ${r.metrics.audits} ledger audits in ${((performance.now() - t) / 1000).toFixed(2)} s.`;
+      load({ id: 'custom', group: 'Custom', title: describe(cfg), blurb: blurbFor(cfg), cfg, result: r });
+      playing = true; setPlayIcon();
+    } catch (err) { note.className = 'err'; note.textContent = err.message; }
+  });
+}
+function describe(cfg) {
+  return cfg.trades.map((t) => t.type === 'equity' ? `${t.buyer} buys ${t.qty} ${(ASSETS[t.asset] || '').split(' ')[0]}` :
+    t.type === 'futures' ? `${t.long} long / ${t.short} short, Q ${t.Q}` : 'repeat trading').join(' + ') || 'Custom scenario';
+}
+function blurbFor(cfg) {
+  const bits = [];
+  const moved = Object.entries(cfg.homes || {}).filter(([a, h]) => h && h !== BOOK[a][0]).map(([a, h]) => `${a} at ${h}`);
+  if (moved.length) bits.push(moved.join(', '));
+  if (cfg.epoch_years || cfg.t0_h) bits.push(`starts ${dateAt((cfg.epoch_years || 0) * 8766 + (cfg.t0_h || 0)).slice(0, 10)}`);
+  bits.push(cfg.loss ? `random loss, seed ${cfg.seed}` : 'no loss');
+  for (const x of cfg.incidents) bits.push(`${x.kind.replace('_', ' ')} of ${x.node} at h ${x.start_h}`);
+  if (!cfg.policy.agent_relay) bits.push('R9 off');
+  if (cfg.policy.restart_notice) bits.push('A1 on');
+  return bits.join(' · ') + '.';
+}
+function refreshButtons() {
+  const b = $('#runBtn');
+  if (b) { b.disabled = !engineReady; b.textContent = engineReady ? 'Run scenario' : 'Waiting for Python engine…'; }
+  const m = $('#mcRun');
+  if (m) m.disabled = !engineReady;
+}
+
+// ------------------------------------------------------------------ canvas
+const cv = $('#cv'), ctx = cv.getContext('2d');
+let W = 0, Hh = 0, DPR = 1;
+const css = {};
+function readColors() {
+  const s = getComputedStyle(document.documentElement);
+  for (const k of ['sky-ink', 'sky-muted', 'sky-line', 'sky-cash', 'sky-share', 'sky-direct', 'sky-ctrl', 'sky-bad', 'sky-relay', 'sky-sun', 'warn'])
+    css[k] = s.getPropertyValue('--' + k).trim();
+}
+function resize() {
+  const r = cv.getBoundingClientRect();
+  DPR = Math.min(2, window.devicePixelRatio || 1);
+  W = r.width; Hh = r.height;
+  cv.width = Math.round(W * DPR); cv.height = Math.round(Hh * DPR);
+  draw();
+}
+new ResizeObserver(resize).observe(cv);
+function scr(p) {
+  const r = Math.hypot(p[0], p[1]);
+  const R = Math.min(W, Hh) * 0.46;
+  let rr;
+  if (view === 'log') rr = R * Math.log1p(r / 0.35) / Math.log1p(31 / 0.35);
+  else if (view === 'inner') rr = R * Math.min(r, 3.4) / 3.25;
+  else rr = R * r / 31;
+  const k = r > 0 ? rr / r : 0;
+  return [W / 2 + p[0] * k, Hh / 2 - p[1] * k, r];
+}
+function col(c) { return c.startsWith('var(') ? css[c.slice(6, -1)] : c; }
+function draw() {
+  if (!cur || !EL || !W) return;
+  const r = cur.result, t = cur.d.t0s + playH * HOUR;
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.clearRect(0, 0, W, Hh);
+  // orbits
+  ctx.lineWidth = 1;
+  for (const n of NODES) {
+    const pts = orbits[n];
+    ctx.beginPath();
+    pts.forEach((p, i) => { const s = scr(p); i ? ctx.lineTo(s[0], s[1]) : ctx.moveTo(s[0], s[1]); });
+    ctx.strokeStyle = n.startsWith('Relay') ? 'rgba(180,156,255,.22)' : 'rgba(150,170,220,.16)';
+    if (n.startsWith('Relay')) ctx.setLineDash([3, 5]);
+    ctx.stroke(); ctx.setLineDash([]);
+  }
+  // sun + exclusion zone
+  const sun = scr([0, 0]), ex = scr([0.1, 0]);
+  const g = ctx.createRadialGradient(sun[0], sun[1], 0, sun[0], sun[1], Math.max(10, (ex[0] - sun[0]) * 2.2));
+  g.addColorStop(0, 'rgba(255,214,122,.95)'); g.addColorStop(0.45, 'rgba(255,170,60,.35)'); g.addColorStop(1, 'rgba(255,140,40,0)');
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(sun[0], sun[1], Math.max(10, (ex[0] - sun[0]) * 2.2), 0, 7); ctx.fill();
+  ctx.strokeStyle = 'rgba(255,120,80,.55)'; ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.arc(sun[0], sun[1], Math.max(4, ex[0] - sun[0]), 0, 7); ctx.stroke(); ctx.setLineDash([]);
+  // positions now
+  const P = {};
+  for (const n of NODES) P[n] = pos(n, t);
+  const absH = r.t0_h + playH;
+  // backbone links: faint; blocked links red; maintenance amber
+  const isolated = new Set((r.incidents || []).filter(() => false));
+  for (const s of SETTLEMENTS) for (const rl of RELAYS) {
+    const a = scr(P[s]), b = scr(P[rl]);
+    const blocked = segClear(P[s], P[rl]) < 0.1;
+    const maint = r.maint !== false && MAINT.some(([x, y, h0, h1]) => x === rl && y === s && absH >= h0 && absH < h1);
+    ctx.strokeStyle = blocked ? 'rgba(255,77,109,.5)' : maint ? 'rgba(240,179,74,.55)' : 'rgba(120,140,200,.07)';
+    if (blocked || maint) ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); ctx.setLineDash([]);
+  }
+  { const a = scr(P['Relay A']), b = scr(P['Relay B']); ctx.strokeStyle = 'rgba(180,156,255,.14)'; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); }
+  // incidents
+  for (const inc of (cur.cfg.incidents || [])) {
+    const s0 = inc.start_h, s1 = s0 + (inc.kind === 'reset' ? 1.5 : (inc.duration_h || (inc.kind === 'isolation' ? 72 : 6)));
+    if (playH >= s0 && playH < s1 && P[inc.node]) {
+      const s = scr(P[inc.node]);
+      ctx.strokeStyle = inc.kind === 'forced_loss' ? css.warn : css['sky-bad'];
+      ctx.lineWidth = 2; ctx.setLineDash(inc.kind === 'reset' ? [] : [3, 3]);
+      ctx.beginPath(); ctx.arc(s[0], s[1], 15 + 3 * Math.sin(performance.now() / 200), 0, 7); ctx.stroke(); ctx.setLineDash([]); ctx.lineWidth = 1;
+      ctx.fillStyle = css['sky-bad']; ctx.font = '11px "IBM Plex Mono", monospace'; ctx.textAlign = 'center';
+      ctx.fillText(inc.kind.replace('_', ' '), s[0], s[1] + 30);
+    }
+  }
+  // packets
+  let inflight = 0;
+  const labels = new Map();          // one label per path and type: the direct copies of one burst share it
+  for (const p of cur.d.pk) {
+    if (p.te > playH) break;
+    if (playH >= p.ta) continue;
+    const f = (playH - p.te) / Math.max(1e-6, p.ta - p.te);
+    if (p.st && f > 0.55) continue;
+    inflight++;
+    const lerp = (u) => [p.pa[0] + (p.pb[0] - p.pa[0]) * u, p.pa[1] + (p.pb[1] - p.pa[1]) * u];
+    const head = scr(lerp(f));
+    const c = col(p.st ? 'var(--sky-bad)' : p.col);
+    const big = p.kind === 'DATA' || p.direct;
+    // trail
+    ctx.strokeStyle = c; ctx.globalAlpha = big ? 0.55 : 0.25; ctx.lineWidth = big ? 2 : 1;
+    ctx.beginPath();
+    for (let k = 0; k <= 8; k++) { const s = scr(lerp(Math.max(0, f - 0.12 * k / 8))); k ? ctx.lineTo(s[0], s[1]) : ctx.moveTo(s[0], s[1]); }
+    ctx.stroke(); ctx.globalAlpha = 1; ctx.lineWidth = 1;
+    ctx.fillStyle = c;
+    ctx.beginPath(); ctx.arc(head[0], head[1], big ? 3.6 : 2, 0, 7); ctx.fill();
+    if (big) { ctx.globalAlpha = 0.25; ctx.beginPath(); ctx.arc(head[0], head[1], 8, 0, 7); ctx.fill(); ctx.globalAlpha = 1; }
+    if (p.st && f > 0.45) { ctx.strokeStyle = c; ctx.beginPath(); ctx.moveTo(head[0] - 5, head[1] - 5); ctx.lineTo(head[0] + 5, head[1] + 5); ctx.moveTo(head[0] + 5, head[1] - 5); ctx.lineTo(head[0] - 5, head[1] + 5); ctx.stroke(); }
+    if (showLabels) {
+      const key = p.a + '|' + p.b + '|' + p.short + '|' + p.st;
+      const L = labels.get(key);
+      if (L) L.n++;
+      else labels.set(key, { x: head[0], y: head[1], text: p.short, c, n: 1, prio: big ? 2 : 1, st: p.st });
+    }
+  }
+  // flashes
+  const now = performance.now();
+  for (let i = flashes.length - 1; i >= 0; i--) {
+    const fl = flashes[i], age = (now - fl.t0) / 900;
+    if (age > 1 || !P[fl.node]) { flashes.splice(i, 1); continue; }
+    const s = scr(P[fl.node]);
+    ctx.strokeStyle = col(fl.c); ctx.globalAlpha = 1 - age; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(s[0], s[1], 8 + 26 * age, 0, 7); ctx.stroke(); ctx.globalAlpha = 1; ctx.lineWidth = 1;
+  }
+  // bodies + labels + residents
+  const residents = {};
+  for (const a of cur.d.involved) (residents[r.homes[a]] = residents[r.homes[a]] || []).push(a);
+  ctx.textAlign = 'center';
+  for (const n of NODES) {
+    const s = scr(P[n]);
+    const relay = n.startsWith('Relay');
+    const host = ['Mars', 'Ceres', 'Earth'].includes(n);
+    ctx.fillStyle = BODY_COLOR[n];
+    if (relay) { ctx.save(); ctx.translate(s[0], s[1]); ctx.rotate(Math.PI / 4); ctx.fillRect(-4, -4, 8, 8); ctx.restore(); }
+    else { ctx.beginPath(); ctx.arc(s[0], s[1], host ? 6 : 5, 0, 7); ctx.fill(); }
+    if (view === 'inner' && s[2] > 3.4) {
+      ctx.fillStyle = css['sky-muted']; ctx.font = '11px "IBM Plex Mono", monospace';
+      ctx.fillText(n + ' ' + s[2].toFixed(1) + ' AU', s[0], s[1] - 10); continue;
+    }
+    ctx.fillStyle = relay ? css['sky-relay'] : css['sky-ink'];
+    ctx.font = (host ? '600 ' : '') + '12px "IBM Plex Sans", sans-serif';
+    ctx.fillText(relay ? n.replace('Relay ', 'Relay ') : n, s[0], s[1] - 11);
+    const res = residents[n];
+    if (res) {
+      ctx.font = '600 11px "IBM Plex Mono", monospace'; ctx.fillStyle = css['sky-cash'];
+      ctx.fillText(res.join(' · '), s[0], s[1] + 19);
+    }
+  }
+  if (showLabels) drawPacketLabels([...labels.values()], inflight);
+  $('#hudFlight').textContent = inflight ? inflight + ' packet' + (inflight > 1 ? 's' : '') + ' in flight' : '';
+}
+let showLabels = true;
+function drawPacketLabels(list, inflight) {
+  const placed = [];
+  const hit = (r) => placed.some((q) => r.x < q.x + q.w && q.x < r.x + r.w && r.y < q.y + q.h && q.y < r.y + r.h);
+  list.sort((a, b) => b.prio - a.prio);
+  ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round';
+  for (const L of list) {
+    if (L.prio === 1 && inflight > 12) continue;          // busy moments: name the data and direct packets only
+    const text = L.text + (L.n > 1 ? ' ×' + L.n : '') + (L.st === 1 ? ' · lost' : L.st === 2 ? ' · killed' : '');
+    ctx.font = (L.prio === 2 ? '500 11px' : '10px') + ' "IBM Plex Mono", monospace';
+    const w = ctx.measureText(text).width + 4, h = 14;
+    let r = null;
+    for (const [dx, dy] of [[8, -9], [8, 9], [-w - 8, -9], [-w - 8, 9]]) {
+      const c = { x: L.x + dx, y: L.y + dy - h / 2, w, h };
+      if (c.x >= 0 && c.x + w <= W && c.y >= 0 && c.y + h <= Hh && !hit(c)) { r = c; break; }
+    }
+    if (!r) continue;
+    placed.push(r);
+    ctx.strokeStyle = 'rgba(7, 11, 24, .9)'; ctx.lineWidth = 3;
+    ctx.strokeText(text, r.x + 2, r.y + h / 2);
+    ctx.fillStyle = L.c; ctx.globalAlpha = L.prio === 2 ? 1 : 0.75;
+    ctx.fillText(text, r.x + 2, r.y + h / 2);
+    ctx.globalAlpha = 1; ctx.lineWidth = 1;
+  }
+  ctx.textBaseline = 'alphabetic';
+}
+$('#lblBtn').onclick = () => { showLabels = !showLabels; $('#lblBtn').setAttribute('aria-pressed', String(showLabels)); draw(); };
+function setView(v) {
+  view = v;
+  $$('.sky-views button[data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === v)));
+  draw();
+}
+$$('.sky-views button[data-view]').forEach((b) => b.onclick = () => setView(b.dataset.view));
+
+// ------------------------------------------------------------------ playback
+function dateAt(absH) {
+  const d = new Date(EPOCH_MS + absH * 3600e3);
+  if (!isFinite(d)) return '';
+  return d.toISOString().slice(0, 16).replace('T', ' ') + ' TDB';
+}
+function nextActivity(h) {
+  const a = cur.d.acts;
+  let lo = 0, hi = a.length;
+  while (lo < hi) { const m = (lo + hi) >> 1; a[m] <= h ? lo = m + 1 : hi = m; }
+  return lo < a.length ? a[lo] : cur.result.horizon_h;
+}
+function busy(h) {
+  for (const p of cur.d.pk) { if (p.te > h) break; if (h < p.ta && !(p.st && (h - p.te) / (p.ta - p.te) > 0.55)) return true; }
+  return false;
+}
+function tick(ts) {
+  const dt = Math.min(0.1, (ts - (lastTs || ts)) / 1000);
+  lastTs = ts;
+  if (playing && cur) {
+    const rate = +$('#speed').value;
+    let dh = rate * dt;
+    if ($('#skip').checked && !busy(playH)) {
+      const nx = nextActivity(playH + 1e-6);
+      if (nx - playH > rate * 1.2) dh = Math.max(dh, Math.min(nx - playH - rate * 0.3, Math.max(rate * dt * 40, (nx - playH) * dt * 3)));
+    }
+    playH = Math.min(cur.result.horizon_h, playH + dh);
+    if (playH >= cur.result.horizon_h) { playing = false; setPlayIcon(); }
+    onTime();
+  }
+  if (cur) draw();
+  requestAnimationFrame(tick);
+}
+function onTime(seek = false) {
+  const r = cur.result;
+  if (!seek) {
+    for (const e of r.events) {
+      if (e[0] > lastH && e[0] <= playH) {
+        const k = e[2];
+        const c = /FILL/.test(k) ? 'var(--sky-share)' : /IMPORT|OPEN|FIXED|MARGIN_HELD/.test(k) ? 'var(--sky-cash)' : /REJECT|RESET|CANCEL/.test(k) ? 'var(--sky-bad)' : null;
+        const node = SETTLEMENTS.includes(e[1]) ? e[1] : r.homes[e[1]];
+        if (c && node) flashes.push({ node, c, t0: performance.now() });
+      }
+    }
+  }
+  lastH = playH;
+  $('#hudT').textContent = 'T+' + fmtH(playH) + ' h';
+  $('#hudDate').textContent = dateAt(r.t0_h + playH);
+  $('#clock').textContent = fmtH(playH) + ' / ' + fmtH(r.horizon_h, 0) + ' h';
+  $('#tlHead') && $('#tlHead').setAttribute('transform', `translate(${tx(playH)},0)`);
+  renderAccounts(); markMoments(); markTrace();
+}
+function setPlayIcon() {
+  $('#playIcon').innerHTML = playing ? '<path d="M3 2h3.5v12H3zM9.5 2H13v12H9.5z"/>' : '<path d="M3 1.5v13l11-6.5z"/>';
+  $('#playBtn').setAttribute('aria-label', playing ? 'Pause' : 'Play');
+}
+$('#playBtn').onclick = () => { if (playH >= cur.result.horizon_h) seek(0); playing = !playing; setPlayIcon(); };
+$('#restart').onclick = () => { seek(0); playing = true; setPlayIcon(); };
+function seek(h) { playH = Math.max(0, Math.min(cur.result.horizon_h, h)); lastH = playH; flashes.length = 0; onTime(true); draw(); }
+document.addEventListener('keydown', (e) => {
+  if (e.target.closest('input, select, textarea, form')) return;
+  if (e.code === 'Space') { e.preventDefault(); playing = !playing; setPlayIcon(); }
+});
+
+// ------------------------------------------------------------------ timeline
+let tx = (h) => h;
+function buildTimeline() {
+  const r = cur.result, svg = $('#tl'), Hz = r.horizon_h;
+  tx = (h) => 6 + (988 * h) / Hz;
+  const step = [1, 2, 5, 10, 24, 48, 100, 200, 500, 1000].find((s) => Hz / s <= 10) || 2000;
+  let s = '';
+  for (let h = 0; h <= Hz; h += step) s += `<line x1="${tx(h)}" x2="${tx(h)}" y1="44" y2="48" stroke="var(--muted)"/><text x="${tx(h)}" y="60" text-anchor="middle" fill="var(--muted)" style="font:10px var(--mono)">${h}</text>`;
+  s += `<line x1="6" x2="994" y1="44" y2="44" stroke="var(--line)"/>`;
+  for (const p of cur.d.pk) {
+    if (p.kind !== 'DATA' && !p.direct) continue;
+    s += `<line x1="${tx(p.te)}" x2="${tx(p.te)}" y1="${p.direct ? 4 : 12}" y2="${p.direct ? 12 : 22}" stroke="${p.st ? 'var(--bad)' : p.direct ? 'var(--direct)' : p.label.includes('$') ? 'var(--cash)' : 'var(--share)'}" stroke-width="1.5" vector-effect="non-scaling-stroke"/>`;
+  }
+  for (const [k, v] of Object.entries(r.times)) s += `<path d="M${tx(v)},27 l4,5 l-4,5 l-4,-5z" fill="var(--accent)"><title>${esc(momentLabel(k))} · ${fmtH(v)} h</title></path>`;
+  for (const inc of (cur.cfg.incidents || [])) {
+    const d = inc.kind === 'reset' ? 0.5 : (inc.duration_h || (inc.kind === 'isolation' ? 72 : 6));
+    s += `<rect x="${tx(inc.start_h)}" y="2" width="${Math.max(2, tx(inc.start_h + d) - tx(inc.start_h))}" height="40" fill="var(--bad)" opacity=".12"/>`;
+  }
+  s += `<g id="tlHead"><line x1="0" x2="0" y1="0" y2="48" stroke="var(--ink)" stroke-width="2" vector-effect="non-scaling-stroke"/></g>`;
+  svg.innerHTML = s;
+  svg.setAttribute('preserveAspectRatio', 'none');
+  $('#tlHead').setAttribute('transform', `translate(${tx(playH)},0)`);
+}
+(() => {
+  const svg = $('#tl');
+  let drag = false;
+  const at = (e) => { const b = svg.getBoundingClientRect(); const x = (e.clientX - b.left) / b.width * 1000; seek((x - 6) / 988 * cur.result.horizon_h); };
+  svg.addEventListener('pointerdown', (e) => { drag = true; svg.setPointerCapture(e.pointerId); at(e); });
+  svg.addEventListener('pointermove', (e) => drag && at(e));
+  svg.addEventListener('pointerup', () => drag = false);
+})();
+
+// ------------------------------------------------------------------ side panels
+function stat(v, s) { return `<div class="stat"><div class="v">${v}</div><div class="s">${s}</div></div>`; }
+function renderStats() {
+  const r = cur.result, m = r.metrics;
+  const qPeak = Math.max(0, ...Object.values(m.quota_by_exchange || {}));
+  const dPeak = Math.max(0, ...Object.values(m.direct_peak || {}));
+  $('#stats').innerHTML = [
+    stat(r.completion != null ? fmtH(r.completion) + ' h' : '—', 'until every result is spendable at home'),
+    stat(m.total, `packets: ${m.backbone} backbone + ${m.direct} direct`),
+    stat(m.lost_backbone + m.direct_lost + m.killed, 'packets lost or killed'),
+    stat(m.matched_value ? money(m.matched_value) : '—', 'value matched'),
+    stat(`${qPeak} / 66`, 'busiest exchange, backbone originations per 24 h'),
+    stat(`${dPeak} / 12`, 'busiest client, direct packets per 24 h'),
+    stat(m.audits, 'conservation audits passed'),
+    stat(m.max_queue, 'longest link queue (limit 10,000)')
+  ].join('');
+}
+function renderMoments() {
+  const t = cur.result.times;
+  $('#moments').innerHTML = Object.entries(t).sort((a, b) => a[1] - b[1]).map(([k, v]) =>
+    `<button type="button" class="moment" data-h="${v}"><span class="num">${fmtH(v)} h</span><span>${esc(momentLabel(k))}</span></button>`).join('') || '<p class="hint">No milestones recorded.</p>';
+  $$('#moments .moment').forEach((b) => b.onclick = () => seek(+b.dataset.h + 1e-4));
+}
+function markMoments() { $$('#moments .moment').forEach((b) => b.classList.toggle('past', +b.dataset.h <= playH + 1e-4)); }
+function stateAt(h) {
+  const ev = cur.result.events;
+  let lo = 0, hi = ev.length;
+  while (lo < hi) { const m = (lo + hi) >> 1; ev[m][0] <= h ? lo = m + 1 : hi = m; }
+  return lo ? ev[lo - 1][4] : null;
+}
+function renderAccounts() {
+  const r = cur.result, st = stateAt(playH), sc = cur.d.scale;
+  $('#accts').innerHTML = cur.d.involved.map((a) => {
+    let nd, shares = [];
+    if (st) {
+      nd = st[a].ND;
+      for (const as of r.assets) { const v = st[a][as]; if (v) [['home', 0], ['at the market', 1], ['held', 2], ['in transit', 4]].forEach(([lab, i]) => v[i] && shares.push(`${v[i].toLocaleString()} ${as[0] + as.slice(1).toLowerCase()} ${lab}`)); }
+    } else {
+      nd = [BOOK[a][1], 0, 0, 0, 0];
+      if (BOOK[a][2]) shares.push(BOOK[a][2] + ' home');
+    }
+    const total = nd.reduce((s, x) => s + x, 0);
+    const segs = ['home', 'remote', 'held', 'escrow', 'transit'].map((k, i) => nd[i] ? `<div class="seg-${k}" style="width:${(100 * nd[i] / sc).toFixed(2)}%" title="${k}: ${money(nd[i])}"></div>` : '').join('');
+    const parts = [['spendable', 0], ['at host', 1], ['held', 2], ['margin', 3], ['in transit', 4]].filter(([, i]) => nd[i]).map(([l, i]) => `<span><span class="num">${money(nd[i])}</span> ${l}</span>`).join('');
+    return `<div class="acct"><div class="acct-head"><b>${a}</b><span>home ${r.homes[a]} · ${money(total)}</span></div>
+      <div class="bar" role="img" aria-label="${a}: ${esc(parts.replace(/<[^>]+>/g, ''))}">${segs}</div>
+      <div class="acct-lines">${parts}</div>${shares.length ? `<div class="acct-lines" style="color:var(--share)">${shares.map(esc).join(' · ')}</div>` : ''}</div>`;
+  }).join('');
+}
+
+// ------------------------------------------------------------------ trace
+function renderTrace() {
+  const rows = cur.result.trace;
+  $('#traceWrap').innerHTML = `<table class="trace"><thead><tr><th>h</th><th>Actor</th><th>Knows</th><th>Does</th><th>Packet / transmission</th><th>Arrives</th><th>Financial state after</th></tr></thead><tbody>${
+    rows.map((r) => `<tr data-h="${r[0]}">${r.map((c, i) => `<td>${i === 6 ? c : esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  $$('#traceWrap tbody tr').forEach((tr) => tr.onclick = () => seek(+tr.dataset.h + 1e-4));
+}
+let lastNow = null;
+function markTrace() {
+  const trs = $$('#traceWrap tbody tr');
+  let now = null;
+  for (const tr of trs) { const f = +tr.dataset.h > playH + 1e-6; tr.classList.toggle('future', f); tr.classList.remove('now'); if (!f) now = tr; }
+  if (now) now.classList.add('now');
+  if (now !== lastNow && now && $('#follow').checked && !$('[data-pane="trace"]').hidden) {
+    const w = $('#traceWrap'); w.scrollTop = now.offsetTop - w.clientHeight / 2;
+  }
+  lastNow = now;
+}
+
+// ------------------------------------------------------------------ packets tab
+function renderPackets() {
+  const r = cur.result, f = $('#pktFilter').value;
+  const kinds = {};
+  for (const p of cur.d.pk) { const k = p.direct ? 'direct ' + p.label.split(' ')[0] : p.kind; kinds[k] = kinds[k] || [0, 0]; kinds[k][0]++; if (p.st) kinds[k][1]++; }
+  const mx = Math.max(1, ...Object.values(kinds).map((v) => v[0]));
+  $('#pktKinds').innerHTML = `<svg viewBox="0 0 440 ${Object.keys(kinds).length * 22 + 6}">${Object.entries(kinds).sort((a, b) => b[1][0] - a[1][0]).map(([k, [n, l]], i) =>
+    `<text x="0" y="${i * 22 + 15}">${esc(k)}</text><rect x="130" y="${i * 22 + 4}" width="${260 * n / mx}" height="14" rx="2" fill="${k.startsWith('direct') ? 'var(--direct)' : k === 'DATA' ? 'var(--cash)' : 'var(--muted)'}" opacity=".85"/>${l ? `<rect x="130" y="${i * 22 + 4}" width="${260 * l / mx}" height="14" rx="2" fill="var(--bad)"/>` : ''}<text x="${136 + 260 * n / mx}" y="${i * 22 + 15}">${n}${l ? ' (' + l + ' lost)' : ''}</text>`).join('')}</svg>`;
+  const rows = cur.d.pk.filter((p) => f === 'all' || (f === 'data' && p.kind === 'DATA') || (f === 'direct' && p.direct) || (f === 'lost' && p.st));
+  $('#pktCount').textContent = rows.length + ' of ' + cur.d.pk.length + ' packets';
+  $('#pkts').innerHTML = `<table><thead><tr><th class="num">launch h</th><th class="num">arrive h</th><th>From → to</th><th>Kind</th><th>Carries</th><th>Fate</th></tr></thead><tbody>${
+    rows.slice(0, 600).map((p) => `<tr><td class="num mono">${fmtH(p.te, 4)}</td><td class="num mono">${fmtH(p.ta, 4)}</td><td>${esc(p.a)} → ${esc(p.b)}</td><td>${p.direct ? 'direct' : esc(p.kind)}</td><td>${esc(p.kind === 'DATA' || p.direct ? p.label : '')}</td><td>${p.st === 1 ? '<span style="color:var(--bad)">lost</span>' : p.st === 2 ? '<span style="color:var(--bad)">killed by incident</span>' : 'arrived'}</td></tr>`).join('')}</tbody></table>`;
+  $('#courier').innerHTML = r.courier.length ? `<table><thead><tr><th class="num">h</th><th>Exchange</th><th>Event</th><th>Peer</th></tr></thead><tbody>${
+    r.courier.map((c) => `<tr><td class="num mono">${fmtH(c[0])}</td><td>${esc(c[1])}</td><td>${esc(c[2].toLowerCase().replace(/_/g, ' '))}</td><td>${esc(c[3])}</td></tr>`).join('')}</tbody></table>` : '<p class="hint" style="padding:8px">No transport events.</p>';
+}
+$('#pktFilter').onchange = renderPackets;
+
+// ------------------------------------------------------------------ Monte Carlo
+let mcCustom = {};
+function cdfPath(vals, n, x, y) {
+  const s = vals.filter((v) => v != null).sort((a, b) => a - b);
+  let d = `M${x(s[0] ?? 0)},${y(0)}`;
+  s.forEach((v, i) => { d += `L${x(v)},${y(i / n)}L${x(v)},${y((i + 1) / n)}`; });
+  return d;
+}
+function quant(vals, q) { const s = vals.filter((v) => v != null).sort((a, b) => a - b); return s.length ? s[Math.min(s.length - 1, Math.floor(q * s.length))] : null; }
+function renderMC() {
+  const key = cur.id, pre = EVID.mc && EVID.mc[{ S1a: 'S1a', S1b: 'S1b', S1c: 'S1c', S1d: 'S1d', S1e: 'S1e' }[key]];
+  const mine = mcCustom[key];
+  const vals = [...(mine ? mine.map((r) => r[0]) : []), ...(pre ? pre.comps : [])].filter((v) => v != null);
+  const box = $('#mcChart');
+  if (!vals.length) {
+    box.innerHTML = '<p class="hint">Run lossy repeats to draw the distribution for this scenario.</p>';
+    $('#mcStats').innerHTML = ''; return;
+  }
+  const lo = Math.min(...vals), hi = Math.max(...vals), logx = hi / Math.max(lo, 1e-3) > 8;
+  const X0 = 46, X1 = 520, Y0 = 210, Y1 = 12;
+  const x = (v) => logx ? X0 + (X1 - X0) * Math.log(v / lo) / Math.log(hi / lo || 2) : X0 + (X1 - X0) * (v - lo) / ((hi - lo) || 1);
+  const y = (p) => Y0 - (Y0 - Y1) * p;
+  let s = `<svg viewBox="0 0 540 240"><line class="axis" x1="${X0}" x2="${X1}" y1="${Y0}" y2="${Y0}"/><line class="axis" x1="${X0}" x2="${X0}" y1="${Y0}" y2="${Y1}"/>`;
+  for (const p of [0, 0.5, 0.9, 1]) s += `<line class="axis" x1="${X0}" x2="${X1}" y1="${y(p)}" y2="${y(p)}" stroke-dasharray="2 4"/><text x="${X0 - 6}" y="${y(p) + 4}" text-anchor="end">${p}</text>`;
+  const ticks = logx ? [1, 2, 3, 5, 10, 20, 30, 50, 100, 200, 300, 500, 1000, 2000].filter((t) => t >= lo && t <= hi) : [lo, (lo + hi) / 2, hi];
+  for (const t of ticks) s += `<text x="${x(t)}" y="${Y0 + 16}" text-anchor="middle">${t >= 100 ? Math.round(t) : +t.toFixed(1)}</text>`;
+  s += `<text x="${(X0 + X1) / 2}" y="236" text-anchor="middle">hours to completion${logx ? ' (log scale)' : ''}</text>`;
+  if (pre) s += `<path d="${cdfPath(pre.comps, pre.comps.length * pre.n / pre.completed, x, y)}" fill="none" stroke="var(--muted)" stroke-width="1.2"/>`;
+  if (mine) s += `<path d="${cdfPath(mine.map((r) => r[0]), mine.length, x, y)}" fill="none" stroke="var(--accent)" stroke-width="2.2"/>`;
+  box.innerHTML = s + '</svg>';
+  const src = mine ? mine.map((r) => r[0]) : null;
+  const done = src ? src.filter((v) => v != null).length : pre.completed;
+  const n = src ? src.length : pre.n;
+  const k = (v) => fmtH(v) + ' h';
+  $('#mcStats').innerHTML = [
+    stat(`${done}/${n}`, mine ? 'your runs completed' : 'appendix runs completed'),
+    stat(k(src ? quant(src, 0.5) : pre.p50), 'median'), stat(k(src ? quant(src, 0.9) : pre.p90), '90th percentile'),
+    stat(k(src ? quant(src, 0.99) : pre.p99), '99th percentile'),
+    mine ? stat(Math.round(mine.reduce((s, r) => s + r[1], 0) / mine.length), 'mean packets') : ''
+  ].join('');
+}
+$('#mcRun').onclick = async () => {
+  const n = +$('#mcN').value, note = $('#mcNote'), key = cur.id;
+  const cfg = JSON.parse(JSON.stringify(cur.cfg));
+  note.textContent = 'Running…'; $('#mcRun').disabled = true;
+  const t = performance.now();
+  try {
+    const r = await engine('mc', { cfg, n }, (p) => $('#mcProg').style.width = (100 * p) + '%');
+    mcCustom[key] = r.runs;
+    note.textContent = `${n} runs in ${((performance.now() - t) / 1000).toFixed(1)} s.`;
+    if (cur.id === key) renderMC();
+  } catch (e) { note.textContent = e.message; }
+  $('#mcRun').disabled = !engineReady;
+};
+
+// ------------------------------------------------------------------ evidence tab
+function renderEvidence() {
+  const out = [];
+  if (EVID.relocations) {
+    const rows = Object.entries(EVID.relocations).sort((a, b) => a[1].noloss - b[1].noloss);
+    const X0 = 84, X1 = 520, lo = 0.3, hi = 300;
+    const x = (v) => X0 + (X1 - X0) * Math.log(Math.max(v, lo) / lo) / Math.log(hi / lo);
+    let s = `<svg viewBox="0 0 540 ${rows.length * 26 + 34}">`;
+    for (const t of [1, 3, 10, 30, 100, 300]) s += `<line class="axis" x1="${x(t)}" x2="${x(t)}" y1="4" y2="${rows.length * 26 + 6}" stroke-dasharray="2 4"/><text x="${x(t)}" y="${rows.length * 26 + 20}" text-anchor="middle">${t} h</text>`;
+    rows.forEach(([k, v], i) => {
+      const yy = i * 26 + 16;
+      if (v.noloss < 0.01) { s += `<text x="0" y="${yy + 4}">${k}</text><text x="${X0}" y="${yy + 4}">local trade, about 1 s</text>`; return; }
+      s += `<text x="0" y="${yy + 4}">${k}</text><line x1="${x(v.p50)}" x2="${x(v.p99)}" y1="${yy}" y2="${yy}" stroke="var(--accent)" stroke-width="3" opacity=".35"/>
+        <circle cx="${x(v.p50)}" cy="${yy}" r="4.5" fill="var(--accent)"/><circle cx="${x(v.noloss)}" cy="${yy}" r="3" fill="var(--cash)"/><line x1="${x(v.p99)}" x2="${x(v.p99)}" y1="${yy - 6}" y2="${yy + 6}" stroke="var(--accent)" stroke-width="2"/>`;
+    });
+    out.push(`<div class="chart"><h3>S3 · Access from every settlement</h3><p class="hint">Alice's $100k Ares purchase with her home moved. Gold: no loss. Blue dot: median of 1,000 lossy runs; bar to the 99th percentile.</p>${s}</svg></div>`);
+  }
+  if (EVID.s2_search && EVID.s2_search.rising) {
+    const S = EVID.s2_search.rising, kinds = [['isolation', 'Isolation 72 h'], ['forced_loss', 'Forced loss 6 h'], ['reset', 'Endpoint reset']];
+    let s = '<svg viewBox="0 0 540 250">';
+    const pal = { Mars: ['#ff7350', 4, ''], Earth: ['#5aa2ff', 2, ''], Ceres: ['#7fc46a', 1.2, '4 3'] };
+    kinds.forEach(([k, lab], j) => {
+      const ox = 36 + j * 170, w = 150, y = (v) => 200 - 180 * Math.min(v, 130) / 130, x = (h) => ox + w * h / 420;
+      s += `<text x="${ox}" y="12">${lab}</text><line class="axis" x1="${ox}" x2="${ox + w}" y1="200" y2="200"/><text x="${ox}" y="216">0</text><text x="${ox + w}" y="216" text-anchor="end">420 h</text>`;
+      if (j === 0) for (const v of [0, 50, 100]) s += `<text x="${ox - 6}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
+      const order = Object.entries(S.series).filter(([key]) => key.startsWith(k + '|'))
+        .sort((a, b) => (pal[a[0].split('|')[1]] ? 1 : 0) - (pal[b[0].split('|')[1]] ? 1 : 0) || (pal[b[0].split('|')[1]]?.[1] || 0) - (pal[a[0].split('|')[1]]?.[1] || 0));
+      for (const [key, pts] of order) {
+        const st = pal[key.split('|')[1]];
+        s += `<polyline fill="none" stroke="${st ? st[0] : 'var(--line)'}" stroke-width="${st ? st[1] : 1}" stroke-dasharray="${st ? st[2] : ''}" stroke-linejoin="round" points="${pts.map(([h, d]) => `${x(h).toFixed(1)},${y(d).toFixed(1)}`).join(' ')}"/>`;
+      }
+    });
+    s += `<text x="270" y="244" text-anchor="middle">incident start (h) · extra hours · Mars red, Earth blue, Ceres green dashed, others grey</text></svg>`;
+    out.push(`<div class="chart"><h3>S2 · Searching for the worst incident</h3><p class="hint">${(EVID.s2_search.rising.n + (EVID.s2_search.falling ? EVID.s2_search.falling.n : 0)).toLocaleString()} futures runs, one per incident type, node and start time. Damage is concentrated at opening and at payout.</p>${s}</div>`);
+  }
+  if (EVID.e5) {
+    const eps = ['+1 year', '+10 years', '+100 years', 'Mars conjunction'];
+    const cell = (k) => { const v = EVID.e5[k]; if (!v) return '—'; return v.comp != null ? fmtH(v.comp) + ' h' : v.suspended ? 'suspended safely' : v.deferred ? 'deferred safely' : 'not complete'; };
+    out.push(`<div class="chart"><h3>E5 · The same trades in other eras</h3><div class="tablewrap"><table><thead><tr><th>Start</th><th>Equity (S1a)</th><th>without R9</th><th>Futures (S1d)</th><th>without R9</th></tr></thead><tbody>${
+      eps.map((e) => `<tr><td>${e}</td><td>${cell(e + '|S1a')}</td><td>${cell(e + ', without O2|S1a')}</td><td>${cell(e + '|S1d')}</td><td>${cell(e + ', without O2|S1d')}</td></tr>`).join('')}</tbody></table></div>
+      <p class="hint">No-loss completion. With rule R9 a third exchange forwards the instruction when the direct path is behind the Sun. The comparison runs switch R9 off: clients then keep their money home and nobody loses value, but nobody trades.</p></div>`);
+  }
+  if (EVID.e4) {
+    const rows = Object.entries(EVID.e4.direct).filter(([k]) => k.endsWith('->Mars')).sort((a, b) => b[1].max_h - a[1].max_h);
+    out.push(`<div class="chart"><h3>E4 · ${EVID.e4.years} years of geometry</h3><div class="tablewrap"><table><thead><tr><th>Direct path</th><th class="num">closed</th><th class="num">closures</th><th class="num">longest</th></tr></thead><tbody>${
+      rows.map(([k, v]) => `<tr><td>${esc(k.replace('->', ' → '))}</td><td class="num">${(100 * v.closed).toFixed(1)}%</td><td class="num">${v.n}</td><td class="num">${(v.max_h / 24).toFixed(1)} d</td></tr>`).join('')}</tbody></table></div>
+      <p class="hint">Every settlement kept a backbone route to every market host at every hourly sample.</p></div>`);
+  }
+  $('#evCharts').innerHTML = out.join('') || '<p class="hint">Evidence data not found.</p>';
+}
+
+// ------------------------------------------------------------------ tabs + mode
+$$('.tabs button').forEach((b) => b.onclick = () => {
+  $$('.tabs button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+  $$('.tabpane').forEach((p) => p.hidden = p.dataset.pane !== b.dataset.tab);
+  if (b.dataset.tab === 'trace') markTrace();
+});
+function mode(build) {
+  $('#modeLib').setAttribute('aria-pressed', String(!build)); $('#modeBuild').setAttribute('aria-pressed', String(build));
+  $('#libView').hidden = build; $('#buildView').hidden = !build;
+}
+$('#modeLib').onclick = () => mode(false);
+$('#modeBuild').onclick = () => mode(true);
+
+// ------------------------------------------------------------------ boot
+const mq = window.matchMedia('(prefers-color-scheme: dark)');
+mq.addEventListener && mq.addEventListener('change', readColors);
+new MutationObserver(readColors).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+readColors();
+Promise.all([fetch('data/replays.json').then((r) => r.json()), fetch('data/evidence.json').then((r) => r.json()).catch(() => ({}))]).then(([d, ev]) => {
+  DATA = d; EVID = ev; EL = d.elements;
+  for (const n of NODES) orbits[n] = orbitPath(n);
+  renderLibrary(); renderBuilder(); wireBuilder(); renderEvidence();
+  let first = (location.hash || '').slice(1);
+  if (!DATA.presets[first]) first = 'S1a';
+  load(DATA.presets[first]);
+  seek(0); playing = !window.matchMedia('(prefers-reduced-motion: reduce)').matches; setPlayIcon();
+  requestAnimationFrame(tick);
+}).catch((e) => { $('#scnTitle').textContent = 'Could not load the scenario data'; $('#scnBlurb').textContent = 'Serve this folder over HTTP (for example: python -m http.server) and reload. ' + e.message; });
+startEngine();
+})();
+</script>

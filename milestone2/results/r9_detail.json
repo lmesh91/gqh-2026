@@ -1,0 +1,568 @@
+{
+ "difficult": {
+  "close_h": 12446.027099609375,
+  "reopen_h": 13713.0,
+  "start_h": 12470.027099609375
+ },
+ "runs": {
+  "S1a": {
+   "completion_h": 4.545158685801757,
+   "times": {
+    "EQ:funding_imported_at_host": 2.512526859059516,
+    "EQ:funding_receipt_at_home": 3.3502229931867786,
+    "EQ:order_sent": 3.3505007709645565,
+    "EQ:first_fill": 3.7080227472343377,
+    "EQ:host_final_fill": 3.7080227472343377,
+    "EQ:seller_spendable": 3.7080227472343377,
+    "EQ:buyer_spendable": 4.545158685801757
+   },
+   "packets": 49,
+   "backbone": 44,
+   "direct": 5,
+   "legs": [
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mercury",
+     "label": "FWD:ORDER",
+     "n": 2,
+     "t_first_emit": 12473.37760038034,
+     "t_first_arrive": 12473.502082923469,
+     "t_last_arrive": 12473.518751129617,
+     "p_loss_each": [
+      0.0689,
+      0.0689
+     ],
+     "p_first": 0.931124937137819,
+     "p_all": 0.9952561687361767
+    },
+    {
+     "principal": "Mercury exchange (agent)",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "ORDER",
+     "n": 3,
+     "t_first_emit": 12473.502082923469,
+     "t_first_arrive": 12473.73512235661,
+     "t_last_arrive": 12473.7684538005,
+     "p_loss_each": [
+      0.1254,
+      0.1254,
+      0.1254
+     ],
+     "p_first": 0.874578362917303,
+     "p_all": 0.9980270665230495
+    }
+   ],
+   "chains": [
+    {
+     "client": "Alice",
+     "via": "Mercury",
+     "host": "Mars",
+     "label": "ORDER",
+     "leg1": {
+      "principal": "Alice",
+      "a": "Earth",
+      "b": "Mercury",
+      "label": "FWD:ORDER",
+      "n": 2,
+      "t_first_emit": 12473.37760038034,
+      "t_first_arrive": 12473.502082923469,
+      "t_last_arrive": 12473.518751129617,
+      "p_loss_each": [
+       0.0689,
+       0.0689
+      ],
+      "p_first": 0.931124937137819,
+      "p_all": 0.9952561687361767
+     },
+     "leg2": {
+      "principal": "Mercury exchange (agent)",
+      "a": "Mercury",
+      "b": "Mars",
+      "label": "ORDER",
+      "n": 3,
+      "t_first_emit": 12473.502082923469,
+      "t_first_arrive": 12473.73512235661,
+      "t_last_arrive": 12473.7684538005,
+      "p_loss_each": [
+       0.1254,
+       0.1254,
+       0.1254
+      ],
+      "p_first": 0.874578362917303,
+      "p_all": 0.9980270665230495
+     },
+     "p_both": 0.9932925945227357,
+     "arrive_h": 12473.7684538005
+    }
+   ],
+   "agent_quota_peak": {
+    "Mercury exchange (agent)": 3
+   },
+   "status": []
+  },
+  "S1d": {
+   "completion_h": 330.2260477969423,
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 2.77142934191972,
+    "F1:Cara:instr_sent": 2.771707119697498,
+    "F1:Alice:funding_receipt_at_home": 3.3502229931867786,
+    "F1:Alice:instr_sent": 3.3505007709645565,
+    "F1:open": 3.7080227472343377,
+    "F1:maturity": 303.70802274723434,
+    "F1:Cara:report_HELD": 3.982018857476198,
+    "F1:Cara:report_OPEN": 4.400807804142436,
+    "F1:Alice:report_OPEN": 4.545436463579535,
+    "F1:discharge": 327.70802274723434,
+    "F1:backed_claim": 327.70802274723434,
+    "F1:Cara:payout_spendable": 329.82551818745833,
+    "F1:Alice:payout_spendable": 330.2260477969423
+   },
+   "packets": 145,
+   "backbone": 136,
+   "direct": 9,
+   "legs": [
+    {
+     "principal": "Cara",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 4,
+     "t_first_emit": 12472.798806729072,
+     "t_first_arrive": 12473.316350563262,
+     "t_last_arrive": 12473.366352181365,
+     "p_loss_each": [
+      0.2579,
+      0.2579,
+      0.2579,
+      0.2579
+     ],
+     "p_first": 0.7421456661006919,
+     "p_all": 0.9955792080626902
+    },
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mercury",
+     "label": "FWD:CINSTR",
+     "n": 2,
+     "t_first_emit": 12473.37760038034,
+     "t_first_arrive": 12473.502082923469,
+     "t_last_arrive": 12473.518751129617,
+     "p_loss_each": [
+      0.0689,
+      0.0689
+     ],
+     "p_first": 0.931124937137819,
+     "p_all": 0.9952561687361767
+    },
+    {
+     "principal": "Mercury exchange (agent)",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 3,
+     "t_first_emit": 12473.502082923469,
+     "t_first_arrive": 12473.73512235661,
+     "t_last_arrive": 12473.7684538005,
+     "p_loss_each": [
+      0.1254,
+      0.1254,
+      0.1254
+     ],
+     "p_first": 0.874578362917303,
+     "p_all": 0.9980270665230495
+    }
+   ],
+   "chains": [
+    {
+     "client": "Alice",
+     "via": "Mercury",
+     "host": "Mars",
+     "label": "CINSTR",
+     "leg1": {
+      "principal": "Alice",
+      "a": "Earth",
+      "b": "Mercury",
+      "label": "FWD:CINSTR",
+      "n": 2,
+      "t_first_emit": 12473.37760038034,
+      "t_first_arrive": 12473.502082923469,
+      "t_last_arrive": 12473.518751129617,
+      "p_loss_each": [
+       0.0689,
+       0.0689
+      ],
+      "p_first": 0.931124937137819,
+      "p_all": 0.9952561687361767
+     },
+     "leg2": {
+      "principal": "Mercury exchange (agent)",
+      "a": "Mercury",
+      "b": "Mars",
+      "label": "CINSTR",
+      "n": 3,
+      "t_first_emit": 12473.502082923469,
+      "t_first_arrive": 12473.73512235661,
+      "t_last_arrive": 12473.7684538005,
+      "p_loss_each": [
+       0.1254,
+       0.1254,
+       0.1254
+      ],
+      "p_first": 0.874578362917303,
+      "p_all": 0.9980270665230495
+     },
+     "p_both": 0.9932925945227357,
+     "arrive_h": 12473.7684538005
+    }
+   ],
+   "agent_quota_peak": {
+    "Mercury exchange (agent)": 3
+   },
+   "status": [
+    {
+     "t": 12473.316350563262,
+     "actor": "Mars"
+    },
+    {
+     "t": 12473.73512235661,
+     "actor": "Mars"
+    },
+    {
+     "t": 12473.73512235661,
+     "actor": "Mars"
+    }
+   ]
+  }
+ },
+ "epochs": {
+  "+1 year|S1a": {
+   "t0_h": 8766.0,
+   "legs": [
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "ORDER",
+     "n": 3,
+     "t_first_emit": 3.1479175543554447,
+     "t_first_arrive": 3.431945400834593,
+     "t_last_arrive": 3.4652795048732514,
+     "p_loss_each": [
+      0.1508,
+      0.1508,
+      0.1508
+     ],
+     "p_first": 0.8492171255056985,
+     "p_all": 0.9965718668083495
+    }
+   ],
+   "agent_quota_peak": {}
+  },
+  "+1 year|S1d": {
+   "t0_h": 8766.0,
+   "legs": [
+    {
+     "principal": "Cara",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 3,
+     "t_first_emit": 2.126884955445348,
+     "t_first_arrive": 2.505928518859946,
+     "t_last_arrive": 2.539263108772502,
+     "p_loss_each": [
+      0.1961,
+      0.1961,
+      0.1961
+     ],
+     "p_first": 0.8039027978720924,
+     "p_all": 0.9924592224645965
+    },
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 3,
+     "t_first_emit": 3.1479175543554447,
+     "t_first_arrive": 3.431945400834593,
+     "t_last_arrive": 3.4652795048732514,
+     "p_loss_each": [
+      0.1508,
+      0.1508,
+      0.1508
+     ],
+     "p_first": 0.8492171255056985,
+     "p_all": 0.9965718668083495
+    }
+   ],
+   "agent_quota_peak": {}
+  },
+  "+10 years|S1a": {
+   "t0_h": 87660.0,
+   "legs": [
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mercury",
+     "label": "FWD:ORDER",
+     "n": 2,
+     "t_first_emit": 2.79844980002963,
+     "t_first_arrive": 2.9184645100904163,
+     "t_last_arrive": 2.9351337841362692,
+     "p_loss_each": [
+      0.0665,
+      0.0665
+     ],
+     "p_first": 0.9335289648629883,
+     "p_all": 0.9955815081113428
+    },
+    {
+     "principal": "Mercury exchange (agent)",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "ORDER",
+     "n": 3,
+     "t_first_emit": 2.9184645100904163,
+     "t_first_arrive": 3.1749390367476735,
+     "t_last_arrive": 3.2082675480050966,
+     "p_loss_each": [
+      0.1372,
+      0.1372,
+      0.1372
+     ],
+     "p_first": 0.8628292163238384,
+     "p_all": 0.9974190864618332
+    }
+   ],
+   "agent_quota_peak": {
+    "Mercury exchange (agent)": 3
+   }
+  },
+  "+10 years|S1d": {
+   "t0_h": 87660.0,
+   "legs": [
+    {
+     "principal": "Cara",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 3,
+     "t_first_emit": 1.2568436317960732,
+     "t_first_arrive": 1.443951213703258,
+     "t_last_arrive": 1.4772855130431708,
+     "p_loss_each": [
+      0.1019,
+      0.1019,
+      0.1019
+     ],
+     "p_first": 0.8980723227441675,
+     "p_all": 0.9989410399345977
+    },
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mercury",
+     "label": "FWD:CINSTR",
+     "n": 2,
+     "t_first_emit": 2.79844980002963,
+     "t_first_arrive": 2.9184645100904163,
+     "t_last_arrive": 2.9351337841362692,
+     "p_loss_each": [
+      0.0665,
+      0.0665
+     ],
+     "p_first": 0.9335289648629883,
+     "p_all": 0.9955815081113428
+    },
+    {
+     "principal": "Mercury exchange (agent)",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 3,
+     "t_first_emit": 2.9184645100904163,
+     "t_first_arrive": 3.1749390367476735,
+     "t_last_arrive": 3.2082675480050966,
+     "p_loss_each": [
+      0.1372,
+      0.1372,
+      0.1372
+     ],
+     "p_first": 0.8628292163238384,
+     "p_all": 0.9974190864618332
+    }
+   ],
+   "agent_quota_peak": {
+    "Mercury exchange (agent)": 3
+   }
+  },
+  "+100 years|S1a": {
+   "t0_h": 876600.0,
+   "legs": [
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "ORDER",
+     "n": 3,
+     "t_first_emit": 2.5684533290332183,
+     "t_first_arrive": 2.87577898055315,
+     "t_last_arrive": 2.909111064276658,
+     "p_loss_each": [
+      0.1621,
+      0.1621,
+      0.1621
+     ],
+     "p_first": 0.8378750686542843,
+     "p_all": 0.9957386521415469
+    }
+   ],
+   "agent_quota_peak": {}
+  },
+  "+100 years|S1d": {
+   "t0_h": 876600.0,
+   "legs": [
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 3,
+     "t_first_emit": 2.5684533290332183,
+     "t_first_arrive": 2.87577898055315,
+     "t_last_arrive": 2.909111064276658,
+     "p_loss_each": [
+      0.1621,
+      0.1621,
+      0.1621
+     ],
+     "p_first": 0.8378750686542843,
+     "p_all": 0.9957386521415469
+    },
+    {
+     "principal": "Cara",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 4,
+     "t_first_emit": 3.3353004697710276,
+     "t_first_arrive": 3.9447946086293086,
+     "t_last_arrive": 3.994795514969155,
+     "p_loss_each": [
+      0.2962,
+      0.2962,
+      0.2962,
+      0.2962
+     ],
+     "p_first": 0.7037886878875204,
+     "p_all": 0.992301472965061
+    }
+   ],
+   "agent_quota_peak": {}
+  },
+  "Mars conjunction|S1a": {
+   "t0_h": 12470.027099609375,
+   "legs": [
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mercury",
+     "label": "FWD:ORDER",
+     "n": 2,
+     "t_first_emit": 3.3505007709645724,
+     "t_first_arrive": 3.474983314094061,
+     "t_last_arrive": 3.491651520242158,
+     "p_loss_each": [
+      0.0689,
+      0.0689
+     ],
+     "p_first": 0.931124937137819,
+     "p_all": 0.9952561687361767
+    },
+    {
+     "principal": "Mercury exchange (agent)",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "ORDER",
+     "n": 3,
+     "t_first_emit": 3.474983314094061,
+     "t_first_arrive": 3.7080227472342813,
+     "t_last_arrive": 3.7413541911246284,
+     "p_loss_each": [
+      0.1254,
+      0.1254,
+      0.1254
+     ],
+     "p_first": 0.874578362917303,
+     "p_all": 0.9980270665230495
+    }
+   ],
+   "agent_quota_peak": {
+    "Mercury exchange (agent)": 3
+   }
+  },
+  "Mars conjunction|S1d": {
+   "t0_h": 12470.027099609375,
+   "legs": [
+    {
+     "principal": "Cara",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 4,
+     "t_first_emit": 2.771707119696657,
+     "t_first_arrive": 3.289250953886949,
+     "t_last_arrive": 3.339252571990073,
+     "p_loss_each": [
+      0.2579,
+      0.2579,
+      0.2579,
+      0.2579
+     ],
+     "p_first": 0.7421456661006919,
+     "p_all": 0.9955792080626902
+    },
+    {
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mercury",
+     "label": "FWD:CINSTR",
+     "n": 2,
+     "t_first_emit": 3.3505007709645724,
+     "t_first_arrive": 3.474983314094061,
+     "t_last_arrive": 3.491651520242158,
+     "p_loss_each": [
+      0.0689,
+      0.0689
+     ],
+     "p_first": 0.931124937137819,
+     "p_all": 0.9952561687361767
+    },
+    {
+     "principal": "Mercury exchange (agent)",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "CINSTR",
+     "n": 3,
+     "t_first_emit": 3.474983314094061,
+     "t_first_arrive": 3.7080227472342813,
+     "t_last_arrive": 3.7413541911246284,
+     "p_loss_each": [
+      0.1254,
+      0.1254,
+      0.1254
+     ],
+     "p_first": 0.874578362917303,
+     "p_all": 0.9980270665230495
+    }
+   ],
+   "agent_quota_peak": {
+    "Mercury exchange (agent)": 3
+   }
+  }
+ }
+}

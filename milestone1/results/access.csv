@@ -1,0 +1,181 @@
+hour,origin,authority,route,delay_minutes,launch_availability_24h_sample,sample_minutes
+0,Mercury,Earth,Mercury > Relay A > Earth,46.02407856696309,1.0,1
+0,Venus,Earth,Venus > Relay A > Earth,40.56755192986737,1.0,1
+0,Earth,Earth,Earth,0.0,1.0,1
+0,Mars,Earth,Mars > Relay A > Earth,33.9065984784426,1.0,1
+0,Ceres,Earth,Ceres > Relay A > Earth,33.370066341778426,1.0,1
+0,Jupiter,Earth,Jupiter > Relay B > Earth,50.923150617088304,1.0,1
+0,Saturn,Earth,Saturn > Relay A > Earth,79.41863149489909,1.0,1
+0,Uranus,Earth,Uranus > Relay A > Earth,158.25455124719915,1.0,1
+0,Neptune,Earth,Neptune > Relay A > Earth,250.47963236197756,1.0,1
+0,Mercury,Mars,Mercury > Relay A > Mars,42.3682378570026,1.0,1
+0,Venus,Mars,Venus > Relay A > Mars,36.911113512550585,1.0,1
+0,Earth,Mars,Earth > Relay A > Mars,33.91191390180273,1.0,1
+0,Mars,Mars,Mars,0.0,1.0,1
+0,Ceres,Mars,Ceres > Relay A > Mars,29.71283949995107,1.0,1
+0,Jupiter,Mars,Jupiter > Relay B > Mars,39.904576500307584,1.0,1
+0,Saturn,Mars,Saturn > Relay A > Mars,75.7664486398248,1.0,1
+0,Uranus,Mars,Uranus > Relay A > Mars,154.6110024071898,1.0,1
+0,Neptune,Mars,Neptune > Relay A > Mars,246.84618169087264,1.0,1
+0,Mercury,Neptune,Mercury > Relay A > Neptune,258.94477464930935,1.0,1
+0,Venus,Neptune,Venus > Relay A > Neptune,253.48764029274193,1.0,1
+0,Earth,Neptune,Earth > Relay A > Neptune,250.48843517962996,1.0,1
+0,Mars,Neptune,Mars > Relay A > Neptune,246.82594496854855,1.0,1
+0,Ceres,Neptune,Ceres > Relay A > Neptune,246.2893530743832,1.0,1
+0,Jupiter,Neptune,Jupiter > Relay A > Neptune,280.03064655402846,1.0,1
+0,Saturn,Neptune,Saturn > Relay A > Neptune,292.3430467191072,1.0,1
+0,Uranus,Neptune,Uranus > Relay A > Neptune,371.1877452493547,1.0,1
+0,Neptune,Neptune,Neptune,0.0,1.0,1
+0,Mercury,Ceres,Mercury > Relay A > Ceres,41.830826630421384,1.0,1
+0,Venus,Ceres,Venus > Relay A > Ceres,36.37389991924686,1.0,1
+0,Earth,Ceres,Earth > Relay A > Ceres,33.37480892577927,1.0,1
+0,Mars,Ceres,Mars > Relay A > Ceres,29.712458071453486,1.0,1
+0,Ceres,Ceres,Ceres,0.0,1.0,1
+0,Jupiter,Ceres,Jupiter > Relay B > Ceres,41.29723611187134,1.0,1
+0,Saturn,Ceres,Saturn > Relay A > Ceres,75.22782784134594,1.0,1
+0,Uranus,Ceres,Uranus > Relay A > Ceres,154.06952588914035,1.0,1
+0,Neptune,Ceres,Neptune > Relay A > Ceres,246.3013640362971,1.0,1
+300,Mercury,Earth,Mercury > Relay A > Earth,43.77374779946403,1.0,1
+300,Venus,Earth,Venus > Relay A > Earth,37.66620566307101,1.0,1
+300,Earth,Earth,Earth,0.0,1.0,1
+300,Mars,Earth,Mars > Relay A > Earth,33.43857428762519,1.0,1
+300,Ceres,Earth,Ceres > Relay A > Earth,32.243617427911765,1.0,1
+300,Jupiter,Earth,Jupiter > Relay B > Earth,50.2285354626365,1.0,1
+300,Saturn,Earth,Saturn > Relay A > Earth,78.86243601997849,1.0,1
+300,Uranus,Earth,Uranus > Relay A > Earth,156.718519973394,1.0,1
+300,Neptune,Earth,Neptune > Relay A > Earth,250.0515072175457,1.0,1
+300,Mercury,Mars,Mercury > Relay A > Mars,42.03154033285876,1.0,1
+300,Venus,Mars,Venus > Relay A > Mars,35.92337280917757,1.0,1
+300,Earth,Mars,Earth > Relay A > Mars,33.44355994150974,1.0,1
+300,Mars,Mars,Mars,0.0,1.0,1
+300,Ceres,Mars,Ceres > Relay A > Mars,30.500229306996335,1.0,1
+300,Jupiter,Mars,Jupiter > Relay B > Mars,39.23310167050998,1.0,1
+300,Saturn,Mars,Saturn > Relay A > Mars,77.1238211165648,1.0,1
+300,Uranus,Mars,Uranus > Relay A > Mars,154.9878741006328,1.0,1
+300,Neptune,Mars,Neptune > Relay A > Mars,248.33041037425477,1.0,1
+300,Mercury,Neptune,Mercury > Relay A > Neptune,258.6455582407846,1.0,1
+300,Venus,Neptune,Venus > Relay A > Neptune,252.53737600013457,1.0,1
+300,Earth,Neptune,Earth > Relay A > Neptune,250.05755715810616,1.0,1
+300,Mars,Neptune,Mars > Relay A > Neptune,248.3093015351488,1.0,1
+300,Ceres,Neptune,Ceres > Relay A > Neptune,247.11421943287522,1.0,1
+300,Jupiter,Neptune,Jupiter > Relay A > Neptune,280.2224178622244,1.0,1
+300,Saturn,Neptune,Saturn > Relay A > Neptune,293.7379236077696,1.0,1
+300,Uranus,Neptune,Uranus > Relay A > Neptune,371.60216446471554,1.0,1
+300,Neptune,Neptune,Neptune,0.0,1.0,1
+300,Mercury,Ceres,Mercury > Relay A > Ceres,40.835565561719704,1.0,1
+300,Venus,Ceres,Venus > Relay A > Ceres,34.72762320197265,1.0,1
+300,Earth,Ceres,Earth > Relay A > Ceres,32.2479017468441,1.0,1
+300,Mars,Ceres,Mars > Relay A > Ceres,30.4997147807541,1.0,1
+300,Ceres,Ceres,Ceres,0.0,1.0,1
+300,Jupiter,Ceres,Jupiter > Relay B > Ceres,41.35382506011908,1.0,1
+300,Saturn,Ceres,Saturn > Relay A > Ceres,75.92655273219958,1.0,1
+300,Uranus,Ceres,Uranus > Relay A > Ceres,153.78773530958375,1.0,1
+300,Neptune,Ceres,Neptune > Relay A > Ceres,247.12683041035197,1.0,1
+8766.0,Mercury,Earth,Mercury > Relay B > Earth,53.433341190032664,1.0,1
+8766.0,Venus,Earth,Venus > Relay B > Earth,48.54751977771521,1.0,1
+8766.0,Earth,Earth,Earth,0.0,1.0,1
+8766.0,Mars,Earth,Mars > Relay B > Earth,47.18327377804865,1.0,1
+8766.0,Ceres,Earth,Ceres > Relay B > Earth,46.61270906869322,1.0,1
+8766.0,Jupiter,Earth,Jupiter > Relay A > Earth,59.096451745616896,1.0,1
+8766.0,Saturn,Earth,Saturn > Relay A > Earth,112.8372319854175,1.0,1
+8766.0,Uranus,Earth,Uranus > Relay A > Earth,177.38322840655843,1.0,1
+8766.0,Neptune,Earth,Neptune > Relay A > Earth,288.4077986544619,1.0,1
+8766.0,Mercury,Mars,Mercury > Relay B > Mars,38.6952588889127,1.0,1
+8766.0,Venus,Mars,Venus > Relay B > Mars,33.80933917059253,1.0,1
+8766.0,Earth,Mars,Earth > Relay B > Mars,47.184657138275604,1.0,1
+8766.0,Mars,Mars,Mars,0.0,1.0,1
+8766.0,Ceres,Mars,Ceres > Relay B > Mars,31.874489535950126,1.0,1
+8766.0,Jupiter,Mars,Jupiter > Relay B > Mars,51.78019371200353,1.0,1
+8766.0,Saturn,Mars,Saturn > Relay A > Mars,117.03422776317845,1.0,1
+8766.0,Uranus,Mars,Uranus > Relay A > Mars,181.5851465980212,1.0,1
+8766.0,Neptune,Mars,Neptune > Relay B > Mars,286.03655533653995,1.0,1
+8766.0,Mercury,Neptune,Mercury > Relay A > Neptune,286.70188980984193,1.0,1
+8766.0,Venus,Neptune,Venus > Relay A > Neptune,283.35547256792586,1.0,1
+8766.0,Earth,Neptune,Earth > Relay A > Neptune,288.4124061141784,1.0,1
+8766.0,Mars,Neptune,Mars > Relay B > Neptune,286.02753143161533,1.0,1
+8766.0,Ceres,Neptune,Ceres > Relay A > Neptune,279.1672105519722,1.0,1
+8766.0,Jupiter,Neptune,Jupiter > Relay A > Neptune,289.84637961151697,1.0,1
+8766.0,Saturn,Neptune,Saturn > Relay A > Neptune,343.59278034120797,1.0,1
+8766.0,Uranus,Neptune,Uranus > Relay A > Neptune,408.14552869480104,1.0,1
+8766.0,Neptune,Neptune,Neptune,0.0,1.0,1
+8766.0,Mercury,Ceres,Mercury > Relay B > Ceres,38.11984118813028,1.0,1
+8766.0,Venus,Ceres,Venus > Relay B > Ceres,33.234219584117334,1.0,1
+8766.0,Earth,Ceres,Earth > Relay B > Ceres,46.60872145096461,1.0,1
+8766.0,Mars,Ceres,Mars > Relay B > Ceres,31.87002937818567,1.0,1
+8766.0,Ceres,Ceres,Ceres,0.0,1.0,1
+8766.0,Jupiter,Ceres,Jupiter > Relay A > Ceres,49.85830980439981,1.0,1
+8766.0,Saturn,Ceres,Saturn > Relay A > Ceres,103.60269112487634,1.0,1
+8766.0,Uranus,Ceres,Uranus > Relay A > Ceres,168.1530142677327,1.0,1
+8766.0,Neptune,Ceres,Neptune > Relay A > Ceres,279.1850309299305,1.0,1
+87660.0,Mercury,Earth,Mercury > Relay A > Earth,44.92430688142777,1.0,1
+87660.0,Venus,Earth,Venus > Relay A > Earth,41.360062776009244,1.0,1
+87660.0,Earth,Earth,Earth,0.0,1.0,1
+87660.0,Mars,Earth,Mars > Relay B > Earth,41.9465485672156,1.0,1
+87660.0,Ceres,Earth,Ceres > Relay B > Earth,40.49241489171982,1.0,1
+87660.0,Jupiter,Earth,Jupiter > Relay A > Earth,42.84579657018185,1.0,1
+87660.0,Saturn,Earth,Saturn > Relay B > Earth,88.65289867023627,1.0,1
+87660.0,Uranus,Earth,Uranus > Relay A > Earth,158.73930401702722,1.0,1
+87660.0,Neptune,Earth,Neptune > Relay A > Earth,259.60569756925105,1.0,1
+87660.0,Mercury,Mars,Mercury > Relay B > Mars,34.9659347285827,1.0,1
+87660.0,Venus,Mars,Venus > Relay B > Mars,35.54105472564697,1.0,1
+87660.0,Earth,Mars,Earth > Relay B > Mars,41.948056262731555,1.0,1
+87660.0,Mars,Mars,Mars,0.0,1.0,1
+87660.0,Ceres,Mars,Ceres > Relay B > Mars,18.82405997812748,1.0,1
+87660.0,Jupiter,Mars,Jupiter > Relay A > Mars,48.06498850484689,1.0,1
+87660.0,Saturn,Mars,Saturn > Relay B > Mars,66.98583128452302,1.0,1
+87660.0,Uranus,Mars,Uranus > Relay B > Mars,158.3980236629645,1.0,1
+87660.0,Neptune,Mars,Neptune > Relay A > Mars,264.84808662335075,1.0,1
+87660.0,Mercury,Neptune,Mercury > Relay A > Neptune,257.2250532925129,1.0,1
+87660.0,Venus,Neptune,Venus > Relay A > Neptune,253.6603551030159,1.0,1
+87660.0,Earth,Neptune,Earth > Relay A > Neptune,259.61518020828566,1.0,1
+87660.0,Mars,Neptune,Mars > Relay A > Neptune,264.82731625537076,1.0,1
+87660.0,Ceres,Neptune,Ceres > Relay A > Neptune,262.06906933585805,1.0,1
+87660.0,Jupiter,Neptune,Jupiter > Relay A > Neptune,255.14627817968528,1.0,1
+87660.0,Saturn,Neptune,Saturn > Relay A > Neptune,304.5906070401271,1.0,1
+87660.0,Uranus,Neptune,Uranus > Relay A > Neptune,371.05455181896684,1.0,1
+87660.0,Neptune,Neptune,Neptune,0.0,1.0,1
+87660.0,Mercury,Ceres,Mercury > Relay B > Ceres,33.50989759763082,1.0,1
+87660.0,Venus,Ceres,Venus > Relay B > Ceres,34.08500329653422,1.0,1
+87660.0,Earth,Ceres,Earth > Relay B > Ceres,40.49184553821882,1.0,1
+87660.0,Mars,Ceres,Mars > Relay B > Ceres,18.822560500105222,1.0,1
+87660.0,Ceres,Ceres,Ceres,0.0,1.0,1
+87660.0,Jupiter,Ceres,Jupiter > Relay A > Ceres,45.30663808683554,1.0,1
+87660.0,Saturn,Ceres,Saturn > Relay B > Ceres,65.52899793783824,1.0,1
+87660.0,Uranus,Ceres,Uranus > Relay B > Ceres,156.93891561130684,1.0,1
+87660.0,Neptune,Ceres,Neptune > Relay A > Ceres,262.08552626371386,1.0,1
+876600.0,Mercury,Earth,Mercury > Relay A > Earth,42.28756050268809,1.0,1
+876600.0,Venus,Earth,Venus > Relay A > Earth,44.08691235383352,1.0,1
+876600.0,Earth,Earth,Earth,0.0,1.0,1
+876600.0,Mars,Earth,Mars > Relay B > Earth,38.50069950421651,1.0,1
+876600.0,Ceres,Earth,Ceres > Relay A > Earth,41.0374219417572,1.0,1
+876600.0,Jupiter,Earth,Jupiter > Relay A > Earth,79.80152601401011,1.0,1
+876600.0,Saturn,Earth,Saturn > Relay B > Earth,85.01932879288991,1.0,1
+876600.0,Uranus,Earth,Uranus > Relay B > Earth,159.48698572317758,1.0,1
+876600.0,Neptune,Earth,Neptune > Relay B > Earth,277.50210053920745,1.0,1
+876600.0,Mercury,Mars,Mercury > Relay B > Mars,36.89218451976776,1.0,1
+876600.0,Venus,Mars,Venus > Relay B > Mars,29.01137796243032,1.0,1
+876600.0,Earth,Mars,Earth > Relay B > Mars,38.50304822921753,1.0,1
+876600.0,Mars,Mars,Mars,0.0,1.0,1
+876600.0,Ceres,Mars,Ceres > Relay A > Mars,50.00016861756642,1.0,1
+876600.0,Jupiter,Mars,Jupiter > Relay B > Mars,71.82032607396444,1.0,1
+876600.0,Saturn,Mars,Saturn > Relay B > Mars,66.6924887418747,1.0,1
+876600.0,Uranus,Mars,Uranus > Relay B > Mars,141.16343990166982,1.0,1
+876600.0,Neptune,Mars,Neptune > Relay B > Mars,259.18378327687583,1.0,1
+876600.0,Mercury,Neptune,Mercury > Relay B > Neptune,275.9219285329183,1.0,1
+876600.0,Venus,Neptune,Venus > Relay B > Neptune,268.04145680268607,1.0,1
+876600.0,Earth,Neptune,Earth > Relay B > Neptune,277.5327238003413,1.0,1
+876600.0,Mars,Neptune,Mars > Relay B > Neptune,259.2022579352061,1.0,1
+876600.0,Ceres,Neptune,Ceres > Relay B > Neptune,295.53964036305746,1.0,1
+876600.0,Jupiter,Neptune,Jupiter > Relay B > Neptune,310.8485859553019,1.0,1
+876600.0,Saturn,Neptune,Saturn > Relay B > Neptune,305.7209665298462,1.0,1
+876600.0,Uranus,Neptune,Uranus > Relay B > Neptune,380.1887523651123,1.0,1
+876600.0,Neptune,Neptune,Neptune,0.0,1.0,1
+876600.0,Mercury,Ceres,Mercury > Relay A > Ceres,49.904487705230714,1.0,1
+876600.0,Venus,Ceres,Venus > Relay A > Ceres,51.70393855571747,1.0,1
+876600.0,Earth,Ceres,Earth > Relay A > Ceres,41.037658937772115,1.0,1
+876600.0,Mars,Ceres,Mars > Relay A > Ceres,49.99442412853241,1.0,1
+876600.0,Ceres,Ceres,Ceres,0.0,1.0,1
+876600.0,Jupiter,Ceres,Jupiter > Relay A > Ceres,87.42051665782928,1.0,1
+876600.0,Saturn,Ceres,Saturn > Relay B > Ceres,103.03168315887451,1.0,1
+876600.0,Uranus,Ceres,Uranus > Relay A > Ceres,175.00140340328215,1.0,1
+876600.0,Neptune,Ceres,Neptune > Relay B > Ceres,295.5257635672887,1.0,1

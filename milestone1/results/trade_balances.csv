@@ -1,0 +1,43 @@
+stage,hour,owner,location,cash_owned,cash_encumbered,cash_available,ares_owned,ares_encumbered,ares_available,belt_owned,terra_owned,liability
+OPENING,0,Alice,Earth,150000,0,150000,0,0,0,0,0,none; no credit issued
+OPENING,0,Bob,Mars,50000,0,50000,3000,0,3000,0,0,none; no credit issued
+OPENING,0,Cara,Ceres,100000,0,100000,0,0,0,1000,0,none; no credit issued
+OPENING,0,Dax,Neptune,100000,0,100000,0,0,0,0,0,none; no credit issued
+OPENING,0,Eve,Uranus,50000,0,50000,0,0,0,0,0,none; no credit issued
+OPENING,0,Fin,Earth,50000,0,50000,0,0,0,0,1000,none; no credit issued
+OPENING,0,Bob cash / Alice shares,"in transit, export T1",0,0,0,0,0,0,0,0,matching staged claims only; do not count claims again
+RESERVE_LOCAL,0.0002777777777777778,Alice,Earth,150000,100000,50000,0,0,0,0,0,none; no credit issued
+RESERVE_LOCAL,0.0002777777777777778,Bob,Mars,50000,0,50000,3000,1000,2000,0,0,none; no credit issued
+RESERVE_LOCAL,0.0002777777777777778,Cara,Ceres,100000,0,100000,0,0,0,1000,0,none; no credit issued
+RESERVE_LOCAL,0.0002777777777777778,Dax,Neptune,100000,0,100000,0,0,0,0,0,none; no credit issued
+RESERVE_LOCAL,0.0002777777777777778,Eve,Uranus,50000,0,50000,0,0,0,0,0,none; no credit issued
+RESERVE_LOCAL,0.0002777777777777778,Fin,Earth,50000,0,50000,0,0,0,0,1000,none; no credit issued
+RESERVE_LOCAL,0.0002777777777777778,Bob cash / Alice shares,"in transit, export T1",0,0,0,0,0,0,0,0,matching staged claims only; do not count claims again
+COMMIT,2.8278651954145424,Alice,Earth,150000,100000,50000,0,0,0,0,0,none; no credit issued
+COMMIT,2.8278651954145424,Bob,Mars,50000,0,50000,2000,0,2000,0,0,none; no credit issued
+COMMIT,2.8278651954145424,Cara,Ceres,100000,0,100000,0,0,0,1000,0,none; no credit issued
+COMMIT,2.8278651954145424,Dax,Neptune,100000,0,100000,0,0,0,0,0,none; no credit issued
+COMMIT,2.8278651954145424,Eve,Uranus,50000,0,50000,0,0,0,0,0,none; no credit issued
+COMMIT,2.8278651954145424,Fin,Earth,50000,0,50000,0,0,0,0,1000,none; no credit issued
+COMMIT,2.8278651954145424,Bob cash / Alice shares,"in transit, export T1",0,0,0,1000,1000,0,0,0,matching staged claims only; do not count claims again
+APPLIED,3.3934444407398243,Alice,Earth,50000,0,50000,0,0,0,0,0,none; no credit issued
+APPLIED,3.3934444407398243,Bob,Mars,50000,0,50000,2000,0,2000,0,0,none; no credit issued
+APPLIED,3.3934444407398243,Cara,Ceres,100000,0,100000,0,0,0,1000,0,none; no credit issued
+APPLIED,3.3934444407398243,Dax,Neptune,100000,0,100000,0,0,0,0,0,none; no credit issued
+APPLIED,3.3934444407398243,Eve,Uranus,50000,0,50000,0,0,0,0,0,none; no credit issued
+APPLIED,3.3934444407398243,Fin,Earth,50000,0,50000,0,0,0,0,1000,none; no credit issued
+APPLIED,3.3934444407398243,Bob cash / Alice shares,"in transit, export T1",100000,100000,0,1000,1000,0,0,0,matching staged claims only; do not count claims again
+RELEASE,3.9590950277829404,Alice,Earth,50000,0,50000,0,0,0,0,0,none; no credit issued
+RELEASE,3.9590950277829404,Bob,Mars,150000,0,150000,2000,0,2000,0,0,none; no credit issued
+RELEASE,3.9590950277829404,Cara,Ceres,100000,0,100000,0,0,0,1000,0,none; no credit issued
+RELEASE,3.9590950277829404,Dax,Neptune,100000,0,100000,0,0,0,0,0,none; no credit issued
+RELEASE,3.9590950277829404,Eve,Uranus,50000,0,50000,0,0,0,0,0,none; no credit issued
+RELEASE,3.9590950277829404,Fin,Earth,50000,0,50000,0,0,0,0,1000,none; no credit issued
+RELEASE,3.9590950277829404,Bob cash / Alice shares,"in transit, export T1",0,0,0,1000,1000,0,0,0,matching staged claims only; do not count claims again
+RELEASED,4.524639823906794,Alice,Earth,50000,0,50000,1000,0,1000,0,0,none; no credit issued
+RELEASED,4.524639823906794,Bob,Mars,150000,0,150000,2000,0,2000,0,0,none; no credit issued
+RELEASED,4.524639823906794,Cara,Ceres,100000,0,100000,0,0,0,1000,0,none; no credit issued
+RELEASED,4.524639823906794,Dax,Neptune,100000,0,100000,0,0,0,0,0,none; no credit issued
+RELEASED,4.524639823906794,Eve,Uranus,50000,0,50000,0,0,0,0,0,none; no credit issued
+RELEASED,4.524639823906794,Fin,Earth,50000,0,50000,0,0,0,0,1000,none; no credit issued
+RELEASED,4.524639823906794,Bob cash / Alice shares,"in transit, export T1",0,0,0,0,0,0,0,0,matching staged claims only; do not count claims again

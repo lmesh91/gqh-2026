@@ -1,0 +1,202 @@
+{
+ "samples": 36526,
+ "step_days": 2,
+ "hosts": {
+  "Mercury": {
+   "mean_one_way_min": 97.14804700466168,
+   "p95_one_way_min": 266.7265466884772,
+   "max_one_way_min": 311.29103985627495,
+   "mean_round_trip_min": 194.29525190335988,
+   "mean_pair_slower_leg_min": 130.9332078237563,
+   "mean_first_try_success": 0.6647767174029273,
+   "inner_mean_one_way_min": 44.814081802810236
+  },
+  "Venus": {
+   "mean_one_way_min": 96.63674912505672,
+   "p95_one_way_min": 265.4375563216208,
+   "max_one_way_min": 311.4089606444041,
+   "mean_round_trip_min": 193.27422998255398,
+   "mean_pair_slower_leg_min": 130.33076191370586,
+   "mean_first_try_success": 0.6662851733732481,
+   "inner_mean_one_way_min": 44.45770876460305
+  },
+  "Earth": {
+   "mean_one_way_min": 96.53863881166532,
+   "p95_one_way_min": 265.7076768797635,
+   "max_one_way_min": 311.59605226516726,
+   "mean_round_trip_min": 193.07675311437563,
+   "mean_pair_slower_leg_min": 130.2466043302905,
+   "mean_first_try_success": 0.6667040689545731,
+   "inner_mean_one_way_min": 44.30991073870224
+  },
+  "Mars": {
+   "mean_one_way_min": 96.600982701483,
+   "p95_one_way_min": 266.99432915896176,
+   "max_one_way_min": 314.8657151937485,
+   "mean_round_trip_min": 193.20274248410098,
+   "mean_pair_slower_leg_min": 130.3948730583412,
+   "mean_first_try_success": 0.6669177786362727,
+   "inner_mean_one_way_min": 44.11397944279087
+  },
+  "Ceres": {
+   "mean_one_way_min": 98.02698734906328,
+   "p95_one_way_min": 273.04382427453993,
+   "max_one_way_min": 308.9172816673915,
+   "mean_round_trip_min": 196.05379055483533,
+   "mean_pair_slower_leg_min": 132.0271464869327,
+   "mean_first_try_success": 0.6633728935803193,
+   "inner_mean_one_way_min": 44.79480080993291
+  },
+  "Jupiter": {
+   "mean_one_way_min": 112.48946875750173,
+   "p95_one_way_min": 290.7911881959438,
+   "max_one_way_min": 333.11706001510225,
+   "mean_round_trip_min": 224.97887583540535,
+   "mean_pair_slower_leg_min": 146.92105859744746,
+   "mean_first_try_success": 0.6203439783239132,
+   "inner_mean_one_way_min": 61.50101078091969
+  },
+  "Saturn": {
+   "mean_one_way_min": 142.69068655615615,
+   "p95_one_way_min": 325.65492457533867,
+   "max_one_way_min": 370.3075836102168,
+   "mean_round_trip_min": 285.38092781077853,
+   "mean_pair_slower_leg_min": 175.8584734163115,
+   "mean_first_try_success": 0.5365304005741299,
+   "inner_mean_one_way_min": 96.07028601298528
+  },
+  "Uranus": {
+   "mean_one_way_min": 212.03245914614274,
+   "p95_one_way_min": 405.2756897449493,
+   "max_one_way_min": 451.94769121805825,
+   "mean_round_trip_min": 424.0645706642844,
+   "mean_pair_slower_leg_min": 239.68202561552584,
+   "mean_first_try_success": 0.37979707090637216,
+   "inner_mean_one_way_min": 175.35604247967348
+  },
+  "Neptune": {
+   "mean_one_way_min": 290.5827187308958,
+   "p95_one_way_min": 405.27041389644137,
+   "max_one_way_min": 451.95336410204567,
+   "mean_round_trip_min": 581.1663340155591,
+   "mean_pair_slower_leg_min": 309.60082383458024,
+   "mean_first_try_success": 0.2530858475020878,
+   "inner_mean_one_way_min": 265.0024563550233
+  }
+ },
+ "host_sets": {
+  "1": {
+   "hosts": [
+    "Earth"
+   ],
+   "mean_pair_slower_leg_min": 130.24660433029038
+  },
+  "2": {
+   "hosts": [
+    "Earth",
+    "Ceres"
+   ],
+   "mean_pair_slower_leg_min": 129.79057996499574
+  },
+  "3": {
+   "hosts": [
+    "Earth",
+    "Mars",
+    "Ceres"
+   ],
+   "mean_pair_slower_leg_min": 129.5328806811762
+  }
+ },
+ "pair_mean_min": {
+  "Mercury": {
+   "Venus": 45.21774879084072,
+   "Earth": 44.72485551898126,
+   "Mars": 44.183415716897024,
+   "Ceres": 45.128066267260515,
+   "Jupiter": 61.4801867371831,
+   "Saturn": 96.00543832227687,
+   "Uranus": 175.3596374179723,
+   "Neptune": 265.07829041817376
+  },
+  "Venus": {
+   "Mercury": 45.21911556776389,
+   "Earth": 44.30540888700537,
+   "Mars": 43.71961594814098,
+   "Ceres": 44.586682770202,
+   "Jupiter": 60.86781362141471,
+   "Saturn": 95.38643368022058,
+   "Uranus": 174.67291458605783,
+   "Neptune": 264.3418617991724
+  },
+  "Earth": {
+   "Mercury": 44.72363924297181,
+   "Venus": 44.30503829451579,
+   "Mars": 43.65000953036703,
+   "Ceres": 44.56072378435669,
+   "Jupiter": 60.76713802919964,
+   "Saturn": 95.32811585640475,
+   "Uranus": 174.6574763575379,
+   "Neptune": 264.3127733263292
+  },
+  "Mars": {
+   "Mercury": 44.184296821189086,
+   "Venus": 43.71966883489451,
+   "Earth": 43.65048973394867,
+   "Ceres": 44.903730417912456,
+   "Jupiter": 61.02522419432728,
+   "Saturn": 95.66413750220492,
+   "Uranus": 174.92444602642544,
+   "Neptune": 264.7420847300414
+  },
+  "Ceres": {
+   "Mercury": 45.12927557931616,
+   "Venus": 44.58837913816115,
+   "Earth": 44.55888881487364,
+   "Mars": 44.90287657575848,
+   "Jupiter": 63.36469132247378,
+   "Saturn": 97.96730470381927,
+   "Uranus": 177.16573801037381,
+   "Neptune": 266.53727150139974
+  },
+  "Jupiter": {
+   "Mercury": 61.48403067683675,
+   "Venus": 60.86585031518071,
+   "Earth": 60.766673246536406,
+   "Mars": 61.02296703074903,
+   "Ceres": 63.36498812440849,
+   "Saturn": 114.64336426523103,
+   "Uranus": 194.0433589341395,
+   "Neptune": 283.7240240301472
+  },
+  "Saturn": {
+   "Mercury": 96.00542331997764,
+   "Venus": 95.3842227115156,
+   "Earth": 95.32828865630331,
+   "Mars": 95.66376991138554,
+   "Ceres": 97.96770957373035,
+   "Jupiter": 114.64298896018153,
+   "Uranus": 228.019823132735,
+   "Neptune": 318.50970377114976
+  },
+  "Uranus": {
+   "Mercury": 175.3555298503604,
+   "Venus": 174.6724007086193,
+   "Earth": 174.65991360925858,
+   "Mars": 174.9232339096771,
+   "Ceres": 177.1660696381193,
+   "Jupiter": 194.04374306684136,
+   "Saturn": 228.02026109150353,
+   "Neptune": 397.4157402707534
+  },
+  "Neptune": {
+   "Mercury": 265.08306497887776,
+   "Venus": 264.3406842067261,
+   "Earth": 264.3145920264152,
+   "Mars": 264.7419729888888,
+   "Ceres": 266.53792821651643,
+   "Jupiter": 283.72396412839237,
+   "Saturn": 318.5104370275883,
+   "Uranus": 397.4162787039002
+  }
+ }
+}

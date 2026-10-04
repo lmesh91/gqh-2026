@@ -1,0 +1,1923 @@
+{
+ "table": [
+  {
+   "settlement": "Mercury",
+   "hour": 0,
+   "Mars": {
+    "route": "Me-A-Ma",
+    "delay": 42.36823785700755,
+    "back_route": "Ma-A-Me",
+    "back": 42.364547239874746,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Me-A-Ce",
+    "delay": 41.83082663042418,
+    "back_route": "Ce-A-Me",
+    "back": 41.82799014129834,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Me-A-Ea",
+    "delay": 46.02407856694984,
+    "back_route": "Ea-A-Me",
+    "back": 46.026799921633376,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 16.614369999087934,
+    "p_loss": 0.1472852874094973,
+    "copies": 3,
+    "burst": 0.9968049467573777,
+    "avail": 0.9520833333333333,
+    "back_delay": 16.615003648615872,
+    "back_p_loss": 0.1472904846741694
+   }
+  },
+  {
+   "settlement": "Venus",
+   "hour": 0,
+   "Mars": {
+    "route": "Ve-A-Ma",
+    "delay": 36.911113512555524,
+    "back_route": "Ma-A-Ve",
+    "back": 36.90444768048308,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ve-A-Ce",
+    "delay": 36.37389991924968,
+    "back_route": "Ce-A-Ve",
+    "back": 36.36793131920881,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ve-A-Ea",
+    "delay": 40.567551929854105,
+    "back_route": "Ea-A-Ve",
+    "back": 40.56642234574276,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 15.333406217100592,
+    "p_loss": 0.1367136514829037,
+    "copies": 3,
+    "burst": 0.9974447367492919,
+    "avail": 1.0,
+    "back_delay": 15.331369182927,
+    "back_p_loss": 0.13669673614302602
+   }
+  },
+  {
+   "settlement": "Earth",
+   "hour": 0,
+   "Mars": {
+    "route": "Ea-A-Ma",
+    "delay": 33.91191390180768,
+    "back_route": "Ma-A-Ea",
+    "back": 33.90659847842935,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ea-A-Ce",
+    "delay": 33.37480892578204,
+    "back_route": "Ce-A-Ea",
+    "back": 33.3700663417628,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "local",
+    "delay": 0.0,
+    "back": 0.0,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 14.39993128275338,
+    "p_loss": 0.12892733531606293,
+    "copies": 3,
+    "burst": 0.9978569365959794,
+    "avail": 1.0,
+    "back_delay": 14.397921520534908,
+    "back_p_loss": 0.12891049591865944
+   }
+  },
+  {
+   "settlement": "Mars",
+   "hour": 0,
+   "Mars": {
+    "route": "local",
+    "delay": 0.0,
+    "back": 0.0,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ma-A-Ce",
+    "delay": 29.712458071456254,
+    "back_route": "Ce-A-Ma",
+    "back": 29.712839499953642,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ma-A-Ea",
+    "delay": 33.90659847842935,
+    "back_route": "Ea-A-Ma",
+    "back": 33.91191390180768,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 0.016666666666666666,
+    "p_loss": 0.0,
+    "copies": 0,
+    "burst": 1.0,
+    "avail": 1.0,
+    "back_delay": 0.016666666666666666,
+    "back_p_loss": 0.0
+   }
+  },
+  {
+   "settlement": "Ceres",
+   "hour": 0,
+   "Mars": {
+    "route": "Ce-A-Ma",
+    "delay": 29.712839499953642,
+    "back_route": "Ma-A-Ce",
+    "back": 29.712458071456254,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "local",
+    "delay": 0.0,
+    "back": 0.0,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ce-A-Ea",
+    "delay": 33.3700663417628,
+    "back_route": "Ea-A-Ce",
+    "back": 33.37480892578204,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 9.484765085522026,
+    "p_loss": 0.08675548376259723,
+    "copies": 2,
+    "burst": 0.9924734860371177,
+    "avail": 1.0,
+    "back_delay": 9.484839722961016,
+    "back_p_loss": 0.08675613940484694
+   }
+  },
+  {
+   "settlement": "Jupiter",
+   "hour": 0,
+   "Mars": {
+    "route": "Ju-B-Ma",
+    "delay": 39.90457650029811,
+    "back_route": "Ma-B-Ju",
+    "back": 39.90758256804493,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ju-B-Ce",
+    "delay": 41.2972361118675,
+    "back_route": "Ce-B-Ju",
+    "back": 41.299497033389336,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ju-B-Ea",
+    "delay": 50.92315061708335,
+    "back_route": "Ea-B-Ju",
+    "back": 50.926034948933086,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 37.14194495275199,
+    "p_loss": 0.3000749101717336,
+    "copies": 4,
+    "burst": 0.99189190667072,
+    "avail": 1.0,
+    "back_delay": 37.145196074239486,
+    "back_p_loss": 0.30009679792856037
+   }
+  },
+  {
+   "settlement": "Saturn",
+   "hour": 0,
+   "Mars": {
+    "route": "Sa-A-Ma",
+    "delay": 75.76644863983465,
+    "back_route": "Ma-A-Sa",
+    "back": 75.75992756777562,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Sa-A-Ce",
+    "delay": 75.22782784135364,
+    "back_route": "Ce-A-Sa",
+    "back": 75.22333936966044,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Sa-A-Ea",
+    "delay": 79.41863149489076,
+    "back_route": "Ea-A-Sa",
+    "back": 79.42239255146178,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 75.20610111301826,
+    "p_loss": 0.5146647962573276,
+    "copies": 7,
+    "burst": 0.9904353024684496,
+    "avail": 1.0,
+    "back_delay": 75.19984222118158,
+    "back_p_loss": 0.5146355765676773
+   }
+  },
+  {
+   "settlement": "Uranus",
+   "hour": 0,
+   "Mars": {
+    "route": "Ur-A-Ma",
+    "delay": 154.61100240719352,
+    "back_route": "Ma-A-Ur",
+    "back": 154.60658767588816,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ur-A-Ce",
+    "delay": 154.0695258891419,
+    "back_route": "Ce-A-Ur",
+    "back": 154.07002899280556,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ur-A-Ea",
+    "delay": 158.25455124718468,
+    "back_route": "Ea-A-Ur",
+    "back": 158.2688512061175,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 149.59657353027316,
+    "p_loss": 0.7627086339300204,
+    "copies": 8,
+    "burst": 0.8854831742802893,
+    "avail": 1.0,
+    "back_delay": 149.59334857022768,
+    "back_p_loss": 0.7627012729388543
+   }
+  },
+  {
+   "settlement": "Neptune",
+   "hour": 0,
+   "Mars": {
+    "route": "Ne-A-Ma",
+    "delay": 246.84618169087761,
+    "back_route": "Ma-A-Ne",
+    "back": 246.82594496854855,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ne-A-Ce",
+    "delay": 246.30136403629987,
+    "back_route": "Ce-A-Ne",
+    "back": 246.28935307438076,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ne-A-Ea",
+    "delay": 250.47963236196435,
+    "back_route": "Ea-A-Ne",
+    "back": 250.48843517962996,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 246.2639929790795,
+    "p_loss": 0.9063598648566212,
+    "copies": 8,
+    "burst": 0.54458710035859,
+    "avail": 1.0,
+    "back_delay": 246.24480119900616,
+    "back_p_loss": 0.9063425770194993
+   }
+  },
+  {
+   "settlement": "Mercury",
+   "hour": 300,
+   "Mars": {
+    "route": "Me-A-Ma",
+    "delay": 42.03154033286264,
+    "back_route": "Ma-A-Me",
+    "back": 42.02463937088614,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Me-A-Ce",
+    "delay": 40.835565561723584,
+    "back_route": "Ce-A-Me",
+    "back": 40.82971903748112,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Me-A-Ea",
+    "delay": 43.773747799456274,
+    "back_route": "Ea-A-Me",
+    "back": 43.772658337194784,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 16.815527172452615,
+    "p_loss": 0.14893361100454672,
+    "copies": 3,
+    "burst": 0.9966964707364049,
+    "avail": 0.0,
+    "back_delay": 16.814858823855563,
+    "back_p_loss": 0.1489281396965707
+   }
+  },
+  {
+   "settlement": "Venus",
+   "hour": 300,
+   "Mars": {
+    "route": "Ve-A-Ma",
+    "delay": 35.92337280918146,
+    "back_route": "Ma-A-Ve",
+    "back": 35.917216041420275,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ve-A-Ce",
+    "delay": 34.72762320197265,
+    "back_route": "Ce-A-Ve",
+    "back": 34.722291461599525,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ve-A-Ea",
+    "delay": 37.66620566306325,
+    "back_route": "Ea-A-Ve",
+    "back": 37.665241230853525,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 14.197609291885358,
+    "p_loss": 0.12723048544177662,
+    "copies": 3,
+    "burst": 0.9979404442486163,
+    "avail": 1.0,
+    "back_delay": 14.195533804226821,
+    "back_p_loss": 0.12721306146257472
+   }
+  },
+  {
+   "settlement": "Earth",
+   "hour": 300,
+   "Mars": {
+    "route": "Ea-A-Ma",
+    "delay": 33.4435599415175,
+    "back_route": "Ma-A-Ea",
+    "back": 33.43857428761742,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ea-A-Ce",
+    "delay": 32.2479017468441,
+    "back_route": "Ce-A-Ea",
+    "back": 32.243617427900126,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "local",
+    "delay": 0.0,
+    "back": 0.0,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 13.700773133469434,
+    "p_loss": 0.12304954282044622,
+    "copies": 3,
+    "burst": 0.9981368834941796,
+    "avail": 1.0,
+    "back_delay": 13.69880318051437,
+    "back_p_loss": 0.12303292560258328
+   }
+  },
+  {
+   "settlement": "Mars",
+   "hour": 300,
+   "Mars": {
+    "route": "local",
+    "delay": 0.0,
+    "back": 0.0,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ma-A-Ce",
+    "delay": 30.49971478075798,
+    "back_route": "Ce-A-Ma",
+    "back": 30.500229307000215,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ma-A-Ea",
+    "delay": 33.43857428761742,
+    "back_route": "Ea-A-Ma",
+    "back": 33.4435599415175,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 0.016666666666666666,
+    "p_loss": 0.0,
+    "copies": 0,
+    "burst": 1.0,
+    "avail": 1.0,
+    "back_delay": 0.016666666666666666,
+    "back_p_loss": 0.0
+   }
+  },
+  {
+   "settlement": "Ceres",
+   "hour": 300,
+   "Mars": {
+    "route": "Ce-A-Ma",
+    "delay": 30.500229307000215,
+    "back_route": "Ma-A-Ce",
+    "back": 30.49971478075798,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "local",
+    "delay": 0.0,
+    "back": 0.0,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ce-A-Ea",
+    "delay": 32.243617427900126,
+    "back_route": "Ea-A-Ce",
+    "back": 32.2479017468441,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 9.292444019741378,
+    "p_loss": 0.08506450178087,
+    "copies": 2,
+    "burst": 0.9927640305367723,
+    "avail": 1.0,
+    "back_delay": 9.292365141434129,
+    "back_p_loss": 0.0850638076018082
+   }
+  },
+  {
+   "settlement": "Jupiter",
+   "hour": 300,
+   "Mars": {
+    "route": "Ju-B-Ma",
+    "delay": 39.23310167050222,
+    "back_route": "Ma-B-Ju",
+    "back": 39.23592370559539,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ju-B-Ce",
+    "delay": 41.3538250601152,
+    "back_route": "Ce-B-Ju",
+    "back": 41.35602520534303,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ju-B-Ea",
+    "delay": 50.22853546262874,
+    "back_route": "Ea-B-Ju",
+    "back": 50.231873898716486,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 36.06592692616784,
+    "p_loss": 0.2927930251110924,
+    "copies": 4,
+    "burst": 0.9926507519277242,
+    "avail": 1.0,
+    "back_delay": 36.06892043762685,
+    "back_p_loss": 0.2928133882391861
+   }
+  },
+  {
+   "settlement": "Saturn",
+   "hour": 300,
+   "Mars": {
+    "route": "Sa-A-Ma",
+    "delay": 77.12382111657644,
+    "back_route": "Ma-A-Sa",
+    "back": 77.1169484103215,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Sa-A-Ce",
+    "delay": 75.92655273220734,
+    "back_route": "Ce-A-Sa",
+    "back": 75.9218748515627,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Sa-A-Ea",
+    "delay": 78.86243601997849,
+    "back_route": "Ea-A-Sa",
+    "back": 78.86519153513946,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 76.46418446232177,
+    "p_loss": 0.5205025984586217,
+    "copies": 8,
+    "burst": 0.9946125504595178,
+    "avail": 1.0,
+    "back_delay": 76.4577297211741,
+    "back_p_loss": 0.5204728268804963
+   }
+  },
+  {
+   "settlement": "Uranus",
+   "hour": 300,
+   "Mars": {
+    "route": "Ur-A-Ma",
+    "delay": 154.9878741006367,
+    "back_route": "Ma-A-Ur",
+    "back": 154.98277990910768,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ur-A-Ce",
+    "delay": 153.78773530958375,
+    "back_route": "Ce-A-Ur",
+    "back": 153.78777081479785,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ur-A-Ea",
+    "delay": 156.71851997338624,
+    "back_route": "Ea-A-Ur",
+    "back": 156.7309287306736,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 150.00252388106892,
+    "p_loss": 0.7636333970626967,
+    "copies": 8,
+    "burst": 0.8843676611517766,
+    "avail": 1.0,
+    "back_delay": 149.9979717484171,
+    "back_p_loss": 0.7636230472183991
+   }
+  },
+  {
+   "settlement": "Neptune",
+   "hour": 300,
+   "Mars": {
+    "route": "Ne-A-Ma",
+    "delay": 248.33041037425863,
+    "back_route": "Ma-A-Ne",
+    "back": 248.3093015351488,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Ceres": {
+    "route": "Ne-A-Ce",
+    "delay": 247.12683041035586,
+    "back_route": "Ce-A-Ne",
+    "back": 247.11421943287132,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "Earth": {
+    "route": "Ne-A-Ea",
+    "delay": 250.05150721753793,
+    "back_route": "Ea-A-Ne",
+    "back": 250.05755715810616,
+    "avail": 1.0,
+    "back_avail": 1.0
+   },
+   "direct": {
+    "delay": 247.63784969082724,
+    "p_loss": 0.907589171794087,
+    "copies": 8,
+    "burst": 0.5396221225116613,
+    "avail": 1.0,
+    "back_delay": 247.6183307857951,
+    "back_p_loss": 0.9075718200805594
+   }
+  }
+ ],
+ "relocations": {
+  "Mercury": {
+   "completion_h": 3.8095843229544606,
+   "times": {
+    "EQ:funding_imported_at_host": 2.1194953532934377,
+    "EQ:funding_receipt_at_home": 2.8261600130044786,
+    "EQ:order_sent": 2.8264377907822564,
+    "EQ:first_fill": 3.1034601416915195,
+    "EQ:host_final_fill": 3.1034601416915195,
+    "EQ:seller_spendable": 3.1034601416915195,
+    "EQ:buyer_spendable": 3.8095843229544606
+   },
+   "packets": 47,
+   "backbone": 44,
+   "direct": 3,
+   "trace": null,
+   "mc_p50": 3.8262519234229786,
+   "mc_p90": 7.2209059206051736,
+   "mc_p99": 9.531749791651205,
+   "p_by_24h": 1.0,
+   "p_by_72h": 1.0,
+   "p_by_168h": 1.0,
+   "mc_packets": 50.508,
+   "direct_log": [
+    {
+     "t": 2.8264377907822564,
+     "te": 2.826993346337812,
+     "ta": 3.1034601416915195,
+     "principal": "Alice",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 1.9924661602207283,
+     "p_loss": 0.14734246304754206,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.843104457448923,
+     "te": 2.8436600130044787,
+     "ta": 3.1201274886842527,
+     "principal": "Alice",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 1.9924710681880213,
+     "p_loss": 0.14734279783270066,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.8597711241155896,
+     "te": 2.8603266796711453,
+     "ta": 3.136794835620974,
+     "principal": "Alice",
+     "a": "Mercury",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "d": 1.992475975751238,
+     "p_loss": 0.14734313259016463,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  },
+  "Venus": {
+   "completion_h": 3.3325653906480124,
+   "times": {
+    "EQ:funding_imported_at_host": 1.8464449773132694,
+    "EQ:funding_receipt_at_home": 2.4619639788877548,
+    "EQ:order_sent": 2.4622417566655326,
+    "EQ:first_fill": 2.7176540918713727,
+    "EQ:host_final_fill": 2.7176540918713727,
+    "EQ:seller_spendable": 2.7176540918713727,
+    "EQ:buyer_spendable": 3.3325653906480124
+   },
+   "packets": 47,
+   "backbone": 44,
+   "direct": 3,
+   "trace": null,
+   "mc_p50": 3.349230080982379,
+   "mc_p90": 6.339662078630007,
+   "mc_p99": 8.28433573271092,
+   "p_by_24h": 1.0,
+   "p_by_72h": 1.0,
+   "p_by_168h": 1.0,
+   "mc_packets": 50.055,
+   "direct_log": [
+    {
+     "t": 2.4622417566655326,
+     "te": 2.4627973122210878,
+     "ta": 2.7176540918713727,
+     "principal": "Alice",
+     "a": "Venus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 1.836568487717977,
+     "p_loss": 0.1366416866710859,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.478908423332199,
+     "te": 2.479463978887755,
+     "ta": 2.734319780217721,
+     "principal": "Alice",
+     "a": "Venus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 1.8365614299785131,
+     "p_loss": 0.1366411992023051,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.495575089998866,
+     "te": 2.4961306455544214,
+     "ta": 2.7509854685552804,
+     "principal": "Alice",
+     "a": "Venus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "d": 1.8365543721756494,
+     "p_loss": 0.13664071172887016,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  },
+  "Earth": {
+   "completion_h": 3.0674062633701413,
+   "times": {
+    "EQ:funding_imported_at_host": 1.6965663932826882,
+    "EQ:funding_receipt_at_home": 2.262180124516946,
+    "EQ:order_sent": 2.2624579022947238,
+    "EQ:first_fill": 2.502372638071735,
+    "EQ:host_final_fill": 2.502372638071735,
+    "EQ:seller_spendable": 2.502372638071735,
+    "EQ:buyer_spendable": 3.0674062633701413
+   },
+   "packets": 47,
+   "backbone": 44,
+   "direct": 3,
+   "trace": null,
+   "mc_p50": 3.0674062633701413,
+   "mc_p90": 4.6927427485861255,
+   "mc_p99": 6.317954498108216,
+   "p_by_24h": 1.0,
+   "p_by_72h": 1.0,
+   "p_by_168h": 1.0,
+   "mc_packets": 49.788,
+   "direct_log": [
+    {
+     "t": 2.2624579022947238,
+     "te": 2.2630134578502794,
+     "ta": 2.502372638071735,
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 1.7247666402092912,
+     "p_loss": 0.12888504574973014,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.2791245689613904,
+     "te": 2.279680124516946,
+     "ta": 2.5190386848521378,
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 1.724762168263177,
+     "p_loss": 0.12888473410334367,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.295791235628057,
+     "te": 2.2963467911836126,
+     "ta": 2.5357047316294095,
+     "principal": "Alice",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "d": 1.7247576962944742,
+     "p_loss": 0.12888442245527143,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  },
+  "Mars": {
+   "completion_h": 0.0004166666666666667,
+   "times": {
+    "EQ:order_sent": 0.0001388888888888889,
+    "EQ:first_fill": 0.0004166666666666667,
+    "EQ:host_final_fill": 0.0004166666666666667,
+    "EQ:seller_spendable": 0.0004166666666666667,
+    "EQ:buyer_spendable": 0.0004166666666666667
+   },
+   "packets": 0,
+   "backbone": 0,
+   "direct": 0,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "ORDER",
+      "oid": "EQ-sell",
+      "asset": "ARES",
+      "side": "SELL",
+      "qty": 1000,
+      "limit": 100,
+      "tif": "GTC",
+      "expiry": 2592000.0,
+      "disp": "AUTO"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Mars",
+     "kind": "ORDER_ADMITTED",
+     "owner": "Bob",
+     "oid": "EQ-sell",
+     "side": "SELL",
+     "asset": "ARES",
+     "qty": 1000,
+     "limit": 100,
+     "tif": "GTC",
+     "hold": 1000,
+     "hold_asset": "ARES"
+    },
+    {
+     "t": 1.5,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "ORDER",
+      "oid": "EQ-buy",
+      "asset": "ARES",
+      "side": "BUY",
+      "qty": 1000,
+      "limit": 100,
+      "tif": "GTC",
+      "expiry": 604800.5,
+      "disp": "AUTO"
+     }
+    },
+    {
+     "t": 1.5,
+     "actor": "Mars",
+     "kind": "ORDER_ADMITTED",
+     "owner": "Alice",
+     "oid": "EQ-buy",
+     "side": "BUY",
+     "asset": "ARES",
+     "qty": 1000,
+     "limit": 100,
+     "tif": "GTC",
+     "hold": 100000,
+     "hold_asset": "ND"
+    },
+    {
+     "t": 1.5,
+     "actor": "Mars",
+     "kind": "FILL",
+     "exec_id": "MA-F1",
+     "asset": "ARES",
+     "qty": 1000,
+     "price": 100,
+     "buyer": "Alice",
+     "seller": "Bob",
+     "buy_oid": "EQ-buy",
+     "sell_oid": "EQ-sell",
+     "improvement": 0
+    }
+   ],
+   "mc_p50": 0.0004166666666666667,
+   "mc_p90": 0.0004166666666666667,
+   "mc_p99": 0.0004166666666666667,
+   "p_by_24h": 1.0,
+   "p_by_72h": 1.0,
+   "p_by_168h": 1.0,
+   "mc_packets": 0.0,
+   "direct_log": []
+  },
+  "Ceres": {
+   "completion_h": 2.636265876999177,
+   "times": {
+    "EQ:funding_imported_at_host": 1.4868103757919418,
+    "EQ:funding_receipt_at_home": 1.9826371981804163,
+    "EQ:order_sent": 1.982914975958194,
+    "EQ:first_fill": 2.1409666429559358,
+    "EQ:host_final_fill": 2.1409666429559358,
+    "EQ:seller_spendable": 2.1409666429559358,
+    "EQ:buyer_spendable": 2.636265876999177
+   },
+   "packets": 46,
+   "backbone": 44,
+   "direct": 2,
+   "trace": null,
+   "mc_p50": 2.636265876999177,
+   "mc_p90": 4.140197347701634,
+   "mc_p99": 7.112247168811949,
+   "p_by_24h": 1.0,
+   "p_by_72h": 1.0,
+   "p_by_168h": 1.0,
+   "mc_packets": 48.456,
+   "direct_log": [
+    {
+     "t": 1.982914975958194,
+     "te": 1.9834705315137497,
+     "ta": 2.1409666429559358,
+     "principal": "Alice",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 1.1341950246320187,
+     "p_loss": 0.08674085710146406,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 1.9995816426248607,
+     "te": 2.0001371981804166,
+     "ta": 2.1576330767433483,
+     "principal": "Alice",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 1.1341933446085413,
+     "p_loss": 0.08674073435771168,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  },
+  "Jupiter": {
+   "completion_h": 3.9460628598895373,
+   "times": {
+    "EQ:funding_imported_at_host": 1.996312586194441,
+    "EQ:funding_receipt_at_home": 2.661917098787716,
+    "EQ:order_sent": 2.6621948765654935,
+    "EQ:first_fill": 3.281063710001149,
+    "EQ:host_final_fill": 3.281063710001149,
+    "EQ:seller_spendable": 3.281063710001149,
+    "EQ:buyer_spendable": 3.9460628598895373
+   },
+   "packets": 48,
+   "backbone": 44,
+   "direct": 4,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "ORDER",
+      "oid": "EQ-sell",
+      "asset": "ARES",
+      "side": "SELL",
+      "qty": 1000,
+      "limit": 100,
+      "tif": "GTC",
+      "expiry": 2592000.0,
+      "disp": "AUTO"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Mars",
+     "kind": "ORDER_ADMITTED",
+     "owner": "Bob",
+     "oid": "EQ-sell",
+     "side": "SELL",
+     "asset": "ARES",
+     "qty": 1000,
+     "limit": 100,
+     "tif": "GTC",
+     "hold": 1000,
+     "hold_asset": "ARES"
+    },
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Jupiter",
+     "msg": {
+      "type": "FUND",
+      "req": "EQ-fund",
+      "asset": "ND",
+      "amount": 100000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Jupiter",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 100000,
+     "dst": "Mars",
+     "eid": "JU-X1",
+     "purpose": "FUND",
+     "ref": "EQ-fund"
+    },
+    {
+     "t": 7186.7253102999875,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 100000,
+     "eid": "JU-X1",
+     "src": "Jupiter",
+     "purpose": "FUND",
+     "ref": "EQ-fund"
+    },
+    {
+     "t": 9582.901555635777,
+     "actor": "Jupiter",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "JU-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 100000,
+     "dst": "Mars"
+    },
+    {
+     "t": 9583.901555635777,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "arrive": 11811.829356004137,
+     "lost": false,
+     "p_loss": 0.3
+    },
+    {
+     "t": 9643.901555635777,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "arrive": 11871.825670059836,
+     "lost": false,
+     "p_loss": 0.3
+    },
+    {
+     "t": 9703.901555635777,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "arrive": 11931.821984126032,
+     "lost": false,
+     "p_loss": 0.3
+    },
+    {
+     "t": 9763.901555635777,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 3,
+     "arrive": 11991.818298202727,
+     "lost": false,
+     "p_loss": 0.3
+    },
+    {
+     "t": 11811.829356004137,
+     "actor": "Mars",
+     "kind": "ORDER_ADMITTED",
+     "owner": "Alice",
+     "oid": "EQ-buy",
+     "side": "BUY",
+     "asset": "ARES",
+     "qty": 1000,
+     "limit": 100,
+     "tif": "GTC",
+     "hold": 100000,
+     "hold_asset": "ND"
+    },
+    {
+     "t": 11811.829356004137,
+     "actor": "Mars",
+     "kind": "FILL",
+     "exec_id": "MA-F1",
+     "asset": "ARES",
+     "qty": 1000,
+     "price": 100,
+     "buyer": "Alice",
+     "seller": "Bob",
+     "buy_oid": "EQ-buy",
+     "sell_oid": "EQ-sell",
+     "improvement": 0
+    },
+    {
+     "t": 11811.829356004137,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ARES",
+     "amount": 1000,
+     "dst": "Jupiter",
+     "eid": "MA-X1",
+     "purpose": "AUTO_FILL",
+     "ref": "MA-F1"
+    },
+    {
+     "t": 14205.826295602334,
+     "actor": "Jupiter",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ARES",
+     "amount": 1000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "AUTO_FILL",
+     "ref": "MA-F1"
+    },
+    {
+     "t": 16601.550151376417,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ARES",
+     "amount": 1000,
+     "dst": "Jupiter"
+    }
+   ],
+   "mc_p50": 3.97939285356597,
+   "mc_p90": 7.274123616990366,
+   "mc_p99": 12.291160178625343,
+   "p_by_24h": 1.0,
+   "p_by_72h": 1.0,
+   "p_by_168h": 1.0,
+   "mc_packets": 51.363,
+   "direct_log": [
+    {
+     "t": 2.6621948765654935,
+     "te": 2.662750432121049,
+     "ta": 3.281063710001149,
+     "principal": "Alice",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 4.458594445850586,
+     "p_loss": 0.30000882815485097,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.6788615432321605,
+     "te": 2.6794170987877157,
+     "ta": 3.297729352794399,
+     "principal": "Alice",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 4.4585870594847075,
+     "p_loss": 0.30000841452345606,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.695528209898827,
+     "te": 2.6960837654543823,
+     "ta": 3.3143949955905647,
+     "principal": "Alice",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "d": 4.458579673139865,
+     "p_loss": 0.30000800089299495,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 2.7121948765654937,
+     "te": 2.7127504321210494,
+     "ta": 3.3310606383896464,
+     "principal": "Alice",
+     "a": "Jupiter",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 3,
+     "d": 4.458572286816058,
+     "p_loss": 0.3000075872634673,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  },
+  "Saturn": {
+   "completion_h": 7.570301880607751,
+   "times": {
+    "EQ:funding_imported_at_host": 3.7896052071236297,
+    "EQ:funding_receipt_at_home": 5.053106544382255,
+    "EQ:order_sent": 5.053384322160033,
+    "EQ:first_fill": 6.3071698568401855,
+    "EQ:host_final_fill": 6.3071698568401855,
+    "EQ:seller_spendable": 6.3071698568401855,
+    "EQ:buyer_spendable": 7.570301880607751
+   },
+   "packets": 51,
+   "backbone": 44,
+   "direct": 7,
+   "trace": null,
+   "mc_p50": 10.59209733498437,
+   "mc_p90": 15.151094803438475,
+   "mc_p99": 21.628122222734714,
+   "p_by_24h": 0.995,
+   "p_by_72h": 1.0,
+   "p_by_168h": 1.0,
+   "mc_packets": 57.763,
+   "direct_log": [
+    {
+     "t": 5.053384322160033,
+     "te": 5.053939877715589,
+     "ta": 6.3071698568401855,
+     "principal": "Alice",
+     "a": "Saturn",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 9.038972235278242,
+     "p_loss": 0.5147629666235076,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 5.0700509888267,
+     "te": 5.070606544382255,
+     "ta": 6.323837679745304,
+     "principal": "Alice",
+     "a": "Saturn",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 9.038980576543976,
+     "p_loss": 0.5147632904226827,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 5.086717655493366,
+     "te": 5.087273211048922,
+     "ta": 6.340505502651696,
+     "principal": "Alice",
+     "a": "Saturn",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "d": 9.038988917818894,
+     "p_loss": 0.5147636142219982,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 5.103384322160033,
+     "te": 5.103939877715589,
+     "ta": 6.357173325559361,
+     "principal": "Alice",
+     "a": "Saturn",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 3,
+     "d": 9.038997259103,
+     "p_loss": 0.5147639380214544,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 5.1200509888267,
+     "te": 5.120606544382255,
+     "ta": 6.373841148468297,
+     "principal": "Alice",
+     "a": "Saturn",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 4,
+     "d": 9.039005600396276,
+     "p_loss": 0.5147642618210504,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 5.136717655493367,
+     "te": 5.137273211048922,
+     "ta": 6.390508971378506,
+     "principal": "Alice",
+     "a": "Saturn",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 5,
+     "d": 9.03901394169873,
+     "p_loss": 0.5147645856207866,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 5.153384322160034,
+     "te": 5.1539398777155885,
+     "ta": 6.407176794289986,
+     "principal": "Alice",
+     "a": "Saturn",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 6,
+     "d": 9.039022283010365,
+     "p_loss": 0.5147649094206632,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  },
+  "Uranus": {
+   "completion_h": 15.379977515621759,
+   "times": {
+    "EQ:funding_imported_at_host": 7.731734482519291,
+    "EQ:funding_receipt_at_home": 10.30921329469042,
+    "EQ:order_sent": 10.309491072468196,
+    "EQ:first_fill": 12.80295754931235,
+    "EQ:host_final_fill": 12.80295754931235,
+    "EQ:seller_spendable": 12.80295754931235,
+    "EQ:buyer_spendable": 15.379977515621759
+   },
+   "packets": 52,
+   "backbone": 44,
+   "direct": 8,
+   "trace": null,
+   "mc_p50": 26.760821339256374,
+   "mc_p90": 48.487606604285006,
+   "mc_p99": 70.30943568870781,
+   "p_by_24h": 0.338,
+   "p_by_72h": 0.992,
+   "p_by_168h": 1.0,
+   "mc_packets": 68.492,
+   "direct_log": [
+    {
+     "t": 10.309491072468196,
+     "te": 10.310046628023752,
+     "ta": 12.80295754931235,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 17.982203752633062,
+     "p_loss": 0.7627346870868226,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 10.326157739134864,
+     "te": 10.32671329469042,
+     "ta": 12.819624526035344,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 17.98220598942273,
+     "p_loss": 0.7627347295438269,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 10.34282440580153,
+     "te": 10.343379961357085,
+     "ta": 12.836291502766368,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "d": 17.982208226270327,
+     "p_loss": 0.7627347720019231,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 10.359491072468197,
+     "te": 10.360046628023753,
+     "ta": 12.852958479505425,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 3,
+     "d": 17.982210463175868,
+     "p_loss": 0.7627348144611116,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 10.376157739134863,
+     "te": 10.376713294690418,
+     "ta": 12.86962545625251,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 4,
+     "d": 17.982212700139335,
+     "p_loss": 0.7627348569213919,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 10.39282440580153,
+     "te": 10.393379961357086,
+     "ta": 12.886292433007627,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 5,
+     "d": 17.98221493716073,
+     "p_loss": 0.7627348993827643,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 10.409491072468196,
+     "te": 10.410046628023752,
+     "ta": 12.902959409770775,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 6,
+     "d": 17.98221717424007,
+     "p_loss": 0.7627349418452287,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 10.426157739134863,
+     "te": 10.426713294690419,
+     "ta": 12.919626386541951,
+     "principal": "Alice",
+     "a": "Uranus",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 7,
+     "d": 17.982219411377336,
+     "p_loss": 0.7627349843087853,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  },
+  "Neptune": {
+   "completion_h": 24.680758268125043,
+   "times": {
+    "EQ:funding_imported_at_host": 12.344081608326647,
+    "EQ:funding_receipt_at_home": 16.45940158142431,
+    "EQ:order_sent": 16.459679359202088,
+    "EQ:first_fill": 20.565327856353687,
+    "EQ:host_final_fill": 20.565327856353687,
+    "EQ:seller_spendable": 20.565327856353687,
+    "EQ:buyer_spendable": 24.680758268125043
+   },
+   "packets": 52,
+   "backbone": 44,
+   "direct": 8,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "ORDER",
+      "oid": "EQ-sell",
+      "asset": "ARES",
+      "side": "SELL",
+      "qty": 1000,
+      "limit": 100,
+      "tif": "GTC",
+      "expiry": 2592000.0,
+      "disp": "AUTO"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Mars",
+     "kind": "ORDER_ADMITTED",
+     "owner": "Bob",
+     "oid": "EQ-sell",
+     "side": "SELL",
+     "asset": "ARES",
+     "qty": 1000,
+     "limit": 100,
+     "tif": "GTC",
+     "hold": 1000,
+     "hold_asset": "ARES"
+    },
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Neptune",
+     "msg": {
+      "type": "FUND",
+      "req": "EQ-fund",
+      "asset": "ND",
+      "amount": 100000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Neptune",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 100000,
+     "dst": "Mars",
+     "eid": "NE-X1",
+     "purpose": "FUND",
+     "ref": "EQ-fund"
+    },
+    {
+     "t": 44438.69378997593,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 100000,
+     "eid": "NE-X1",
+     "src": "Neptune",
+     "purpose": "FUND",
+     "ref": "EQ-fund"
+    },
+    {
+     "t": 59253.845693127514,
+     "actor": "Neptune",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "NE-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 100000,
+     "dst": "Mars"
+    },
+    {
+     "t": 59254.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "arrive": 74035.18028287328,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 59314.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "arrive": 74095.18483654893,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 59374.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "arrive": 74155.18939022887,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 59434.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 3,
+     "arrive": 74215.19394391307,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 59494.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 4,
+     "arrive": 74275.19849760152,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 59554.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 5,
+     "arrive": 74335.20305129424,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 59614.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 6,
+     "arrive": 74395.20760499123,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 59674.845693127514,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 7,
+     "arrive": 74455.21215869248,
+     "lost": false,
+     "p_loss": 0.9064
+    },
+    {
+     "t": 74035.18028287328,
+     "actor": "Mars",
+     "kind": "ORDER_ADMITTED",
+     "owner": "Alice",
+     "oid": "EQ-buy",
+     "side": "BUY",
+     "asset": "ARES",
+     "qty": 1000,
+     "limit": 100,
+     "tif": "GTC",
+     "hold": 100000,
+     "hold_asset": "ND"
+    },
+    {
+     "t": 74035.18028287328,
+     "actor": "Mars",
+     "kind": "FILL",
+     "exec_id": "MA-F1",
+     "asset": "ARES",
+     "qty": 1000,
+     "price": 100,
+     "buyer": "Alice",
+     "seller": "Bob",
+     "buy_oid": "EQ-buy",
+     "sell_oid": "EQ-sell",
+     "improvement": 0
+    },
+    {
+     "t": 74035.18028287328,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ARES",
+     "amount": 1000,
+     "dst": "Neptune",
+     "eid": "MA-X1",
+     "purpose": "AUTO_FILL",
+     "ref": "MA-F1"
+    },
+    {
+     "t": 88850.72976525016,
+     "actor": "Neptune",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ARES",
+     "amount": 1000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "AUTO_FILL",
+     "ref": "MA-F1"
+    },
+    {
+     "t": 103670.69959204752,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ARES",
+     "amount": 1000,
+     "dst": "Neptune"
+    }
+   ],
+   "mc_p50": 74.43290744705193,
+   "mc_p90": 127.05101861730662,
+   "mc_p99": 201.83732430365515,
+   "p_by_24h": 0.0,
+   "p_by_72h": 0.473,
+   "p_by_168h": 0.973,
+   "mc_packets": 96.504,
+   "direct_log": [
+    {
+     "t": 16.459679359202088,
+     "te": 16.460234914757642,
+     "ta": 20.565327856353687,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 0,
+     "d": 29.612710091270415,
+     "p_loss": 0.9064273189572077,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 16.476346025868754,
+     "te": 16.47690158142431,
+     "ta": 20.581995787930257,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 1,
+     "d": 29.612719216507184,
+     "p_loss": 0.9064273872670123,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 16.49301269253542,
+     "te": 16.493568248090977,
+     "ta": 20.59866371950802,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 2,
+     "d": 29.61272834175255,
+     "p_loss": 0.9064274555768316,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 16.50967935920209,
+     "te": 16.510234914757643,
+     "ta": 20.61533165108696,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 3,
+     "d": 29.612737467006436,
+     "p_loss": 0.9064275238866646,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 16.526346025868754,
+     "te": 16.52690158142431,
+     "ta": 20.63199958266709,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 4,
+     "d": 29.612746592268866,
+     "p_loss": 0.9064275921965117,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 16.54301269253542,
+     "te": 16.543568248090978,
+     "ta": 20.6486675142484,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 5,
+     "d": 29.612755717539837,
+     "p_loss": 0.9064276605063729,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 16.559679359202086,
+     "te": 16.560234914757643,
+     "ta": 20.665335445830898,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 6,
+     "d": 29.612764842819356,
+     "p_loss": 0.9064277288162482,
+     "lost": false,
+     "killed": false
+    },
+    {
+     "t": 16.576346025868755,
+     "te": 16.57690158142431,
+     "ta": 20.682003377414578,
+     "principal": "Alice",
+     "a": "Neptune",
+     "b": "Mars",
+     "label": "ORDER",
+     "copy": 7,
+     "d": 29.612773968107415,
+     "p_loss": 0.9064277971261375,
+     "lost": false,
+     "killed": false
+    }
+   ]
+  }
+ }
+}

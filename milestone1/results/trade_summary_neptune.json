@@ -1,0 +1,37 @@
+{
+  "label": "conditional no-loss; cold session; no pre-epoch traffic",
+  "route": [
+    "Neptune",
+    "Relay A",
+    "Mars"
+  ],
+  "backbone_originations": 8,
+  "backbone_launches": 68,
+  "direct_launches": 1,
+  "total_launches": 69,
+  "direct_required_success_probability": 0.09364013514337875,
+  "complete_hour": 32.9246935318488,
+  "clearer_knows_complete_hour": 37.04202125803944,
+  "backed_claim_hour": 20.575393009265753,
+  "discharge_hour": 28.80803898476346,
+  "peak_cash_encumbered": 100000,
+  "peak_shares_encumbered": 1000,
+  "cash_asset_hours": 2880776.120698568,
+  "share_asset_hours": 32924.41575407103,
+  "capital_utilization": 0.2,
+  "capital_efficiency": 1,
+  "types": {
+    "SYN": 2,
+    "HOP_RECEIPT": 34,
+    "SYN_ACK": 2,
+    "ACK": 2,
+    "RESERVATION": 2,
+    "DATA_ACK": 14,
+    "PREPARE": 2,
+    "PREPARED": 2,
+    "COMMIT": 2,
+    "APPLIED": 2,
+    "RELEASE": 2,
+    "RELEASED": 2
+  }
+}

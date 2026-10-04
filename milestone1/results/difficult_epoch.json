@@ -1,0 +1,89 @@
+{
+  "selection": "maximum hourly screened best-route delay to Mars",
+  "origin": "Neptune",
+  "hour": 993506.0,
+  "exact_route": {
+    "path": [
+      "Neptune",
+      "Relay A",
+      "Relay B",
+      "Mars"
+    ],
+    "arrival_s": 3576640492.5879273,
+    "delay_s": 18892.58792734146,
+    "hops": [
+      {
+        "sender": "Neptune",
+        "receiver": "Relay A",
+        "ready_s": 3576621600.0,
+        "emission_s": 3576621601.0,
+        "arrival_s": 3576636847.746614,
+        "distance_au": 30.55337784854182,
+        "clearance_au": 2.808093796847156,
+        "loss": 0.4572288794210563
+      },
+      {
+        "sender": "Relay A",
+        "receiver": "Relay B",
+        "ready_s": 3576636848.746614,
+        "emission_s": 3576636849.746614,
+        "arrival_s": 3576638845.9099984,
+        "distance_au": 4.000167096384035,
+        "clearance_au": 1.9999164482856995,
+        "loss": 0.07688673859627981
+      },
+      {
+        "sender": "Relay B",
+        "receiver": "Mars",
+        "ready_s": 3576638846.9099984,
+        "emission_s": 3576638847.9099984,
+        "arrival_s": 3576640492.5879273,
+        "distance_au": 3.2958156565359316,
+        "clearance_au": 1.4286688236934153,
+        "loss": 0.06379079056892689
+      }
+    ]
+  },
+  "other_direction": {
+    "path": [
+      "Mars",
+      "Relay B",
+      "Relay A",
+      "Neptune"
+    ],
+    "arrival_s": 3576640490.993301,
+    "delay_s": 18890.993300914764,
+    "hops": [
+      {
+        "sender": "Mars",
+        "receiver": "Relay B",
+        "ready_s": 3576621600.0,
+        "emission_s": 3576621601.0,
+        "arrival_s": 3576623244.962702,
+        "distance_au": 3.294382393085418,
+        "clearance_au": 1.4293319526109665,
+        "loss": 0.06376395349544461
+      },
+      {
+        "sender": "Relay B",
+        "receiver": "Relay A",
+        "ready_s": 3576623245.962702,
+        "emission_s": 3576623246.962702,
+        "arrival_s": 3576625242.959321,
+        "distance_au": 3.999832910954568,
+        "clearance_au": 2.000083541244257,
+        "loss": 0.07688056875562699
+      },
+      {
+        "sender": "Relay A",
+        "receiver": "Neptune",
+        "ready_s": 3576625243.959321,
+        "emission_s": 3576625244.959321,
+        "arrival_s": 3576640490.993301,
+        "distance_au": 30.55194978135692,
+        "clearance_au": 2.8082634670541577,
+        "loss": 0.45721337692714714
+      }
+    ]
+  }
+}

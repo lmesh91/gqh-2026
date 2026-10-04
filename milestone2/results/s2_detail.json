@@ -1,0 +1,7371 @@
+{
+ "incident": {
+  "kind": "reset",
+  "node": "Mars",
+  "start": 0.75
+ },
+ "runs": {
+  "rising:baseline_no_incident": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 1.9826371981804163,
+    "F1:Cara:instr_sent": 1.982914975958194,
+    "F1:Alice:funding_receipt_at_home": 2.262180124516946,
+    "F1:Alice:instr_sent": 2.2624579022947238,
+    "F1:open": 2.502372638071735,
+    "F1:maturity": 302.50237263807173,
+    "F1:Cara:report_HELD": 2.636543654776955,
+    "F1:Cara:report_OPEN": 2.998242905213995,
+    "F1:Alice:report_OPEN": 3.067684041147919,
+    "F1:discharge": 326.50237263807173,
+    "F1:backed_claim": 326.50237263807173,
+    "F1:Cara:payout_spendable": 328.03209814385,
+    "F1:Alice:payout_spendable": 328.1735595202306
+   },
+   "completion": 328.1735595202306,
+   "packets": 141,
+   "backbone": 136,
+   "direct": 5,
+   "originations": 15,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 5352.51735285099,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 6107.639015817677,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 7137.493913449499,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 7138.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 7707.479914641369,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7198.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 7767.479076276053,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7707.479914641369,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 8143.848448261006,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 8144.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 9008.541497058246,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8204.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 9068.539265467696,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8264.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 9128.537033865874,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1089008.5414970582,
+     "fixing": 1175408.5414970582
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 110
+     }
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 110,
+     "source": "Bob"
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 120
+     }
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 120,
+     "source": "Bob"
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 130
+     }
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 130,
+     "source": "Bob"
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 135
+     }
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 135,
+     "source": "Bob"
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 125
+     }
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 125,
+     "source": "Bob"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 125,
+     "used": "observation 5",
+     "net_long": 50000,
+     "gross_long": 130000,
+     "gross_short": 30000
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1180915.55331786,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1181424.81427283,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1182752.0759378127,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1183431.3566811974,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     1,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     2,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     3,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     4,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 200000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 50000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 52386684.23654479,
+     "escrow_h": 51840000.0,
+     "remote_h": 116797.00095624328
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 136,
+   "lost_launches": 0
+  },
+  "rising:incident": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 126.96990292455216,
+    "F1:Cara:instr_sent": 126.97018070232993,
+    "F1:Cara:report_HELD": 127.6276384405516,
+    "F1:Alice:funding_receipt_at_home": 127.89065167189736,
+    "F1:Alice:instr_sent": 127.89092944967514,
+    "F1:open": 128.12608303615744,
+    "F1:maturity": 428.12608303615747,
+    "F1:Cara:report_OPEN": 128.62738266806784,
+    "F1:Alice:report_OPEN": 128.68778979194138,
+    "F1:discharge": 452.12608303615747,
+    "F1:backed_claim": 452.12608303615747,
+    "F1:Cara:payout_spendable": 453.67278342414073,
+    "F1:Alice:payout_spendable": 453.7907160869115
+   },
+   "completion": 453.7907160869115,
+   "packets": 197,
+   "backbone": 192,
+   "direct": 5,
+   "originations": 19,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 455287.2320830404,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 457091.65052838775,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 457092.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 457655.9767077488,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457152.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 457715.97603650554,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457655.9767077488,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 458383.12471087126,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 460406.3460188305,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 460407.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 461253.8989301668,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460467.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 461313.89661407226,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460527.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 461373.8942979666,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1541253.8989301668,
+     "fixing": 1627653.8989301668
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 110
+     }
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 110,
+     "source": "Bob"
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 120
+     }
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 120,
+     "source": "Bob"
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 130
+     }
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 130,
+     "source": "Bob"
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 135
+     }
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 135,
+     "source": "Bob"
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 125
+     }
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 125,
+     "source": "Bob"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 125,
+     "used": "observation 5",
+     "net_long": 50000,
+     "gross_long": 130000,
+     "gross_short": 30000
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633222.0203269066,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633646.5779128815,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1635078.9187577334,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1635645.2691406205,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     5,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     6,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     6,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     6,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     5,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     5,
+     "DATA"
+    ],
+    [
+     95320.2209665587,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     6,
+     "DATA"
+    ],
+    [
+     96572.08905845789,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     5,
+     "DATA"
+    ],
+    [
+     185297.65579997923,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     6,
+     "DATA"
+    ],
+    [
+     187033.14053343845,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     5,
+     "DATA"
+    ],
+    [
+     275282.8530192226,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     6,
+     "DATA"
+    ],
+    [
+     277488.9218292921,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     5,
+     "DATA"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     6,
+     0
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     13,
+     "TRANSFER",
+     449877.39608371264
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     5,
+     0
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     12,
+     "TRANSFER",
+     452315.5112122248
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "APP_RESUBMIT",
+     "Mars",
+     13,
+     "TRANSFER"
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     7,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "APP_RESUBMIT",
+     "Mars",
+     12,
+     "TRANSFER"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     8,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     9,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     10,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 200000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 50000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 72486498.39748931,
+     "escrow_h": 51840000.0,
+     "remote_h": 116433.75208897569
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 192,
+   "lost_launches": 0
+  },
+  "rising:incident_no_maintenance": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 126.96990292455216,
+    "F1:Cara:instr_sent": 126.97018070232993,
+    "F1:Cara:report_HELD": 127.6276384405516,
+    "F1:Alice:funding_receipt_at_home": 127.89065167189736,
+    "F1:Alice:instr_sent": 127.89092944967514,
+    "F1:open": 128.12608303615744,
+    "F1:maturity": 428.12608303615747,
+    "F1:Cara:report_OPEN": 128.62738266806784,
+    "F1:Alice:report_OPEN": 128.68778979194138,
+    "F1:discharge": 452.12608303615747,
+    "F1:backed_claim": 452.12608303615747,
+    "F1:Cara:payout_spendable": 453.67278342414073,
+    "F1:Alice:payout_spendable": 453.7907160869115
+   },
+   "completion": 453.7907160869115,
+   "packets": 197,
+   "backbone": 192,
+   "direct": 5,
+   "originations": 19,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 455287.2320830404,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 457091.65052838775,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 457092.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 457655.9767077488,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457152.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 457715.97603650554,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457655.9767077488,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 458383.12471087126,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 460406.3460188305,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 460407.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 461253.8989301668,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460467.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 461313.89661407226,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460527.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 461373.8942979666,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1541253.8989301668,
+     "fixing": 1627653.8989301668
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 110
+     }
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 110,
+     "source": "Bob"
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 120
+     }
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 120,
+     "source": "Bob"
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 130
+     }
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 130,
+     "source": "Bob"
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 135
+     }
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 135,
+     "source": "Bob"
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 125
+     }
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 125,
+     "source": "Bob"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 125,
+     "used": "observation 5",
+     "net_long": 50000,
+     "gross_long": 130000,
+     "gross_short": 30000
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633222.0203269066,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633646.5779128815,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1635078.9187577334,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1635645.2691406205,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     11,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     12,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     12,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     12,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     11,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     11,
+     "DATA"
+    ],
+    [
+     95320.2209665587,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     12,
+     "DATA"
+    ],
+    [
+     96572.08905845789,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     11,
+     "DATA"
+    ],
+    [
+     185297.65579997923,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     12,
+     "DATA"
+    ],
+    [
+     187033.14053343845,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     11,
+     "DATA"
+    ],
+    [
+     275282.8530192226,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     12,
+     "DATA"
+    ],
+    [
+     277488.9218292921,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     11,
+     "DATA"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     12,
+     0
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     24,
+     "TRANSFER",
+     449877.39608371264
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     11,
+     0
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     23,
+     "TRANSFER",
+     452315.5112122248
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "APP_RESUBMIT",
+     "Mars",
+     24,
+     "TRANSFER"
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     13,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "APP_RESUBMIT",
+     "Mars",
+     23,
+     "TRANSFER"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     14,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     15,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     16,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 200000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 50000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 72486498.39748931,
+     "escrow_h": 51840000.0,
+     "remote_h": 116433.75208897569
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 192,
+   "lost_launches": 0
+  },
+  "rising:no_incident_no_maintenance": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 1.9826371981804163,
+    "F1:Cara:instr_sent": 1.982914975958194,
+    "F1:Alice:funding_receipt_at_home": 2.262180124516946,
+    "F1:Alice:instr_sent": 2.2624579022947238,
+    "F1:open": 2.502372638071735,
+    "F1:maturity": 302.50237263807173,
+    "F1:Cara:report_HELD": 2.636543654776955,
+    "F1:Cara:report_OPEN": 2.998242905213995,
+    "F1:Alice:report_OPEN": 3.067684041147919,
+    "F1:discharge": 326.50237263807173,
+    "F1:backed_claim": 326.50237263807173,
+    "F1:Cara:payout_spendable": 328.03209814385,
+    "F1:Alice:payout_spendable": 328.1735595202306
+   },
+   "completion": 328.1735595202306,
+   "packets": 141,
+   "backbone": 136,
+   "direct": 5,
+   "originations": 15,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 5352.51735285099,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 6107.639015817677,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 7137.493913449499,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 7138.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 7707.479914641369,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7198.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 7767.479076276053,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7707.479914641369,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 8143.848448261006,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 8144.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 9008.541497058246,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8204.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 9068.539265467696,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8264.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 9128.537033865874,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1089008.5414970582,
+     "fixing": 1175408.5414970582
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 110
+     }
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 110,
+     "source": "Bob"
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 120
+     }
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 120,
+     "source": "Bob"
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 130
+     }
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 130,
+     "source": "Bob"
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 135
+     }
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 135,
+     "source": "Bob"
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 125
+     }
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 125,
+     "source": "Bob"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 125,
+     "used": "observation 5",
+     "net_long": 50000,
+     "gross_long": 130000,
+     "gross_short": 30000
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1180915.55331786,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1181424.81427283,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1182752.0759378127,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1183431.3566811974,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     17,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     18,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     19,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     20,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 200000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 50000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 52386684.23654479,
+     "escrow_h": 51840000.0,
+     "remote_h": 116797.00095624328
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 136,
+   "lost_launches": 0
+  },
+  "rising:incident_restart_notice": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 3.2283678808659664,
+    "F1:Cara:instr_sent": 3.228645658643744,
+    "F1:Alice:funding_receipt_at_home": 3.5776622030864482,
+    "F1:Alice:instr_sent": 3.577939980864226,
+    "F1:open": 3.8178057800571166,
+    "F1:maturity": 303.8178057800571,
+    "F1:Cara:report_HELD": 3.8823102600094974,
+    "F1:Cara:report_OPEN": 4.313732346347284,
+    "F1:Alice:report_OPEN": 4.383077116086085,
+    "F1:discharge": 327.8178057800571,
+    "F1:backed_claim": 327.8178057800571,
+    "F1:Cara:payout_spendable": 329.3477078633755,
+    "F1:Alice:payout_spendable": 329.4889141880203
+   },
+   "completion": 329.4889141880203,
+   "packets": 189,
+   "backbone": 184,
+   "direct": 5,
+   "originations": 21,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 9836.955914518912,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 10843.518852910609,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 11622.12437111748,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 11623.12437111748,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 12192.047771258707,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 11683.12437111748,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 12252.046934563845,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 12192.047771258707,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 12879.583931111214,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 12880.583931111214,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 13744.10080820562,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 12940.583931111214,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 13804.098575725548,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 13000.583931111214,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 13864.096343234205,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 13744.10080820562,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 13744.10080820562,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1093744.1008082055,
+     "fixing": 1180144.1008082055
+    },
+    {
+     "t": 229744.1008082056,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 110
+     }
+    },
+    {
+     "t": 229744.1008082056,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 110,
+     "source": "Bob"
+    },
+    {
+     "t": 445744.1008082056,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 120
+     }
+    },
+    {
+     "t": 445744.1008082056,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 120,
+     "source": "Bob"
+    },
+    {
+     "t": 661744.1008082057,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 130
+     }
+    },
+    {
+     "t": 661744.1008082057,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 130,
+     "source": "Bob"
+    },
+    {
+     "t": 877744.1008082057,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 135
+     }
+    },
+    {
+     "t": 877744.1008082057,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 135,
+     "source": "Bob"
+    },
+    {
+     "t": 1093744.1008082055,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 125
+     }
+    },
+    {
+     "t": 1093744.1008082055,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 125,
+     "source": "Bob"
+    },
+    {
+     "t": 1180144.1008082055,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 125,
+     "used": "observation 5",
+     "net_long": 50000,
+     "gross_long": 130000,
+     "gross_short": 30000
+    },
+    {
+     "t": 1180144.1008082055,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1180144.1008082055,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1185651.7483081517,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1186160.0910768732,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1187488.4828854415,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1188166.5394503684,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     21,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     22,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "RESTART_NOTICE",
+     "Ceres",
+     47,
+     "RESTART"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "RESTART_NOTICE",
+     "Earth",
+     48,
+     "RESTART"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     23,
+     "Mars>Relay A>Ceres"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     24,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     22,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     22,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     21,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     21,
+     "DATA"
+    ],
+    [
+     8051.840900420752,
+     "Ceres",
+     "RESTART_RESUBMIT",
+     "Mars",
+     46,
+     "TRANSFER"
+    ],
+    [
+     8807.072822952185,
+     "Earth",
+     "RESTART_RESUBMIT",
+     "Mars",
+     45,
+     "TRANSFER"
+    ],
+    [
+     1180144.1008082055,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     25,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1180144.1008082055,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     26,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 200000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 50000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 52597152.88452092,
+     "escrow_h": 51840000.0,
+     "remote_h": 116792.75137855123
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 184,
+   "lost_launches": 0
+  },
+  "rising:incident_immediate_recovery": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 102.96572282155363,
+    "F1:Cara:instr_sent": 102.96600059933141,
+    "F1:Cara:report_HELD": 103.6226880351056,
+    "F1:Alice:funding_receipt_at_home": 103.89326794317563,
+    "F1:Alice:instr_sent": 103.89354572095341,
+    "F1:open": 104.12962243148682,
+    "F1:maturity": 404.12962243148684,
+    "F1:Cara:report_OPEN": 104.62987698645836,
+    "F1:Alice:report_OPEN": 104.69198176600399,
+    "F1:discharge": 428.12962243148684,
+    "F1:backed_claim": 428.12962243148684,
+    "F1:Cara:payout_spendable": 429.67306350501906,
+    "F1:Alice:payout_spendable": 429.7953557094874
+   },
+   "completion": 429.7953557094874,
+   "packets": 197,
+   "backbone": 192,
+   "direct": 5,
+   "originations": 19,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 368875.9461336878,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 370676.60215759306,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 370677.60215759306,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 371241.9181474128,
+     "lost": false,
+     "p_loss": 0.0861
+    },
+    {
+     "t": 370737.60215759306,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 371301.91744417115,
+     "lost": false,
+     "p_loss": 0.0861
+    },
+    {
+     "t": 371241.9181474128,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 371990.19172944716,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 374015.76459543227,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 374016.76459543227,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 374866.64075335255,
+     "lost": false,
+     "p_loss": 0.127
+    },
+    {
+     "t": 374076.76459543227,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 374926.6384533197,
+     "lost": false,
+     "p_loss": 0.127
+    },
+    {
+     "t": 374136.76459543227,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 374986.63615327573,
+     "lost": false,
+     "p_loss": 0.127
+    },
+    {
+     "t": 374866.64075335255,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 374866.64075335255,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1454866.6407533525,
+     "fixing": 1541266.6407533525
+    },
+    {
+     "t": 590866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 110
+     }
+    },
+    {
+     "t": 590866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 110,
+     "source": "Bob"
+    },
+    {
+     "t": 806866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 120
+     }
+    },
+    {
+     "t": 806866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 120,
+     "source": "Bob"
+    },
+    {
+     "t": 1022866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 130
+     }
+    },
+    {
+     "t": 1022866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 130,
+     "source": "Bob"
+    },
+    {
+     "t": 1238866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 135
+     }
+    },
+    {
+     "t": 1238866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 135,
+     "source": "Bob"
+    },
+    {
+     "t": 1454866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 125
+     }
+    },
+    {
+     "t": 1454866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 125,
+     "source": "Bob"
+    },
+    {
+     "t": 1541266.6407533525,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 125,
+     "used": "observation 5",
+     "net_long": 50000,
+     "gross_long": 130000,
+     "gross_short": 30000
+    },
+    {
+     "t": 1541266.6407533525,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1541266.6407533525,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1546823.0286180687,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1547263.2805541547,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1548676.0147633373,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1549263.2893944508,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     27,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     28,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     28,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     28,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     27,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     27,
+     "DATA"
+    ],
+    [
+     95320.2209665587,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     28,
+     "DATA"
+    ],
+    [
+     96572.08905845789,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     27,
+     "DATA"
+    ],
+    [
+     185297.65579997923,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     28,
+     "DATA"
+    ],
+    [
+     187033.14053343845,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     27,
+     "DATA"
+    ],
+    [
+     275282.8530192226,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     28,
+     "DATA"
+    ],
+    [
+     277488.9218292921,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     27,
+     "DATA"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     28,
+     0
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     59,
+     "TRANSFER",
+     363477.39608371264
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT",
+     "Mars",
+     59,
+     "TRANSFER"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     29,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     27,
+     0
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     58,
+     "TRANSFER",
+     365915.5112122248
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT",
+     "Mars",
+     58,
+     "TRANSFER"
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     30,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1541266.6407533525,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     31,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1541266.6407533525,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     32,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 200000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 50000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 68647045.4576588,
+     "escrow_h": 51840000.0,
+     "remote_h": 116498.2452806758
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 192,
+   "lost_launches": 0
+  },
+  "falling:baseline_no_incident": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 1.9826371981804163,
+    "F1:Cara:instr_sent": 1.982914975958194,
+    "F1:Alice:funding_receipt_at_home": 2.262180124516946,
+    "F1:Alice:instr_sent": 2.2624579022947238,
+    "F1:open": 2.502372638071735,
+    "F1:maturity": 302.50237263807173,
+    "F1:Cara:report_HELD": 2.636543654776955,
+    "F1:Cara:report_OPEN": 2.998242905213995,
+    "F1:Alice:report_OPEN": 3.067684041147919,
+    "F1:discharge": 326.50237263807173,
+    "F1:backed_claim": 326.50237263807173,
+    "F1:Cara:payout_spendable": 328.03209814385,
+    "F1:Alice:payout_spendable": 328.1735595202306
+   },
+   "completion": 328.1735595202306,
+   "packets": 141,
+   "backbone": 136,
+   "direct": 5,
+   "originations": 15,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 5352.51735285099,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 6107.639015817677,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 7137.493913449499,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 7138.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 7707.479914641369,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7198.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 7767.479076276053,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7707.479914641369,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 8143.848448261006,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 8144.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 9008.541497058246,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8204.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 9068.539265467696,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8264.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 9128.537033865874,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1089008.5414970582,
+     "fixing": 1175408.5414970582
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 90
+     }
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 90,
+     "source": "Bob"
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 80
+     }
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 80,
+     "source": "Bob"
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 70
+     }
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 70,
+     "source": "Bob"
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 65
+     }
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 65,
+     "source": "Bob"
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 75
+     }
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 75,
+     "source": "Bob"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 75,
+     "used": "observation 5",
+     "net_long": -50000,
+     "gross_long": 30000,
+     "gross_short": 130000
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1180915.55331786,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1181424.81427283,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1182752.0759378127,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1183431.3566811974,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     33,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     34,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     35,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     36,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 100000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 150000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 52372538.09890673,
+     "escrow_h": 51840000.0,
+     "remote_h": 116797.00095624328
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 136,
+   "lost_launches": 0
+  },
+  "falling:incident": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 126.96990292455216,
+    "F1:Cara:instr_sent": 126.97018070232993,
+    "F1:Cara:report_HELD": 127.6276384405516,
+    "F1:Alice:funding_receipt_at_home": 127.89065167189736,
+    "F1:Alice:instr_sent": 127.89092944967514,
+    "F1:open": 128.12608303615744,
+    "F1:maturity": 428.12608303615747,
+    "F1:Cara:report_OPEN": 128.62738266806784,
+    "F1:Alice:report_OPEN": 128.68778979194138,
+    "F1:discharge": 452.12608303615747,
+    "F1:backed_claim": 452.12608303615747,
+    "F1:Cara:payout_spendable": 453.67278342414073,
+    "F1:Alice:payout_spendable": 453.7907160869115
+   },
+   "completion": 453.7907160869115,
+   "packets": 197,
+   "backbone": 192,
+   "direct": 5,
+   "originations": 19,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 455287.2320830404,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 457091.65052838775,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 457092.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 457655.9767077488,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457152.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 457715.97603650554,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457655.9767077488,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 458383.12471087126,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 460406.3460188305,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 460407.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 461253.8989301668,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460467.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 461313.89661407226,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460527.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 461373.8942979666,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1541253.8989301668,
+     "fixing": 1627653.8989301668
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 90
+     }
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 90,
+     "source": "Bob"
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 80
+     }
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 80,
+     "source": "Bob"
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 70
+     }
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 70,
+     "source": "Bob"
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 65
+     }
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 65,
+     "source": "Bob"
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 75
+     }
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 75,
+     "source": "Bob"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 75,
+     "used": "observation 5",
+     "net_long": -50000,
+     "gross_long": 30000,
+     "gross_short": 130000
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633222.0203269066,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633646.5779128815,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1635078.9187577334,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1635645.2691406205,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     37,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     38,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     38,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     38,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     37,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     37,
+     "DATA"
+    ],
+    [
+     95320.2209665587,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     38,
+     "DATA"
+    ],
+    [
+     96572.08905845789,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     37,
+     "DATA"
+    ],
+    [
+     185297.65579997923,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     38,
+     "DATA"
+    ],
+    [
+     187033.14053343845,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     37,
+     "DATA"
+    ],
+    [
+     275282.8530192226,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     38,
+     "DATA"
+    ],
+    [
+     277488.9218292921,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     37,
+     "DATA"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     38,
+     0
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     81,
+     "TRANSFER",
+     449877.39608371264
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     37,
+     0
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     80,
+     "TRANSFER",
+     452315.5112122248
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "APP_RESUBMIT",
+     "Mars",
+     81,
+     "TRANSFER"
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     39,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "APP_RESUBMIT",
+     "Mars",
+     80,
+     "TRANSFER"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     40,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     41,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     42,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 100000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 150000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 72474705.13121222,
+     "escrow_h": 51840000.0,
+     "remote_h": 116433.75208897569
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 192,
+   "lost_launches": 0
+  },
+  "falling:incident_no_maintenance": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 126.96990292455216,
+    "F1:Cara:instr_sent": 126.97018070232993,
+    "F1:Cara:report_HELD": 127.6276384405516,
+    "F1:Alice:funding_receipt_at_home": 127.89065167189736,
+    "F1:Alice:instr_sent": 127.89092944967514,
+    "F1:open": 128.12608303615744,
+    "F1:maturity": 428.12608303615747,
+    "F1:Cara:report_OPEN": 128.62738266806784,
+    "F1:Alice:report_OPEN": 128.68778979194138,
+    "F1:discharge": 452.12608303615747,
+    "F1:backed_claim": 452.12608303615747,
+    "F1:Cara:payout_spendable": 453.67278342414073,
+    "F1:Alice:payout_spendable": 453.7907160869115
+   },
+   "completion": 453.7907160869115,
+   "packets": 197,
+   "backbone": 192,
+   "direct": 5,
+   "originations": 19,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 455287.2320830404,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 457091.65052838775,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 457092.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 457655.9767077488,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457152.65052838775,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 457715.97603650554,
+     "lost": false,
+     "p_loss": 0.0859
+    },
+    {
+     "t": 457655.9767077488,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 458383.12471087126,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 460406.3460188305,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 460407.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 461253.8989301668,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460467.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 461313.89661407226,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 460527.3460188305,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 461373.8942979666,
+     "lost": false,
+     "p_loss": 0.1265
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 461253.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1541253.8989301668,
+     "fixing": 1627653.8989301668
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 90
+     }
+    },
+    {
+     "t": 677253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 90,
+     "source": "Bob"
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 80
+     }
+    },
+    {
+     "t": 893253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 80,
+     "source": "Bob"
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 70
+     }
+    },
+    {
+     "t": 1109253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 70,
+     "source": "Bob"
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 65
+     }
+    },
+    {
+     "t": 1325253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 65,
+     "source": "Bob"
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 75
+     }
+    },
+    {
+     "t": 1541253.8989301668,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 75,
+     "source": "Bob"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 75,
+     "used": "observation 5",
+     "net_long": -50000,
+     "gross_long": 30000,
+     "gross_short": 130000
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1627653.8989301668,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633222.0203269066,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1633646.5779128815,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1635078.9187577334,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1635645.2691406205,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     43,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     44,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     44,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     44,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     43,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     43,
+     "DATA"
+    ],
+    [
+     95320.2209665587,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     44,
+     "DATA"
+    ],
+    [
+     96572.08905845789,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     43,
+     "DATA"
+    ],
+    [
+     185297.65579997923,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     44,
+     "DATA"
+    ],
+    [
+     187033.14053343845,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     43,
+     "DATA"
+    ],
+    [
+     275282.8530192226,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     44,
+     "DATA"
+    ],
+    [
+     277488.9218292921,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     43,
+     "DATA"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     44,
+     0
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     92,
+     "TRANSFER",
+     449877.39608371264
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     43,
+     0
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     91,
+     "TRANSFER",
+     452315.5112122248
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "APP_RESUBMIT",
+     "Mars",
+     92,
+     "TRANSFER"
+    ],
+    [
+     449877.39608371264,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     45,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "APP_RESUBMIT",
+     "Mars",
+     91,
+     "TRANSFER"
+    ],
+    [
+     452315.5112122248,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     46,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     47,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1627653.8989301668,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     48,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 100000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 150000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 72474705.13121222,
+     "escrow_h": 51840000.0,
+     "remote_h": 116433.75208897569
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 192,
+   "lost_launches": 0
+  },
+  "falling:no_incident_no_maintenance": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 1.9826371981804163,
+    "F1:Cara:instr_sent": 1.982914975958194,
+    "F1:Alice:funding_receipt_at_home": 2.262180124516946,
+    "F1:Alice:instr_sent": 2.2624579022947238,
+    "F1:open": 2.502372638071735,
+    "F1:maturity": 302.50237263807173,
+    "F1:Cara:report_HELD": 2.636543654776955,
+    "F1:Cara:report_OPEN": 2.998242905213995,
+    "F1:Alice:report_OPEN": 3.067684041147919,
+    "F1:discharge": 326.50237263807173,
+    "F1:backed_claim": 326.50237263807173,
+    "F1:Cara:payout_spendable": 328.03209814385,
+    "F1:Alice:payout_spendable": 328.1735595202306
+   },
+   "completion": 328.1735595202306,
+   "packets": 141,
+   "backbone": 136,
+   "direct": 5,
+   "originations": 15,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 5352.51735285099,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 6107.639015817677,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 7137.493913449499,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 7138.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 7707.479914641369,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7198.493913449499,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 7767.479076276053,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 7707.479914641369,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 8143.848448261006,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 8144.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 9008.541497058246,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8204.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 9068.539265467696,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 8264.848448261006,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 9128.537033865874,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 9008.541497058246,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1089008.5414970582,
+     "fixing": 1175408.5414970582
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 90
+     }
+    },
+    {
+     "t": 225008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 90,
+     "source": "Bob"
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 80
+     }
+    },
+    {
+     "t": 441008.54149705824,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 80,
+     "source": "Bob"
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 70
+     }
+    },
+    {
+     "t": 657008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 70,
+     "source": "Bob"
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 65
+     }
+    },
+    {
+     "t": 873008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 65,
+     "source": "Bob"
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 75
+     }
+    },
+    {
+     "t": 1089008.5414970582,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 75,
+     "source": "Bob"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 75,
+     "used": "observation 5",
+     "net_long": -50000,
+     "gross_long": 30000,
+     "gross_short": 130000
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1175408.5414970582,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1180915.55331786,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1181424.81427283,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1182752.0759378127,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1183431.3566811974,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     49,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     50,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     51,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1175408.5414970582,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     52,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 100000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 150000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 52372538.09890673,
+     "escrow_h": 51840000.0,
+     "remote_h": 116797.00095624328
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 136,
+   "lost_launches": 0
+  },
+  "falling:incident_restart_notice": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 3.2283678808659664,
+    "F1:Cara:instr_sent": 3.228645658643744,
+    "F1:Alice:funding_receipt_at_home": 3.5776622030864482,
+    "F1:Alice:instr_sent": 3.577939980864226,
+    "F1:open": 3.8178057800571166,
+    "F1:maturity": 303.8178057800571,
+    "F1:Cara:report_HELD": 3.8823102600094974,
+    "F1:Cara:report_OPEN": 4.313732346347284,
+    "F1:Alice:report_OPEN": 4.383077116086085,
+    "F1:discharge": 327.8178057800571,
+    "F1:backed_claim": 327.8178057800571,
+    "F1:Cara:payout_spendable": 329.3477078633755,
+    "F1:Alice:payout_spendable": 329.4889141880203
+   },
+   "completion": 329.4889141880203,
+   "packets": 189,
+   "backbone": 184,
+   "direct": 5,
+   "originations": 21,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 9836.955914518912,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 10843.518852910609,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 11622.12437111748,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 11623.12437111748,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 12192.047771258707,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 11683.12437111748,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 12252.046934563845,
+     "lost": false,
+     "p_loss": 0.0867
+    },
+    {
+     "t": 12192.047771258707,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 12879.583931111214,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 12880.583931111214,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 13744.10080820562,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 12940.583931111214,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 13804.098575725548,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 13000.583931111214,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 13864.096343234205,
+     "lost": false,
+     "p_loss": 0.1289
+    },
+    {
+     "t": 13744.10080820562,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 13744.10080820562,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1093744.1008082055,
+     "fixing": 1180144.1008082055
+    },
+    {
+     "t": 229744.1008082056,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 90
+     }
+    },
+    {
+     "t": 229744.1008082056,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 90,
+     "source": "Bob"
+    },
+    {
+     "t": 445744.1008082056,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 80
+     }
+    },
+    {
+     "t": 445744.1008082056,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 80,
+     "source": "Bob"
+    },
+    {
+     "t": 661744.1008082057,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 70
+     }
+    },
+    {
+     "t": 661744.1008082057,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 70,
+     "source": "Bob"
+    },
+    {
+     "t": 877744.1008082057,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 65
+     }
+    },
+    {
+     "t": 877744.1008082057,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 65,
+     "source": "Bob"
+    },
+    {
+     "t": 1093744.1008082055,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 75
+     }
+    },
+    {
+     "t": 1093744.1008082055,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 75,
+     "source": "Bob"
+    },
+    {
+     "t": 1180144.1008082055,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 75,
+     "used": "observation 5",
+     "net_long": -50000,
+     "gross_long": 30000,
+     "gross_short": 130000
+    },
+    {
+     "t": 1180144.1008082055,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1180144.1008082055,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1185651.7483081517,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1186160.0910768732,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1187488.4828854415,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1188166.5394503684,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     53,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     54,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "RESTART_NOTICE",
+     "Ceres",
+     115,
+     "RESTART"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "RESTART_NOTICE",
+     "Earth",
+     116,
+     "RESTART"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     55,
+     "Mars>Relay A>Ceres"
+    ],
+    [
+     2700.0,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     56,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     54,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     54,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     53,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     53,
+     "DATA"
+    ],
+    [
+     8051.840900420752,
+     "Ceres",
+     "RESTART_RESUBMIT",
+     "Mars",
+     114,
+     "TRANSFER"
+    ],
+    [
+     8807.072822952185,
+     "Earth",
+     "RESTART_RESUBMIT",
+     "Mars",
+     113,
+     "TRANSFER"
+    ],
+    [
+     1180144.1008082055,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     57,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1180144.1008082055,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     58,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 100000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 150000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 52583032.252056435,
+     "escrow_h": 51840000.0,
+     "remote_h": 116792.75137855123
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 184,
+   "lost_launches": 0
+  },
+  "falling:incident_immediate_recovery": {
+   "times": {
+    "F1:Cara:funding_receipt_at_home": 102.96572282155363,
+    "F1:Cara:instr_sent": 102.96600059933141,
+    "F1:Cara:report_HELD": 103.6226880351056,
+    "F1:Alice:funding_receipt_at_home": 103.89326794317563,
+    "F1:Alice:instr_sent": 103.89354572095341,
+    "F1:open": 104.12962243148682,
+    "F1:maturity": 404.12962243148684,
+    "F1:Cara:report_OPEN": 104.62987698645836,
+    "F1:Alice:report_OPEN": 104.69198176600399,
+    "F1:discharge": 428.12962243148684,
+    "F1:backed_claim": 428.12962243148684,
+    "F1:Cara:payout_spendable": 429.67306350501906,
+    "F1:Alice:payout_spendable": 429.7953557094874
+   },
+   "completion": 429.7953557094874,
+   "packets": 197,
+   "backbone": 192,
+   "direct": 5,
+   "originations": 19,
+   "trace": [
+    {
+     "t": 1.0,
+     "actor": "Alice",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Earth",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Alice-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Earth",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "EA-X1",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 1.0,
+     "actor": "Cara",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Ceres",
+     "msg": {
+      "type": "FUND",
+      "req": "F1-Cara-fund",
+      "asset": "ND",
+      "amount": 80000,
+      "dst": "Mars"
+     }
+    },
+    {
+     "t": 1.0,
+     "actor": "Ceres",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars",
+     "eid": "CE-X1",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 2700.0,
+     "actor": "Mars",
+     "kind": "ENDPOINT_RESET"
+    },
+    {
+     "t": 368875.9461336878,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "CE-X1",
+     "src": "Ceres",
+     "purpose": "FUND",
+     "ref": "F1-Cara-fund"
+    },
+    {
+     "t": 370676.60215759306,
+     "actor": "Ceres",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "CE-X1",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 370677.60215759306,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 371241.9181474128,
+     "lost": false,
+     "p_loss": 0.0861
+    },
+    {
+     "t": 370737.60215759306,
+     "actor": "Cara",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Ceres",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 371301.91744417115,
+     "lost": false,
+     "p_loss": 0.0861
+    },
+    {
+     "t": 371241.9181474128,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Cara",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 371990.19172944716,
+     "actor": "Mars",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "eid": "EA-X1",
+     "src": "Earth",
+     "purpose": "FUND",
+     "ref": "F1-Alice-fund"
+    },
+    {
+     "t": 374015.76459543227,
+     "actor": "Earth",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "EA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 80000,
+     "dst": "Mars"
+    },
+    {
+     "t": 374016.76459543227,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 0,
+     "arrive": 374866.64075335255,
+     "lost": false,
+     "p_loss": 0.127
+    },
+    {
+     "t": 374076.76459543227,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 1,
+     "arrive": 374926.6384533197,
+     "lost": false,
+     "p_loss": 0.127
+    },
+    {
+     "t": 374136.76459543227,
+     "actor": "Alice",
+     "kind": "DIRECT_LAUNCH",
+     "a": "Earth",
+     "b": "Mars",
+     "label": "CINSTR",
+     "copy": 2,
+     "arrive": 374986.63615327573,
+     "lost": false,
+     "p_loss": 0.127
+    },
+    {
+     "t": 374866.64075335255,
+     "actor": "Mars",
+     "kind": "MARGIN_HELD",
+     "owner": "Alice",
+     "cid": "F1",
+     "amount": 80000
+    },
+    {
+     "t": 374866.64075335255,
+     "actor": "Mars",
+     "kind": "CONTRACT_OPEN",
+     "cid": "F1",
+     "escrow": 160000,
+     "long": "Alice",
+     "short": "Cara",
+     "Q": 2000,
+     "maturity": 1454866.6407533525,
+     "fixing": 1541266.6407533525
+    },
+    {
+     "t": 590866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 1,
+      "price": 90
+     }
+    },
+    {
+     "t": 590866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 1,
+     "price": 90,
+     "source": "Bob"
+    },
+    {
+     "t": 806866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 2,
+      "price": 80
+     }
+    },
+    {
+     "t": 806866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 2,
+     "price": 80,
+     "source": "Bob"
+    },
+    {
+     "t": 1022866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 3,
+      "price": 70
+     }
+    },
+    {
+     "t": 1022866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 3,
+     "price": 70,
+     "source": "Bob"
+    },
+    {
+     "t": 1238866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 4,
+      "price": 65
+     }
+    },
+    {
+     "t": 1238866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 4,
+     "price": 65,
+     "source": "Bob"
+    },
+    {
+     "t": 1454866.6407533525,
+     "actor": "Bob",
+     "kind": "LOCAL_INSTRUCTION",
+     "where": "Mars",
+     "msg": {
+      "type": "PRICE",
+      "cid": "F1",
+      "k": 5,
+      "price": 75
+     }
+    },
+    {
+     "t": 1454866.6407533525,
+     "actor": "Mars",
+     "kind": "PRICE_OBSERVED",
+     "cid": "F1",
+     "k": 5,
+     "price": 75,
+     "source": "Bob"
+    },
+    {
+     "t": 1541266.6407533525,
+     "actor": "Mars",
+     "kind": "CONTRACT_FIXED",
+     "cid": "F1",
+     "P": 75,
+     "used": "observation 5",
+     "net_long": -50000,
+     "gross_long": 30000,
+     "gross_short": 130000
+    },
+    {
+     "t": 1541266.6407533525,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth",
+     "eid": "MA-X1",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1541266.6407533525,
+     "actor": "Mars",
+     "kind": "EXPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres",
+     "eid": "MA-X2",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1546823.0286180687,
+     "actor": "Ceres",
+     "kind": "IMPORT",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "eid": "MA-X2",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1547263.2805541547,
+     "actor": "Earth",
+     "kind": "IMPORT",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "eid": "MA-X1",
+     "src": "Mars",
+     "purpose": "PAYOUT",
+     "ref": "F1"
+    },
+    {
+     "t": 1548676.0147633373,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X2",
+     "owner": "Cara",
+     "asset": "ND",
+     "amount": 130000,
+     "dst": "Ceres"
+    },
+    {
+     "t": 1549263.2893944508,
+     "actor": "Mars",
+     "kind": "RECEIPT_KNOWN",
+     "eid": "MA-X1",
+     "owner": "Alice",
+     "asset": "ND",
+     "amount": 30000,
+     "dst": "Earth"
+    }
+   ],
+   "courier_events": [
+    [
+     1.0,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     59,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1.0,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     60,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     5351.517310059374,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     60,
+     "ACK"
+    ],
+    [
+     5352.51735285099,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     60,
+     "DATA"
+    ],
+    [
+     6106.638976310494,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     59,
+     "ACK"
+    ],
+    [
+     6107.639015817677,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     59,
+     "DATA"
+    ],
+    [
+     95320.2209665587,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     60,
+     "DATA"
+    ],
+    [
+     96572.08905845789,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     59,
+     "DATA"
+    ],
+    [
+     185297.65579997923,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     60,
+     "DATA"
+    ],
+    [
+     187033.14053343845,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     59,
+     "DATA"
+    ],
+    [
+     275282.8530192226,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Ceres",
+     60,
+     "DATA"
+    ],
+    [
+     277488.9218292921,
+     "Mars",
+     "IGNORED_UNKNOWN_SESSION",
+     "Earth",
+     59,
+     "DATA"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     60,
+     0
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     127,
+     "TRANSFER",
+     363477.39608371264
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "APP_RESUBMIT",
+     "Mars",
+     127,
+     "TRANSFER"
+    ],
+    [
+     363477.39608371264,
+     "Ceres",
+     "SESSION_OPEN",
+     "Mars",
+     61,
+     "Ceres>Relay A>Mars"
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "DELIVERY_UNKNOWN",
+     "Mars",
+     59,
+     0
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT_SCHEDULED",
+     "Mars",
+     126,
+     "TRANSFER",
+     365915.5112122248
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "APP_RESUBMIT",
+     "Mars",
+     126,
+     "TRANSFER"
+    ],
+    [
+     365915.5112122248,
+     "Earth",
+     "SESSION_OPEN",
+     "Mars",
+     62,
+     "Earth>Relay A>Mars"
+    ],
+    [
+     1541266.6407533525,
+     "Mars",
+     "SESSION_OPEN",
+     "Earth",
+     63,
+     "Mars>Relay A>Earth"
+    ],
+    [
+     1541266.6407533525,
+     "Mars",
+     "SESSION_OPEN",
+     "Ceres",
+     64,
+     "Mars>Relay A>Ceres"
+    ]
+   ],
+   "balances": [
+    [
+     "Earth",
+     "Alice",
+     {
+      "ND": 100000
+     }
+    ],
+    [
+     "Earth",
+     "Fin",
+     {
+      "ND": 50000,
+      "TERRA": 1000
+     }
+    ],
+    [
+     "Mars",
+     "Bob",
+     {
+      "ND": 50000,
+      "ARES": 3000
+     }
+    ],
+    [
+     "Ceres",
+     "Cara",
+     {
+      "ND": 150000,
+      "BELT": 1000
+     }
+    ],
+    [
+     "Uranus",
+     "Eve",
+     {
+      "ND": 50000
+     }
+    ],
+    [
+     "Neptune",
+     "Dax",
+     {
+      "ND": 100000
+     }
+    ]
+   ],
+   "capital": {
+    "ND": {
+     "encumbered_h": 68634816.23721197,
+     "escrow_h": 51840000.0,
+     "remote_h": 116498.2452806758
+    },
+    "ARES": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "BELT": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    },
+    "TERRA": {
+     "encumbered_h": 0.0,
+     "escrow_h": 0.0,
+     "remote_h": 0.0
+    }
+   },
+   "peak": {
+    "ND": {
+     "encumbered": 160000,
+     "escrow": 160000,
+     "remote": 160000,
+     "away": 160000
+    },
+    "ARES": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "BELT": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    },
+    "TERRA": {
+     "encumbered": 0,
+     "escrow": 0,
+     "remote": 0,
+     "away": 0
+    }
+   },
+   "audits": 13,
+   "launch_count": 192,
+   "lost_launches": 0
+  },
+  "mc:incident": {
+   "n": 1000,
+   "p50": 455.33062787710435,
+   "p90": 457.2690768832769,
+   "p99": 460.6059475278316,
+   "completed": 1000,
+   "p_open": 1.0,
+   "mean_total": 206.436
+  },
+  "mc:incident_restart_notice": {
+   "n": 1000,
+   "p50": 331.07119804563655,
+   "p90": 333.6787385701545,
+   "p99": 337.6628606654434,
+   "completed": 1000,
+   "p_open": 1.0,
+   "mean_total": 197.253
+  }
+ },
+ "alternatives": [
+  "restart_notice",
+  "immediate_recovery"
+ ]
+}

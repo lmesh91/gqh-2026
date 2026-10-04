@@ -1,0 +1,705 @@
+\documentclass[10pt,letterpaper]{article}
+% Built by split_appendix.py from evidence_appendix.tex (build.py, ../results/*.json). Needs only texlive-latex-base.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{array,tabularx,longtable}
+\usepackage{url}
+\IfFileExists{etoolbox.sty}{\usepackage[hidelinks]{hyperref}}{}
+\newcommand{\doclink}[2]{\ifdefined\href\href{#1}{#2}\else#2\fi}
+\usepackage{fancyhdr}
+
+% Characters that appear in data-driven text
+\DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+\DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\ge}}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+\DeclareUnicodeCharacter{0394}{\ensuremath{\Delta}}
+\DeclareUnicodeCharacter{2032}{\ensuremath{'}}
+\DeclareUnicodeCharacter{220F}{\ensuremath{\prod}}
+\DeclareUnicodeCharacter{207B}{\ensuremath{^{-}}}
+\DeclareUnicodeCharacter{2070}{\ensuremath{^{0}}}
+\DeclareUnicodeCharacter{00B9}{\ensuremath{^{1}}}
+\DeclareUnicodeCharacter{2074}{\ensuremath{^{4}}}
+\DeclareUnicodeCharacter{2075}{\ensuremath{^{5}}}
+\DeclareUnicodeCharacter{2080}{\ensuremath{_{0}}}
+\DeclareUnicodeCharacter{1D62}{\ensuremath{_{i}}}
+\DeclareUnicodeCharacter{00B2}{\ensuremath{^{2}}}
+\DeclareUnicodeCharacter{00B3}{\ensuremath{^{3}}}
+\DeclareUnicodeCharacter{2076}{\ensuremath{^{6}}}
+\DeclareUnicodeCharacter{2077}{\ensuremath{^{7}}}
+\DeclareUnicodeCharacter{2078}{\ensuremath{^{8}}}
+\DeclareUnicodeCharacter{2079}{\ensuremath{^{9}}}
+\DeclareUnicodeCharacter{2081}{\ensuremath{_{1}}}
+\DeclareUnicodeCharacter{2082}{\ensuremath{_{2}}}
+\DeclareUnicodeCharacter{2083}{\ensuremath{_{3}}}
+\DeclareUnicodeCharacter{2084}{\ensuremath{_{4}}}
+\DeclareUnicodeCharacter{2085}{\ensuremath{_{5}}}
+\DeclareUnicodeCharacter{2086}{\ensuremath{_{6}}}
+\DeclareUnicodeCharacter{2087}{\ensuremath{_{7}}}
+\DeclareUnicodeCharacter{2088}{\ensuremath{_{8}}}
+\DeclareUnicodeCharacter{2089}{\ensuremath{_{9}}}
+
+\setlength{\extrarowheight}{0.5pt}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\setlength{\parskip}{2pt plus 1pt}
+\setlength{\parindent}{0pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{3pt}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{4pt}
+\AtBeginDocument{\setlength{\LTcapwidth}{\textwidth}}
+\makeatletter
+% compact section headings
+\renewcommand\section{\@startsection{section}{1}{\z@}{-9pt plus -2pt minus -1pt}{3pt}{\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{-6pt plus -2pt minus -1pt}{2pt}{\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{4pt plus 1pt}{-0.6em}{\normalfont\normalsize\bfseries}}
+\makeatother
+\pagestyle{plain}
+\newcommand{\tablefont}{\normalsize}
+\begin{document}
+\begin{center}{\LARGE\bfseries Evidence Appendix\par}\vspace{3pt}{\normalsize MultiPlanetary Exchange System \quad$\cdot$\quad Milestone 2 \quad$\cdot$\quad Design v3\par}\end{center}
+
+\linespread{0.95}\selectfont
+\renewcommand{\thetable}{A\arabic{table}}\renewcommand{\thefigure}{A\arabic{figure}}
+\section*{Introduction}
+All results come from one discrete-event simulator that implements the brief's network in full (moving-receiver
+light time, solar exclusion, links, queues, timers, sessions, quotas, maintenance, incidents and random loss) and the
+ledgers of design v3. In every traced run it checks conservation, non-negative balances, hold arithmetic and registry
+custody after every ledger event.
+
+A trace is a single run \emph{without packet loss} unless it is labelled ``lossy''. Times are in hours after the
+start of the scenario, and the epoch is 2026-09-22 00:00 TDB. For every probability we state whether it is exact or
+an approximation.
+
+This appendix covers items S1 to S3 and E1 to E5 of the brief. It holds every result these items require. Tables numbered B are in the
+supplement (\doclink{supplement.pdf}{\texttt{supplement.pdf}}), which adds detail only: the complete seven-column trace of every S1 run and S3
+relocation, every direct message and backbone launch, the state history and settlement moments of every scenario,
+the event trace of the S2 incident and every direct leg at the shifted epochs. Sections F (message formats and
+sizes), E6 (quota, backlog and storage) and E7 (market data), which the design paper cites, are in the supplement.
+
+\section*{E1. Orbital calculations}
+\paragraph{Method.} Each body follows the fixed Kepler ellipse given in \texttt{data.zip}. The mean anomaly is
+$M = M_0 + nt$, where $n$ is the supplied mean motion. We solve Kepler's equation by Newton iteration until the residual
+is below $10^{-15}$ rad, and then rotate by $\omega$, $i$ and $\Omega$ into the heliocentric J2000 ecliptic frame. Units
+are AU and seconds of TDB since the epoch; tables give times in hours. The relays use the same code with $e = 0$ and
+the supplied phases. The largest difference from the brief's table of epoch positions is 7.3e-07~AU, which
+is the rounding of the table (Table~\ref{tab:e1pos}). Table~\ref{tab:e1later} gives later positions. As the brief
+asks, every body and relay returns to its starting point after one orbital period to within
+3e-14~AU, and over 200,001 samples per orbit its distance from the Sun
+stays within $[a(1 - e), a(1 + e)]$ to within 4e-16~AU,
+the floating-point rounding.
+
+\paragraph{Light time.} A packet emitted at time $t_e$ from body $P$ reaches body $Q$ at the time $t_a$ that solves
+$t_a = t_e + 499.02\,|Q(t_a) - P(t_e)|$, where 499.02 is the light time in seconds per AU. We solve this by fixed-point
+iteration. For the Earth to Relay A link the successive corrections are 2.1e-02, 4.1e-07, 7.7e-12 seconds. Each step is smaller than
+the previous one by a factor of about $v/c \approx 10^{-4}$, so two iterations reach 1~ms. We always iterate to
+$10^{-6}$~s.
+
+\paragraph{Solar exclusion.} A launch is blocked if the line segment from $P(t_e)$ to $Q(t_a)$ passes within 0.10~AU of
+the Sun. Every launch, ACK and receipt is checked at its own emission time.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Positions at the epoch and their difference from the table in the brief.}\label{tab:e1pos}
+\begin{tabularx}{\linewidth}{@{}lRRRR@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Body} & \textbf{x (AU)} & \textbf{y (AU)} & \textbf{z (AU)} & \textbf{Error (AU)} \\\hline\noalign{\vskip 1pt}
+Mercury & -0.213426 & -0.410281 & -0.013955 & 1.8e-07 \\
+Venus & +0.679067 & -0.257950 & -0.042725 & 3.4e-07 \\
+Earth & +1.003581 & -0.023693 & -0.000003 & 5.3e-07 \\
+Mars & +0.247476 & +1.526869 & +0.025929 & 7.3e-07 \\
+Ceres & +0.375786 & +2.653941 & +0.014791 & 5.6e-07 \\
+Jupiter & -3.438179 & +4.038309 & +0.060149 & 5.2e-07 \\
+Saturn & +9.271221 & +1.717485 & -0.398962 & 3.8e-07 \\
+Uranus & +8.962475 & +17.253919 & -0.052129 & 6.0e-07 \\
+Neptune & +29.839098 & +1.351785 & -0.715470 & 3.3e-07 \\
+Relay A & +2.000000 & +2.000000 & +0.000000 & 4.4e-16 \\
+Relay B & -2.000000 & +2.000000 & +0.000000 & 4.4e-16 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Positions computed by the same code at hour 300 and after one Julian year, for the bodies used in S1.}\label{tab:e1later}
+\begin{tabularx}{\linewidth}{@{}lLL@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Body} & \textbf{Hour 300 (x, y, z) in AU} & \textbf{Hour 8,766 (x, y, z) in AU} \\\hline\noalign{\vskip 1pt}
+Earth & (+0.9822, +0.1894, -0.0000) & (+1.0036, -0.0192, -0.0000) \\
+Mars & (+0.0802, +1.5602, +0.0307) & (-0.4854, -1.4173, -0.0178) \\
+Ceres & (+0.2446, +2.6592, +0.0391) & (-2.4828, +0.3753, +0.4693) \\
+Relay A & (+1.9076, +2.0883, +0.0000) & (-1.4432, +2.4326, +0.0000) \\
+Relay B & (-2.0883, +1.9076, +0.0000) & (-2.4326, -1.4432, -0.0000) \\
+Neptune & (+29.8370, +1.3912, -0.7162) & (+29.7556, +2.5017, -0.7374) \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Effect of receiver motion.} Table~\ref{tab:e1flight} shows the S1a funding route (Earth to Relay A to
+Mars) and the return route for the shares (Mars to Relay A to Earth) at their actual emission times in the S1a run:
+hour 1.1317 for the funding, after the session handshake, and hour
+2.5027 for the shares, just after the fill. Each relay sends
+the packet on 2~s after it arrives (1~s of processing and 1~s of serialization). The ``frozen'' column uses the
+positions of both ends at the emission time. The forward and return legs are not mirror images. On the Earth to Relay~A
+leg the flight is +21.4~ms longer than the frozen value because Relay~A moves away during the
+flight.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Flight times on the S1a routes with a moving receiver, compared with the ``frozen'' time that uses both positions at emission. The first four rows are the S1a funding and share delivery at their actual launch times; the last four are illustrative emissions at the epoch.}\label{tab:e1flight}
+\begin{tabularx}{\linewidth}{@{}lRRRRRR@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Path} & \textbf{Emitted (s)} & \textbf{Flight (s)} & \textbf{Frozen (s)} & \textbf{Difference (ms)} & \textbf{Distance (AU)} & \textbf{Clearance (AU)} \\\hline\noalign{\vskip 1pt}
+Earth→A & 4074.049 & 1125.375451 & 1125.354049 & +21.402 & 2.2552 & 1.004 \\
+A→Mars & 5201.424 & 906.214978 & 906.152494 & +62.484 & 1.8160 & 1.547 \\
+Mars→A & 9009.541 & 906.276241 & 906.302932 & -26.691 & 1.8161 & 1.547 \\
+A→Earth & 9917.818 & 1124.844810 & 1124.944916 & -100.106 & 2.2541 & 1.004 \\
+Earth→Mars & 2.000 & 860.995877 & 860.951580 & +44.297 & 1.7254 & 0.892 \\
+Mars→Earth & 2.000 & 860.875291 & 860.951580 & -76.289 & 1.7251 & 0.892 \\
+Neptune→A & 1.000 & 13901.212047 & 13900.618008 & +594.039 & 27.8570 & 2.828 \\
+A→Neptune & 1.000 & 13900.598751 & 13900.618008 & -19.257 & 27.8558 & 2.828 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Timers.} $T_0$ is the route time with empty queues. The endpoint timer is $R_e = 2T_0 + 24$~h and the hop
+timer is $R_h = 2 \times \text{flight} + 60$~min. On the S1 routes: Ea-A-Ma at hour 0.0000: $T_0$ = 33.91 min, $R_e$ = 25.13 h, $R_h$ = 97.5 and 90.2 min; Ma-A-Ea at hour 1.6966: $T_0$ = 33.90 min, $R_e$ = 25.13 h, $R_h$ = 90.2 and 97.5 min; Ce-A-Ma at hour 0.0000: $T_0$ = 29.71 min, $R_e$ = 24.99 h, $R_h$ = 89.1 and 90.2 min; Ne-A-Ma at hour 0.0000: $T_0$ = 246.85 min, $R_e$ = 32.23 h, $R_h$ = 523.4 and 90.2 min.
+
+
+\section*{S1. Scenario traces}
+These runs have no packet loss, start at the epoch and include the scheduled maintenance. Each scenario is a separate
+run from the opening balances. A scenario is complete when every intended result is spendable at its owner's home.
+Packet counts include every backbone launch (data, handshakes, hop receipts, ACKs and retries) and every direct copy.
+
+\paragraph{Transactions and value settled.} Both efficiency measures use one definition. A \emph{transaction} is a
+completed transfer (funding, home delivery, payout or withdrawal), a trade fill, or a settled futures contract.
+\emph{Value settled} adds their values as the brief defines them: a fill counts price $\times$ quantity, a transfer
+counts the cash moved or the shares at the stated \$100, and a contract counts its notional $Q \times 1 \times 100$.
+S1a has three transactions (funding \$100,000, the fill \$100,000 and the delivery of the shares \$100,000), so it
+settles \$300,000; S1d has five (two fundings, the \$200,000 notional and two payouts).
+\emph{Encumbered} value is the sum of order holds, contract
+margin and value in transit, given per asset as the peak value and the asset-hours. \emph{Utilisation} is the peak
+encumbered cash divided by the total cash of \$500,000. \emph{Exposure} is a side's largest possible loss to its
+counterparty. It is \$0 for equities, because cash and shares change owner in one ledger event at the host (the buyer
+carries only the market risk of the shares it chose to own). For futures it is the cap $40Q$, fully escrowed before the
+contract opens. Tables~\ref{tab:s1sum} and~\ref{tab:s1cap} give the results.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{2.4pt}
+\caption{Completion and every packet of the S1 runs without loss, by type: session handshakes (SYN, SYN-ACK, ACK), record launches (DATA), endpoint acknowledgements (DACK), hop receipts (RCPT) and direct copies. Tx counts completed transactions as defined in the text.}\label{tab:s1sum}
+\begin{tabularx}{\linewidth}{@{}lrrrrrrrrrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{} & \textbf{Done (h)} & \textbf{SYN} & \textbf{S-ACK} & \textbf{ACK} & \textbf{DATA} & \textbf{DACK} & \textbf{RCPT} & \textbf{Backbone} & \textbf{Direct} & \textbf{Total} & \textbf{Tx} & \textbf{Pkts/tx} \\\hline\noalign{\vskip 1pt}
+S1a & 3.07 & 2 & 2 & 2 & 8 & 8 & 22 & 44 & 3 & 47 & 3 & 15.7 \\
+S1b & 3.16 & 2 & 2 & 2 & 8 & 8 & 22 & 44 & 3 & 47 & 3 & 15.7 \\
+S1c & 15.82 & 2 & 2 & 2 & 8 & 8 & 22 & 44 & 8 & 52 & 3 & 17.3 \\
+S1d & 328.17 & 8 & 8 & 8 & 22 & 22 & 68 & 136 & 5 & 141 & 5 & 28.2 \\
+S1e & 328.17 & 8 & 8 & 8 & 22 & 22 & 68 & 136 & 5 & 141 & 5 & 28.2 \\
+S1f & 328.17 & 8 & 8 & 8 & 22 & 22 & 68 & 136 & 5 & 141 & 5 & 28.2 \\
+S1g & — & 2 & 2 & 2 & 12 & 12 & 30 & 60 & 6 & 66 & 2 & 33.0 \\
+S1h & — & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & — \\
+S1i & 51.06 & 2 & 2 & 2 & 8 & 8 & 22 & 44 & 15 & 59 & 7 & 8.4 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{3pt}
+\caption{Capital measures (Section 7 of the brief). Asset-hours are in thousands (k). Capital efficiency is peak encumbered cash divided by value settled. Exp./side is each side's largest possible loss; S1g and S1h never open.}\label{tab:s1cap}
+\begin{tabularx}{\linewidth}{@{}Lrlrrl@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Scenario} & \textbf{Value settled} & \textbf{Peak enc. / asset-h} & \textbf{Util.} & \textbf{Cap. eff.} & \textbf{Exp./side} \\\hline\noalign{\vskip 1pt}
+S1a Earth buys Ares & \$300,000 & \$100k / 169.6k; 1,000 Ares / 3.1k & 20\% & 0.33 & \$0 \\
+S1b Earth buys Belt & \$300,000 & \$100k / 166.9k; 1,000 Belt / 3.2k & 20\% & 0.33 & \$0 \\
+S1c Uranus buys Terra & \$120,000 & \$40k / 316.5k; 400 Terra / 6.3k & 8\% & 0.33 & \$0 \\
+S1d rising & \$520,000 & \$160k / 52,386.7k & 32\% & 0.31 & \$80k \\
+S1e falling & \$520,000 & \$160k / 52,372.5k & 32\% & 0.31 & \$80k \\
+S1f Q = 2,500 & \$650,000 & \$200k / 65,483.4k & 40\% & 0.31 & \$100k \\
+S1g Q = 2,501 & \$200,080 & \$100k / 16,782.1k & 20\% & 0.50 & \$0 \\
+S1h Q = 4,000 & \$0 & — & 0\% & — & \$0 \\
+S1i Repeat trading & \$23,020 & \$10k / 106k; 15 Ares / 51 & 2\% & 0.43 & \$0 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Scale and the binding constraint.} The futures in S1d and S1e hold \$160,000, or 32\% of all cash, in escrow
+for 324 hours. The boundary case $Q = 2{,}500$ holds \$200,000, or 40\%. With $Q = 2{,}501$ each side needs \$100,040.
+Cara has only \$100,000, so her Ceres exchange rejects her funding transfer immediately. Alice's \$100,040 is held at
+Mars until the 168-hour deadline, then released. Mars reports REJECTED to Earth in a STATUS record (R5), which
+reaches Alice at hour 168.56, and she withdraws the cash
+home by hour 169.79. With $Q = 4{,}000$
+(\$160,000 each) both home exchanges reject the funding before anything moves. All 91 ledger checks in
+these runs passed.
+
+\paragraph{Traces.} Table~\ref{tab:s1a} is an excerpt of the S1a trace and Table~\ref{tab:s1other} gives the key steps of the other runs; they omit rows
+that change no balance: an exchange learning that its transfer arrived, and Bob publishing each observation. Section T of the supplement
+gives the complete trace of every S1 run, S1a to S1i, including those rows. The packet-level
+communication traces are machine-readable files in \texttt{milestone2/traces/}, one set per S1 run and per S3
+relocation. \texttt{*\_launches.csv} lists every packet in Table~\ref{tab:s1sum}, one row each, with its type, session,
+copy number, emission and arrival time, distance, loss probability and outcome. \texttt{*\_transport.csv} lists every
+session and recovery event, and \texttt{*\_ledger.csv} every ledger event. The packet counts in Table~\ref{tab:s1sum} are
+computed from these files.
+
+{\tablefont\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.55in}>{\raggedright\arraybackslash}p{0.6in}>{\raggedright\arraybackslash}p{0.72in}>{\raggedright\arraybackslash}p{1.05in}>{\raggedright\arraybackslash}p{1.05in}>{\raggedright\arraybackslash}p{0.55in}>{\raggedright\arraybackslash}p{1.45in}@{}}
+\caption{Excerpt of the S1a trace, the rows that move value (the complete trace, with the quote, admission and duplicate-copy rows, is Table~B6): Alice (Earth) buys 1,000 Ares from Bob (Mars) at \$100.}\label{tab:s1a}\\\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{h} & \textbf{Actor} & \textbf{Knows} & \textbf{Does} & \textbf{Packet or transmission} & \textbf{Arrives} & \textbf{Financial state after} \\\hline\noalign{\vskip 1pt}\endfirsthead
+\multicolumn{7}{@{}l}{\textit{(continued)}}\\\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{h} & \textbf{Actor} & \textbf{Knows} & \textbf{Does} & \textbf{Packet or transmission} & \textbf{Arrives} & \textbf{Financial state after} \\\hline\noalign{\vskip 1pt}\endhead
+\hline\endfoot
+0.0003 & Bob & Own inventory at the market & Sell 1,000 Ares limit \$100 GTC & Local access at Mars, sent h 0.0000 & 0.0003 & \textbf{Alice} \$150k at Earth; \textbf{Bob} \$50k at Mars, 3,000 Ares home \\
+0.0003 & Alice & Own Earth balance & Funds own Mars account: \$100k & Local access at Earth, sent h 0.0000 & 0.0003 & \textbf{Alice} \$150k at Earth; \textbf{Bob} \$50k at Mars, 2,000 Ares home, 1,000 Ares held \\
+0.0003 & Earth exchange & Instruction or fill; its own ledger & Debits Alice \$100k; TRANSFER EA-X1 (funding) to Mars & New session (SYN h 0.0006); DATA Ea→A h 1.1317, A→Ma h 1.4448 & 1.6966 & \textbf{Alice} \$50k at Earth, \$100k in transit; \textbf{Bob} \$50k at Mars, 2,000 Ares home, 1,000 Ares held \\
+1.6966 & Mars exchange & Authentic new transfer EA-X1 & Imports once; credits Alice \$100k (spendable now) & RECEIVED to Earth (backbone) & 2.2622 & \textbf{Alice} \$50k at Earth, \$100k free at host; \textbf{Bob} \$50k at Mars, 2,000 Ares home, 1,000 Ares held \\
+2.2625 & Alice & Published geometry; own funding confirmed & Sends ORDER ×3 copies & Direct Ea→Ma, launches 2.2625, 2.2791, 2.2958; p(loss) 0.129 each, all lost 2.1e-03 & 2.5024 (first) & \textbf{Alice} \$50k at Earth, \$100k free at host; \textbf{Bob} \$50k at Mars, 2,000 Ares home, 1,000 Ares held \\
+2.5024 & Mars exchange & Both holds in its own ledger & Fill 1,000 Ares @ \$100: Alice buys from Bob & — & local, atomic & \textbf{Alice} \$50k at Earth, 1,000 Ares at market; \textbf{Bob} \$150k at Mars, 2,000 Ares home \\
+2.5024 & Mars exchange & Instruction or fill; its own ledger & Debits Alice 1,000 Ares; TRANSFER MA-X1 (automatic home delivery) to Earth & Session from h 0.0006; DATA Ma→A h 2.5027, A→Ea h 2.7549 & 3.0674 & \textbf{Alice} \$50k at Earth, 1,000 Ares in transit; \textbf{Bob} \$150k at Mars, 2,000 Ares home \\
+3.0674 & Earth exchange & Authentic new transfer MA-X1 & Imports once; credits Alice 1,000 Ares (spendable now) & RECEIVED to Mars (backbone) & 3.6331 & \textbf{Alice} \$50k at Earth, 1,000 Ares home; \textbf{Bob} \$150k at Mars, 2,000 Ares home \\
+\end{longtable}}
+\paragraph{S1e (falling prices).} This run is identical to S1d, step by step, until the first observation, as the
+margin rule requires. The contract opens at the same time (2.5024 h) with the same packets. The
+observations are 90, 80, 70, 65 and 75. The fixing at 75 gives the long a net result of
+\$-50,000, so the gross payouts are reversed: \$30,000 to Alice and \$130,000 to Cara. Alice ends with
+\$100,000 and Cara with \$150,000 at home. Cara's payout is spendable at 328.032 h and
+Alice's at 328.174 h. Table~\ref{tab:s1other} gives the key steps of the remaining
+scenarios.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Key steps of the scenarios without a trace table here (complete traces of every run: supplement, Section T).}\label{tab:s1other}
+\begin{tabularx}{\linewidth}{@{}lL@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{} & \textbf{Key steps (hours)} \\\hline\noalign{\vskip 1pt}
+S1d & Alice and Cara each fund \$80,000 at Mars (receipts known at 2.262 and 1.983) and send their contract instructions. Both margins are held and the contract opens at 2.502 with \$160,000 in escrow; Cara learns OPEN at 2.998 and Alice at 3.068. Bob publishes 110, 120, 130, 135 and 125 every 60 h; maturity at 302.502, fixing at 326.502 at 125 (long net +\$50,000). Payouts: \$30,000 spendable by Cara at 328.032 and \$130,000 by Alice at 328.174. \\
+S1b & funds at Ceres at 1.670, receipt known at 2.226, fill at 2.608, Cara can spend at 2.608, Belt shares home at 3.164. Same structure as S1a on the route Earth, Relay A, Ceres. Mars is not involved. \\
+S1c & funds at Earth at 7.913, receipt at Uranus at 10.551, fill at 13.188, Fin can spend at 13.188, Terra shares at Uranus at 15.824. Eve sends 8 copies from Uranus to Earth, each lost with probability 0.78. \\
+S1f & As S1d with \$100,000 margin each. The contract opens at 2.502 and the payouts are spendable at 328.03 and 328.17. Alice ends with \$212,500 and Cara with \$37,500. \\
+S1i & Alice funds \$10,000 at Mars. One batched direct packet carries two buy orders, each 40 at \$100 (o1 and o2). o1 fills 10 at \$97, and the \$30 price improvement is refunded immediately, then 5 at \$100. o2 is cancelled unfilled at +6 h, which releases its \$4,000 hold. At +12 h she sells 10 at \$101 to Bob. At +24 h her cancel of o1 races an immediate-or-cancel sell from Bob. Bob's order arrives first and fills 5 at \$100, and the cancel then releases only the remainder, \$2,000 for 20 shares. Finally, her cash and shares are sent home. Done at 51.06 h, with 59 packets for 7 transactions. \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+
+\section*{E2. Probability and traffic}
+\paragraph{Direct service (exact).} Each copy is lost independently with probability $p = 1 - e^{-0.08d}$, where $d$
+is the distance in AU at that copy's own launch. Copies are sent 60~s apart, and we check that the path is open for
+every copy, so they are never blocked by the same closure. Incidents are excluded from these figures. The probability
+that all copies are lost is the product of the $p_i$. A lost order is not a financial failure: the cash stays
+available at the host until a fallback copy arrives. Table~\ref{tab:e2direct}
+lists every direct message in S1a to S1e; Table~B15 in the supplement extends it to all nine runs. The traces use the first copy's arrival. Each later copy adds 60~s and
+raises the probability, so Alice's order in S1a has arrived with probability 0.871 at the traced time and
+0.9979 2 minutes later. If no copy arrives, the client resends with the same identifier (R6). HELD and OPEN status reports are
+not direct messages: they travel to the client's home exchange as STATUS records over the backbone, and are counted
+with the backbone packets.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{3pt}
+\caption{Direct-service messages in the S1 runs (exact). ``First h is the arrival time of the first copy, which is the time used in the traces; ``P by then is the probability that the message has arrived by that time. P(arrives) is the probability that at least one copy arrives, by the last copy's arrival.}\label{tab:e2direct}
+\begin{tabularx}{\linewidth}{@{}lllLrrrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Run} & \textbf{Sender} & \textbf{Path} & \textbf{Message} & \textbf{Copies} & \textbf{p each} & \textbf{First h} & \textbf{P by then} & \textbf{Last h} & \textbf{P(arrives)} \\\hline\noalign{\vskip 1pt}
+S1a & Alice & Ea→Ma & ORDER & 3 & 0.1289 & 2.502 & 0.8711 & 2.536 & 0.99786 \\
+S1c & Eve & Ur→Ea & ORDER & 8 & 0.7815 & 13.188 & 0.2185 & 13.304 & 0.86082 \\
+S1d & Cara & Ce→Ma & CINSTR & 2 & 0.0867 & 2.141 & 0.9133 & 2.158 & 0.99248 \\
+S1d & Alice & Ea→Ma & CINSTR & 3 & 0.1289 & 2.502 & 0.8711 & 2.536 & 0.99786 \\
+S1i & Alice & Ea→Ma & ORDER o1 + o2 & 3 & 0.1289 & 2.502 & 0.8711 & 2.536 & 0.99786 \\
+S1i & Alice & Ea→Ma & CANCEL o2 & 3 & 0.1288 & 8.502 & 0.8712 & 8.535 & 0.99786 \\
+S1i & Alice & Ea→Ma & ORDER o3 & 3 & 0.1287 & 14.502 & 0.8713 & 14.535 & 0.99787 \\
+S1i & Alice & Ea→Ma & CANCEL o1 & 3 & 0.1284 & 26.501 & 0.8716 & 26.535 & 0.99788 \\
+S1i & Alice & Ea→Ma & WITHDRAW cash + ARES & 3 & 0.1280 & 50.501 & 0.8720 & 50.534 & 0.99790 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Backbone.} Table~\ref{tab:e2hop} covers every hop of every record in S1a to S1e;
+Table~B16 in the supplement lists every launch of every S1 run individually. For each hop
+a launch is unconfirmed with probability $1 - (1 - p_\text{data})(1 - p_\text{receipt})$. P(no retry) is the
+probability that every hop of the record is confirmed at its first launch, which is the case shown in the traces. A hop
+is abandoned after four unconfirmed launches. Launch $k$ is unconfirmed with probability
+$u_k = 1 - e^{-0.02 d_k} e^{-0.02 r_k}$, where $d_k$ and $r_k$ are the path lengths of its data and of the hop receipt,
+so the hop is abandoned with probability $u_1 u_2 u_3 u_4$. P(ab.) is the chance that this happens on some hop,
+with each retry launched when the hop timer sets it ($t_{k+1} = t_k + $ twice the flight time $+ 1$~h) and each $u_k$
+computed from its own geometry (\texttt{hop\_bound.py}). Queues or quota may delay a retry. If each retry may be
+delayed by up to 24~hours, launch $k$ lies in a window of $(k-1) \cdot 24$~h, no path length grows faster than
+0.0029~AU/h (twice Mercury's top speed, with margin), and $u$ grows with both lengths, so evaluating $u_k$ at
+$d_k + 0.0029 \cdot (k-1) \cdot 24$ (and the same for $r_k$) gives the column Bound. Every window is also certified open:
+the clearance at its start exceeds $0.10~\text{AU} + 0.00146$~AU/h times its length (the clearance Lipschitz bound
+of E4). \emph{The bound is conditional on that 24-hour limit.} It does not cover a retry held longer, for example by a
+closure of the hop that opens after the first launch or by congestion that fills the link for more than a day; for
+such cases we give no per-hop bound, and the Monte Carlo results below are the evidence. Holding the first launch's geometry for all four launches, our earlier approximation, is within
+0.21\% of the exact value on every hop. P(never) is the chance that the data never crosses some hop ($p_\text{data}^4$ per hop).
+An abandoned hop leads to endpoint retries and resubmission; the money stays in transit, owned by the client.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{1.8pt}
+\caption{Backbone loss for every record of S1a to S1e, over all of its hops. P(ab.), the chance that some hop is abandoned, is exact for retries at the hop timer; Bound holds only if no retry is delayed by more than 24 hours. S1d/e: S1e uses the same records and times as S1d. Ea = Earth, Ma = Mars, Ce = Ceres, Ur = Uranus.}\label{tab:e2hop}
+\begin{tabularx}{\linewidth}{@{}llrrrrrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Run} & \textbf{Record} & \textbf{Hops} & \textbf{Max d} & \textbf{Launch} & \textbf{Max p unc.} & \textbf{P(no retry)} & \textbf{P(ab.)} & \textbf{Bound} & \textbf{P(never)} \\\hline\noalign{\vskip 1pt}
+S1a & Funding Ea→Ma & 4 & 2.26 & 1.13 & 0.0863 & 0.7221 & 1.6e-04 & 1.9e-04 & 1.1e-05 \\
+S1a & Delivery Ma→Ea & 4 & 2.25 & 2.50 & 0.0862 & 0.7221 & 1.6e-04 & 1.9e-04 & 1.1e-05 \\
+S1b & Funding Ea→Ce & 4 & 2.26 & 1.11 & 0.0863 & 0.7258 & 1.5e-04 & 1.8e-04 & 1.0e-05 \\
+S1b & Delivery Ce→Ea & 4 & 2.25 & 2.61 & 0.0862 & 0.7259 & 1.5e-04 & 1.8e-04 & 1.0e-05 \\
+S1c & Delivery Ea→Ur & 4 & 16.77 & 13.19 & 0.4886 & 0.2185 & 1.1e-01 & 1.1e-01 & 1.3e-02 \\
+S1c & Funding Ur→Ea & 4 & 16.77 & 5.28 & 0.4886 & 0.2184 & 1.1e-01 & 1.1e-01 & 1.3e-02 \\
+S1d/e & Funding Ea→Ma & 4 & 2.26 & 1.13 & 0.0863 & 0.7221 & 1.6e-04 & 1.9e-04 & 1.1e-05 \\
+S1d/e & Payout Ma→Ea & 4 & 2.10 & 327.62 & 0.0806 & 0.7255 & 1.4e-04 & 1.7e-04 & 9.7e-06 \\
+S1d/e & Payout Ma→Ce & 4 & 1.91 & 327.52 & 0.0736 & 0.7456 & 1.0e-04 & 1.2e-04 & 6.8e-06 \\
+S1d/e & Funding Ce→Ma & 4 & 1.82 & 0.99 & 0.0701 & 0.7517 & 9.0e-05 & 1.1e-04 & 6.0e-06 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Monte Carlo under random loss.} Each run uses an independent seed, draws every launch from the brief's loss
+law and follows our client policy. Table~\ref{tab:e2mc} ties each traced time to its probability: the no-loss time is
+a best case, met only when every launch succeeds first time. Figure~B1 shows the full distributions.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{2.4pt}
+\caption{Monte Carlo results under random loss (2,000 runs each; every run completed). Times in hours. P(≤tr.) and P(+1h) are the probabilities of completing by the no-loss trace time and within one hour of it. Quota columns give the highest rolling 24-hour use in any run: backbone originations by one exchange (limit 66) and direct packets by one client (limit 12). The last two columns count the runs that needed an application resubmission or a client fallback.}\label{tab:e2mc}
+\begin{tabularx}{\linewidth}{@{}lrrrrrrrrrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Run} & \textbf{Trace h} & \textbf{P(≤tr.)} & \textbf{P(+1h)} & \textbf{Median} & \textbf{p90} & \textbf{p99} & \textbf{Max} & \textbf{Pkts} & \textbf{BB q.} & \textbf{Dir. q.} & \textbf{Res.} & \textbf{Fb.} \\\hline\noalign{\vskip 1pt}
+S1a & 3.07 & 0.53 & 0.60 & 3.07 & 4.71 & 7.70 & 28.21 & 49.8 & 3 & 6 & 0 & 1 \\
+S1b & 3.16 & 0.50 & 0.62 & 3.16 & 4.81 & 7.76 & 14.04 & 49.8 & 3 & 6 & 0 & 9 \\
+S1c & 15.82 & 0.02 & 0.09 & 28.76 & 50.74 & 71.48 & 104.58 & 69.2 & 3 & 12 & 0 & 414 \\
+S1d & 328.17 & 0.21 & 0.24 & 329.70 & 331.42 & 335.62 & 340.26 & 149.1 & 5 & 6 & 0 & 21 \\
+S1e & 328.17 & 0.21 & 0.24 & 329.70 & 331.42 & 335.62 & 340.26 & 149.1 & 5 & 6 & 0 & 21 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+\paragraph{Futures opening and link capacity.} The contract opened in 100.00\% of the lossy runs.
+The median opening time was 3.63 h and the 99th percentile 9.94 h,
+well before the 168-hour deadline. The longest queue on any directed link in any S1 run was 4 packets, against a
+limit of 10,000, and serialization never delayed a packet by more than a few seconds.
+
+
+\paragraph{What the Monte Carlo shows and does not show.} Every lossy run reached its end point within the run
+(Table~B18). With 2,000 runs and no failure, the probability of failing within 1,500 hours is below
+0.15\% at 95\% confidence; the simulations alone cannot show more. Completion with probability one rests on the
+rules, not on the sample. A transfer is resubmitted after every delivery-unknown, without limit. Each attempt crosses
+a route of at most three links whose lengths are bounded for all time (E4), so it succeeds with probability at least
+some $q > 0$, and after $k$ attempts it is still undelivered with probability at most $(1 - q)^k$, which goes to zero.
+A client request is resent by R6 until it is 30 days old. A completion \emph{time} is never certain: every table
+gives a distribution, and the no-loss trace time is its best case.
+
+\section*{E3. Balances and capital}
+\paragraph{Conservation check.} After every ledger event the simulator checks, for each asset, that the opening supply
+equals the sum of available balances, order holds, contract holds, escrow, and transfers that have been sent but not
+yet imported. It also checks that every balance is non-negative and that every buy hold equals the remaining quantity
+times the limit price. For each share registry, it checks that the custody recorded for each exchange equals the
+shares held there plus the shares in transit to and from it. No run ever failed a check. Table~\ref{tab:e3final} gives the final position of every account that changed.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Final balances. Accounts not listed end with their opening balances, and all other balances are zero.}\label{tab:e3final}
+\begin{tabularx}{\linewidth}{@{}lL@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Run} & \textbf{Final balances of the accounts that changed} \\\hline\noalign{\vskip 1pt}
+S1a & Alice at Earth: \$50,000, 1,000 Ares; Bob at Mars: \$150,000, 2,000 Ares \\
+S1b & Alice at Earth: \$50,000, 1,000 Belt; Cara at Ceres: \$200,000 \\
+S1c & Fin at Earth: \$90,000, 600 Terra; Eve at Uranus: \$10,000, 400 Terra \\
+S1d & Alice at Earth: \$200,000; Cara at Ceres: \$50,000, 1,000 Belt \\
+S1e & Alice at Earth: \$100,000; Cara at Ceres: \$150,000, 1,000 Belt \\
+S1g & No change \\
+S1i & Alice at Earth: \$149,040, 10 Ares; Bob at Mars: \$50,960, 2,990 Ares \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Ledger at the peak of the futures.} Between hour 2.502 and hour 326.502 of S1d, Alice's \$80,000 and Cara's
+\$80,000 sit in contract escrow at Mars. Each amount backs the maximum loss of that side ($40Q$) and is released only by
+the fixing. All other assets are free: Alice has \$70,000 at Earth, Cara has \$20,000 and 1,000 Belt at Ceres, Bob has
+\$50,000 and 3,000 Ares at Mars, Dax has \$100,000 at Neptune, Eve has \$50,000 at Uranus, and Fin has \$50,000 and
+1,000 Terra at Earth. Every dollar therefore has one owner, one location and one use.
+
+Table~\ref{tab:e3times} shows when each settled position stops being an obligation, when it is backed by
+a funded transfer, and when it is spendable at home.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{When each settled position is discharged, backed by a funded transfer, and spendable at home (hours, no loss).}\label{tab:e3times}
+\begin{tabularx}{\linewidth}{@{}lLLL@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Position} & \textbf{Obligation discharged} & \textbf{Backed claim exists} & \textbf{Spendable at home} \\\hline\noalign{\vskip 1pt}
+S1a, Alice's shares & Fill at 2.502 & Fill at 2.502 & 3.067 \\
+S1a, Bob's cash & Fill at 2.502 & — (local) & 2.502 \\
+S1d and S1e payouts & 326.502 & 326.502 & Cara 328.032, Alice 328.174 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+
+
+\paragraph{Opening sheet and history.} Table~\ref{tab:e3open} is the opening balance sheet. The supplement
+(Section E3+) lists every change in every scenario's balances by account, asset and location, and
+Table~B27 there gives, for every obligation in every scenario, when it is created, discharged,
+backed and spendable.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Opening balance sheet at hour 0. Every balance is available at the account's home exchange; remote trading accounts, holds, escrow and transit are all zero. The share registries record the same custody: Mars 3,000 Ares at Mars, Ceres 1,000 Belt at Ceres, Earth 1,000 Terra at Earth.}\label{tab:e3open}
+\begin{tabularx}{\linewidth}{@{}llrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Account} & \textbf{Home exchange} & \textbf{NeoDollars} & \textbf{Ares} & \textbf{Belt} & \textbf{Terra} \\\hline\noalign{\vskip 1pt}
+Alice & Earth & \$150,000 & — & — & — \\
+Bob & Mars & \$50,000 & 3,000 & — & — \\
+Cara & Ceres & \$100,000 & — & 1,000 & — \\
+Dax & Neptune & \$100,000 & — & — & — \\
+Eve & Uranus & \$50,000 & — & — & — \\
+Fin & Earth & \$50,000 & — & — & 1,000 \\
+Total & 5 settlements & \$500,000 & 3,000 & 1,000 & 1,000 \\
+Each exchange (own account) & all 9 & \$0 & — & — & — \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+\section*{S2. Stress and recovery}
+\paragraph{Choice of incident.} We ran the futures scenario on both price paths under every allowed incident on a
+grid of start times between hour 0 and hour 420. The grid covered a 72-hour isolation of each settlement starting
+every hour, a 6-hour forced loss at each of the 11 nodes starting every 0.5 hours, and an endpoint reset of each
+exchange every 0.25 hours, 56,280 runs in total. We measured damage as the extra hours until both payouts
+are spendable, with a penalty of $10^6$ if the contract never opens. Table~\ref{tab:s2search} gives the worst start time
+for each kind of incident and node, and Figure~B2 shows the damage against start time.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Worst start time for each kind of incident and node, over both price paths.}\label{tab:s2search}
+\begin{tabularx}{\linewidth}{@{}llrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Incident} & \textbf{Node} & \textbf{Start h} & \textbf{Opened h} & \textbf{Done h} & \textbf{Extra h} \\\hline\noalign{\vskip 1pt}
+reset & Mars & 0.75 & 128.13 & 453.79 & +125.6 \\
+reset & Earth & 327.25 & 2.50 & 453.73 & +125.6 \\
+reset & Ceres & 327.25 & 2.50 & 453.16 & +125.0 \\
+isolation & Earth & 1 & 77.88 & 403.55 & +75.4 \\
+isolation & Mars & 1 & 77.88 & 403.55 & +75.4 \\
+isolation & Ceres & 310 & 2.50 & 403.11 & +74.9 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+\paragraph{State of every obligation during the incident.} Alice's and Cara's \$80,000 have been debited at home and are
+in transit. They still belong to Alice and Cara but cannot be spent anywhere, for about 125 hours. No contract exists
+yet, so nobody owes anything and neither margin can be lost. Bob's shares and all other accounts are not affected.
+Local service at Mars never stops, because the reset only erased transport state.
+
+\paragraph{Recovery.} Recovery here means that financial service resumes, not only that a packet gets through. The
+transfers are imported at Mars, both margins are held and the contract opens at hour 128.13. This is before the
+168-hour deadline, so the trade still takes place with the full 300-hour term, and both payouts arrive home.
+Table~\ref{tab:s2var} compares the variants. Across the search, isolation and forced loss matter only around the
+opening (hours 0 to 3) and in the payout window (hours 255 to 330), and a reset matters only if it falls between a
+handshake and the first data packet.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{The chosen incident under each variant, without random loss. The falling price path gives identical results.}\label{tab:s2var}
+\begin{tabularx}{\linewidth}{@{}Lrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Variant} & \textbf{Opened h} & \textbf{Done h} & \textbf{Packets} & \textbf{Originations} \\\hline\noalign{\vskip 1pt}
+No incident & 2.50 & 328.17 & 141 & 15 \\
+Incident, baseline design & 128.13 & 453.79 & 197 & 19 \\
+Incident, no maintenance & 128.13 & 453.79 & 197 & 19 \\
+No incident, no maintenance & 2.50 & 328.17 & 141 & 15 \\
+Incident with restart notice (A1) & 3.82 & 329.49 & 189 & 21 \\
+Incident with no backoff & 104.13 & 429.80 & 197 & 19 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+
+\paragraph{Maintenance.} Removing the two scheduled maintenance windows makes no difference to this incident. Neither
+window (Relay B to Neptune from hour 2 to 26, and Relay B to Ceres from hour 240 to 264) lies on the routes that the
+runs use, which are Earth, Relay A, Mars and Ceres, Relay A, Mars. The timing is set by the geometry alone.
+
+\paragraph{Alternative A1.} This alternative changes one rule and keeps the same funding and guarantees. After a reset,
+an exchange sends a RESTART notice to every peer it has had a session with in the last 7 days. The notice is one
+64-byte backbone record and counts against the sender's quota. A peer that receives it abandons its old sessions with
+that exchange and immediately resubmits all unacknowledged records. With A1 the contract opens at hour 3.82
+instead of hour 128.13, and fewer packets are needed. Removing the backoff alone, as a sensitivity test, saves
+only 24 hours. A1 is not part of the evaluated design v3; it is the first change for the next revision.
+Table~\ref{tab:s2mc} gives the results with random loss.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{The chosen incident with random loss (1,000 runs each).}\label{tab:s2mc}
+\begin{tabularx}{\linewidth}{@{}lrrrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Variant} & \textbf{Done} & \textbf{Median h} & \textbf{p90 h} & \textbf{p99 h} & \textbf{P(open)} & \textbf{Mean pkts} \\\hline\noalign{\vskip 1pt}
+incident & 1000/1000 & 455.33 & 457.27 & 460.61 & 100.0\% & 206 \\
+incident restart notice & 1000/1000 & 331.07 & 333.68 & 337.66 & 100.0\% & 197 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+
+
+\paragraph{Complete trace.} Table~B28 in the supplement lists every event of the incident from hour 0
+to the opening, including every ignored copy and every endpoint timeout.
+
+\section*{S3. Access at every settlement}
+Funding, withdrawals and payouts travel over the backbone between the client's home exchange and the host; orders and
+contract instructions travel by direct service from the client to the host. The hosts are Mars (Ares and the futures),
+Ceres (Belt) and Earth (Terra). Tables~\ref{tab:s3access} and~\ref{tab:s3direct} show access by each service.
+Availability is sampled every minute with maintenance applied. The only availability changes between hour 0 and hour
+300 are on Mercury's direct paths: to Mars it is open for 95\% of the first day and closed all of day 300 (hours 22.5
+to 357), and to Ceres it is open for 37\% of day 300. R8 forwards around both.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{3pt}
+\caption{Backbone access from each settlement to the three hosts at hours 0 and 300: relay or relays used (A, B) and one-way delay there and back in minutes. Availability over the next 24 hours is 100\% unless shown.}\label{tab:s3access}
+\begin{tabularx}{\linewidth}{@{}lllllll@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{From} & \textbf{Mars, h 0} & \textbf{Mars, h 300} & \textbf{Ceres, h 0} & \textbf{Ceres, h 300} & \textbf{Earth, h 0} & \textbf{Earth, h 300} \\\hline\noalign{\vskip 1pt}
+Mercury & A 42/42 & A 42/42 & A 42/42 & A 41/41 & A 46/46 & A 44/44 \\
+Venus & A 37/37 & A 36/36 & A 36/36 & A 35/35 & A 41/41 & A 38/38 \\
+Earth & A 34/34 & A 33/33 & A 33/33 & A 32/32 & local & local \\
+Mars & local & local & A 30/30 & A 30/31 & A 34/34 & A 33/33 \\
+Ceres & A 30/30 & A 31/30 & local & local & A 33/33 & A 32/32 \\
+Jupiter & B 40/40 & B 39/39 & B 41/41 & B 41/41 & B 51/51 & B 50/50 \\
+Saturn & A 76/76 & A 77/77 & A 75/75 & A 76/76 & A 79/79 & A 79/79 \\
+Uranus & A 155/155 & A 155/155 & A 154/154 & A 154/154 & A 158/158 & A 157/157 \\
+Neptune & A 247/247 & A 248/248 & A 246/246 & A 247/247 & A 250/250 & A 250/250 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{3pt}
+\caption{Direct access from each settlement to the three hosts at hours 0 and 300: one-way delay in minutes, availability over the next 24 hours, and the number of copies the client sends.}\label{tab:s3direct}
+\begin{tabularx}{\linewidth}{@{}lllllll@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{From} & \textbf{Mars, h 0} & \textbf{Mars, h 300} & \textbf{Ceres, h 0} & \textbf{Ceres, h 300} & \textbf{Earth, h 0} & \textbf{Earth, h 300} \\\hline\noalign{\vskip 1pt}
+Mercury & 17, 95\%, 3 & 17, 0\%, 3 & 26, 100\%, 4 & 26, 37\%, 4 & 11, 100\%, 2 & 9, 100\%, 2 \\
+Venus & 15, 100\%, 3 & 14, 100\%, 3 & 24, 100\%, 3 & 23, 100\%, 3 & 3, 100\%, 2 & 3, 100\%, 2 \\
+Earth & 14, 100\%, 3 & 14, 100\%, 3 & 23, 100\%, 3 & 21, 100\%, 3 & local & local \\
+Mars & local & local & 9, 100\%, 2 & 9, 100\%, 2 & 14, 100\%, 3 & 14, 100\%, 3 \\
+Ceres & 9, 100\%, 2 & 9, 100\%, 2 & local & local & 23, 100\%, 3 & 21, 100\%, 3 \\
+Jupiter & 37, 100\%, 4 & 36, 100\%, 4 & 34, 100\%, 4 & 33, 100\%, 4 & 50, 100\%, 5 & 49, 100\%, 5 \\
+Saturn & 75, 100\%, 7 & 76, 100\%, 8 & 75, 100\%, 7 & 75, 100\%, 7 & 70, 100\%, 7 & 70, 100\%, 7 \\
+Uranus & 150, 100\%, 8 & 150, 100\%, 8 & 141, 100\%, 8 & 141, 100\%, 8 & 158, 100\%, 8 & 157, 100\%, 8 \\
+Neptune & 246, 100\%, 8 & 248, 100\%, 8 & 245, 100\%, 8 & 246, 100\%, 8 & 240, 100\%, 8 & 240, 100\%, 8 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Relocation.} We re-ran the same client, a \$100,000 Ares purchase with home delivery from a comparable
+funded account, with its home moved to each settlement in turn (Table~\ref{tab:s3rel}). A Mars home is best overall
+(the purchase is local, with no packets) and is left out of the ranking. Table~\ref{tab:s3steps} gives the step-by-step timeline for the best
+(Ceres), median (Mercury) and worst (Neptune) homes. The sequence is the same everywhere; only the backbone and
+direct delays and the number of direct copies change.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{The same \$100,000 Ares purchase with the client moved to each settlement, ranked by completion time without loss. Times in hours; P(t) is the probability of completing within t hours (1,000 lossy runs each).}\label{tab:s3rel}
+\begin{tabularx}{\linewidth}{@{}lrrrrrrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Home} & \textbf{No loss} & \textbf{Pkts} & \textbf{Median} & \textbf{p90} & \textbf{p99} & \textbf{P(24)} & \textbf{P(72)} & \textbf{P(168)} & \textbf{Mean pkts} \\\hline\noalign{\vskip 1pt}
+Mars & 0.00 & 0 & 0.00 & 0.00 & 0.00 & 1.00 & 1.00 & 1.00 & 0 \\
+Ceres & 2.64 & 46 & 2.64 & 4.14 & 7.11 & 1.00 & 1.00 & 1.00 & 48 \\
+Earth & 3.07 & 47 & 3.07 & 4.69 & 6.32 & 1.00 & 1.00 & 1.00 & 50 \\
+Venus & 3.33 & 47 & 3.35 & 6.34 & 8.28 & 1.00 & 1.00 & 1.00 & 50 \\
+Mercury & 3.81 & 47 & 3.83 & 7.22 & 9.53 & 1.00 & 1.00 & 1.00 & 51 \\
+Jupiter & 3.95 & 48 & 3.98 & 7.27 & 12.29 & 1.00 & 1.00 & 1.00 & 51 \\
+Saturn & 7.57 & 51 & 10.59 & 15.15 & 21.63 & 0.99 & 1.00 & 1.00 & 58 \\
+Uranus & 15.38 & 52 & 26.76 & 48.49 & 70.31 & 0.34 & 0.99 & 1.00 & 68 \\
+Neptune & 24.68 & 52 & 74.43 & 127.05 & 201.84 & 0.00 & 0.47 & 0.97 & 97 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Step-by-step timeline of the relocated purchase for the best, median and worst homes. The full packet-level traces are in \texttt{traces/S3\_reloc\_<home>\_*.csv}.}\label{tab:s3steps}
+\begin{tabularx}{\linewidth}{@{}lrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Step (hours, no loss)} & \textbf{Best: Ceres} & \textbf{Median: Mercury} & \textbf{Worst: Neptune} \\\hline\noalign{\vskip 1pt}
+Funding imported at Mars & 1.487 & 2.119 & 12.344 \\
+RECEIVED known at home & 1.983 & 2.826 & 16.459 \\
+Order sent (direct) & 1.983 & 2.826 & 16.460 \\
+Order arrives and fills & 2.141 & 3.103 & 20.565 \\
+Bob's cash spendable & 2.141 & 3.103 & 20.565 \\
+Shares spendable at home & 2.636 & 3.810 & 24.681 \\
+Order copies × loss each & 2 × p 0.087 & 3 × p 0.147 & 8 × p 0.906 \\
+Packets (backbone + direct) & 44 + 2 & 44 + 3 & 44 + 8 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Outer settlements in the futures.} Table~\ref{tab:s3fut} shows the futures with Dax (Neptune) or Eve
+(Uranus) as the long party against Cara. Eve's position is $Q = 1{,}250$ so that it fits her \$50,000.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Futures with an outer-system long party against Cara. Times in hours; P(open) is the probability that the contract opens before the 168-hour deadline (300 lossy runs each).}\label{tab:s3fut}
+\begin{tabularx}{\linewidth}{@{}lrrrrr@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Long party} & \textbf{Open, no loss} & \textbf{Done, no loss} & \textbf{P(open)} & \textbf{Median open} & \textbf{Median done} \\\hline\noalign{\vskip 1pt}
+Dax & 20.57 & 356.99 & 99.7\% & 62.04 & 421.46 \\
+Eve & 12.80 & 344.56 & 100.0\% & 24.13 & 363.01 \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+
+\paragraph{Every product at every settlement.} Table~\ref{tab:s3prod} repeats the relocation for each product. A
+purchase is local, with no network traffic, only when the client's home is the market's host; every other cell uses
+the same three steps (funding over the backbone, a direct order, delivery home over the backbone). The time is set by
+the slower of the client's direct path to the host and the backbone route back, so the columns differ little. The
+Neptune client completes within 72 hours with probability 0.49 and within 168 hours with
+probability 0.98.
+
+Of the 10,800 lossy runs, 3 did not trade, all with the client at Neptune
+(1 Ares, 1 Belt, 1 Futures), and none lost anything. A direct copy from Neptune to Mars is lost with probability about 0.91.
+In the share runs every copy of the order was lost during its 7-day life (64 copies in 8 sends in the Ares run); it expired and
+the \$100,000 stayed available to the client at the host. In the futures run the client's instruction did not reach Mars
+before the 168-hour opening deadline, so the contract was rejected and both margins went back home.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{3pt}
+\caption{Service by product and settlement. The client's account is moved to each settlement and buys 1,000 shares of each stock at \$100 at its market with home delivery, or goes long $Q = 2{,}000$ in the Mars futures against Cara. Share columns: completion hours without loss / median under random loss / probability of completing within 72 hours. Futures column: opening hour without loss / probability of opening before the 168-hour deadline. 300 lossy runs per cell (\texttt{products.py}).}\label{tab:s3prod}
+\begin{tabularx}{\linewidth}{@{}lllll@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Home} & \textbf{Ares at Mars} & \textbf{Belt at Ceres} & \textbf{Terra at Earth} & \textbf{Futures at Mars} \\\hline\noalign{\vskip 1pt}
+Mercury & 3.8 / 5.3 / 1.00 & 3.9 / 4.7 / 1.00 & 4.0 / 5.6 / 1.00 & 3.1 / 100.0\% \\
+Venus & 3.3 / 3.3 / 1.00 & 3.4 / 3.5 / 1.00 & 3.4 / 3.5 / 1.00 & 2.7 / 100.0\% \\
+Earth & 3.1 / 3.1 / 1.00 & 3.2 / 3.2 / 1.00 & local, 0.0 & 2.5 / 100.0\% \\
+Mars & local, 0.0 & 2.6 / 2.6 / 1.00 & 3.1 / 3.1 / 1.00 & 2.1 / 100.0\% \\
+Ceres & 2.6 / 2.6 / 1.00 & local, 0.0 & 3.2 / 3.2 / 1.00 & 2.1 / 100.0\% \\
+Jupiter & 3.9 / 4.0 / 1.00 & 4.0 / 4.1 / 1.00 & 5.1 / 6.8 / 1.00 & 3.3 / 100.0\% \\
+Saturn & 7.6 / 10.6 / 1.00 & 7.5 / 10.5 / 1.00 & 7.8 / 10.8 / 1.00 & 6.3 / 100.0\% \\
+Uranus & 15.4 / 26.8 / 0.99 & 15.2 / 26.5 / 1.00 & 15.8 / 27.2 / 0.98 & 12.8 / 100.0\% \\
+Neptune & 24.7 / 73.4 / 0.49 & 24.6 / 73.2 / 0.49 & 24.9 / 69.4 / 0.52 & 20.6 / 99.7\% \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+
+\section*{E4. Long-horizon scan (Tier 3)}
+\paragraph{Scan.} We scanned 200 Julian years from the epoch at a 1-hour step (1,753,201
+samples). At each sample we computed the clearance from the Sun, with a moving receiver, for all 38 directed backbone
+links and all 72 directed direct paths, without maintenance. For routes, we computed the best-route delay from every settlement to each market host and back
+at 6-hour steps, with flights in sequence.
+
+\paragraph{Certification of the scan.} The clearance is the Sun's distance from the segment between the sender at
+$t_e$ and the receiver at $t_a$. It changes no faster than the fastest endpoint moves plus the shift in arrival time,
+which gives a Lipschitz bound of $L \le 0.00146$~AU per hour (Mercury at perihelion, 58.98~km/s).
+On any interval $[a, b]$ with end values $c(a)$ and $c(b)$, every interior value lies within
+$\tfrac12(c(a) + c(b)) \pm \tfrac12 L(b - a)$. A second program (\texttt{e4\_certify.py}) uses this as an interval
+test on all 110 paths. An hour is certified open if the lower bound is at least 0.10~AU and certified
+closed if the upper bound is below it. Otherwise it is split in half and both halves are tested again, down to 1~ms.
+Of the 192,852,000 path-hours, all but 116,956 were certified directly, and
+the refined hours contain 48,632 changes between open and closed, each located to within 1~ms.
+The closure counts agree exactly with the scan. Leaves that the test cannot classify can sit next to each other,
+so we merged adjacent uncertified leaves into connected intervals. There are 48,632 such intervals,
+exactly one per located transition. The longest is 0.29~s
+(337 leaves, at a grazing pass where the clearance stays very close to 0.10~AU), and
+every one has different states at its two ends, so each contains the change it is counted for. Any further changes
+inside an interval would come in pairs and bound a period shorter than the interval. Within the model, therefore, every
+change between open and closed in the 200 years is located to within 0.29~s, and no open
+or closed period longer than 0.29~s is missed. The run took 4.6 minutes.
+
+\paragraph{Refined boundary (Tier 2).} For the Earth to Relay A, first closure, the hourly samples bracket the boundary in
+[24001200, 24004800]~s. Bisection with the exact light-time solver narrows this to
+[24004585.374355, 24004585.375214]~s, a width of 0.858~ms, within the
+1~ms tolerance. A packet emitted before the boundary follows its own path and is not affected. Our queue does not launch
+a packet after the boundary; the link waits instead. A closure therefore never destroys a packet in flight. It only
+delays the next launch, and the hop timer $R_h$ restarts at the actual emission.
+
+\paragraph{Results.} The link between Relay A and Relay B never closes; its minimum clearance is
+2.00~AU. Table~\ref{tab:e4} gives the results for the other links. Every settlement
+had a route to every host at every sample: the connected fraction is 1.000 for all 42 directed
+settlement--host pairs, as the geometric argument in the design paper predicts. The longest one-way route is
+Mars to Neptune at 315 minutes (hour 993,510). The longest
+direct closure is Jupiter to Saturn at 70.8 days. Direct paths are the weak point,
+and their closures are the reason for our access check, deferral and forwarding rule R8.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{3pt}
+\caption{Results of the 200-year scan. Relay columns: availability, number of closures and longest closure. Host columns: one-way route time in minutes (minimum / median / maximum). Last column: availability and longest closure of the direct path to Mars.}\label{tab:e4}
+\begin{tabularx}{\linewidth}{@{}lllllll@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{From} & \textbf{To Relay A} & \textbf{To Relay B} & \textbf{To Mars} & \textbf{To Ceres} & \textbf{To Earth} & \textbf{Direct to Mars} \\\hline\noalign{\vskip 1pt}
+Mercury & 90.9\%, 788, 267 h & 90.9\%, 789, 267 h & 30/42/86 & 20/43/91 & 35/43/84 & 89.7\%, 14 d \\
+Venus & 94.6\%, 283, 345 h & 94.6\%, 283, 345 h & 27/43/87 & 19/43/91 & 33/44/85 & 93.6\%, 24 d \\
+Earth & 95.7\%, 158, 493 h & 95.7\%, 158, 493 h & 25/43/87 & 17/43/92 & local & 94.7\%, 53 d \\
+Mars & 96.9\%, 64, 1086 h & 96.9\%, 64, 1084 h & local & 12/44/94 & 25/43/87 & local \\
+Ceres & 99.5\%, 2, 4565 h & 99.7\%, 2, 3768 h & 12/44/94 & local & 17/43/92 & 98.9\%, 38 d \\
+Jupiter & 98.3\%, 25, 1243 h & 98.4\%, 25, 1211 h & 30/59/112 & 23/65/106 & 33/58/110 & 97.4\%, 26 d \\
+Saturn & 99.0\%, 35, 747 h & 99.0\%, 36, 749 h & 62/95/148 & 53/99/144 & 67/92/145 & 97.8\%, 20 d \\
+Uranus & 98.7\%, 40, 571 h & 98.7\%, 40, 571 h & 139/174/227 & 134/178/230 & 145/172/227 & 97.8\%, 17 d \\
+Neptune & 99.0\%, 41, 528 h & 99.0\%, 41, 529 h & 235/263/315 & 227/268/309 & 240/261/312 & 98.0\%, 17 d \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{What holds beyond 200 years.} Two results do not depend on the scan. The relay geometry argument shows that
+every settlement always has a route to every host. Since a route has at most three links, its length is at most
+$(r_a + R) + R\sqrt{2} + (r_b + R)$~AU, with aphelion distances $r_a, r_b$ and relay radius $R = 2.828$~AU,
+so every one-way route delay with empty queues is bounded for all time (\texttt{e4\_bound.py}). The largest bound is
+358 minutes (Neptune to Ceres, against 309 observed), and every
+observed maximum is at least 9 minutes below its bound. The availability figures, closure counts and
+typical delays in Table~\ref{tab:e4} are statistics of the scanned 200 years only. The orbital periods are not
+commensurate, so the configuration never repeats exactly, and we do not extrapolate them. Section E5 tests three
+later epochs directly.
+
+
+\section*{E5. Shifted epochs (Tier 3)}
+Each run starts at $t = k \times 365.25$ days with every orbit advanced from the epoch. Balances are reset to the
+opening values, maintenance and the S2 incident are not repeated, and the observation and maturity times move with the
+start. S1d and S1e give identical times at every epoch (only the payout split differs), so Table~\ref{tab:e5} lists
+them together.
+
+\begin{table}[!htb]\centering\tablefont\setlength{\tabcolsep}{4pt}
+\caption{Results at shifted epochs. Route columns: backbone route used and one-way time in minutes, then the direct path time and 24-hour availability (backbone availability is 100\% unless shown). Scenario columns: completion time without loss, with the median of 300 lossy runs in brackets. Where the result without rule R8 (forwarding) differs, it is shown after ``no R8''.}\label{tab:e5}
+\begin{tabularx}{\linewidth}{@{}lrLLLL@{}}\noalign{\vskip 1pt}\hline\noalign{\vskip 1pt}\textbf{Epoch} & \textbf{Start (h)} & \textbf{Earth–Mars} & \textbf{Ceres–Mars} & \textbf{S1a equity} & \textbf{S1d/S1e futures} \\\hline\noalign{\vskip 1pt}
++1 year & 8,766 & Ea-B-Ma 47; direct 17, 100\% & Ce-B-Ma 32; direct 23, 100\% & 4.22 (5.76) & 329.87 (331.91) \\
++10 years & 87,660 & Ea-B-Ma 42; direct 22, 0\% & Ce-B-Ma 19; direct 11, 100\% & 3.87 (3.89); no R8: 350.75 & 329.27 (331.32); no R8: suspended \\
++100 years & 876,600 & Ea-B-Ma 39; direct 18, 100\% & Ce-A-Ma 50; direct 37, 100\% & 3.52 (3.53) & 330.48 (332.37) \\
+Mars conjunction & 12,470 & Ea-A-Ma 50; direct 20, 0\% & Ce-B-Ma 42; direct 31, 100\% & 4.55 (6.06); no R8: deferred & 330.23 (332.79); no R8: suspended \\\noalign{\vskip 1pt}\hline
+\end{tabularx}
+\end{table}
+
+\paragraph{Difficult epoch.} We chose the first Mars solar conjunction after the epoch. The Earth to Mars direct path
+closes at hour 12,446.0 and reopens at hour 13,713, 53 days later, and we start
+24 hours after the closure. With rule R8, Alice's client forwards her instructions through Mercury, whose direct legs to Earth and to Mars
+are both open. Her order goes Earth to Mercury as 2 copies (each lost with probability
+0.069), and Mercury forwards it once as 3 copies (each lost with
+probability 0.125). The first copy reaches Mars at hour
+3.708, with probability 0.814 that both first copies
+arrive. The probability that some copy crosses each leg, so that the order arrives within minutes (by about hour
+3.76, if only the last first-leg copy gets through), is 0.9933. Mercury uses at most
+3 of its 12 daily direct packets. Alice learns that her contract is OPEN at hour
+4.55 from a STATUS record over the backbone. The equity trade completes in
+4.55 hours, and both futures price paths complete in
+330.23 hours. With random loss, 300/300 equity
+runs (median 6.06 h, p99 11.03 h) and 300/300 futures runs (median
+332.79 h) complete. A lost forwarded copy is recovered by the R6 fallback as attempt $k + 1$.
+
+Without R8, Alice's client finds no long enough direct window and never funds Mars: no trade takes place, and Cara's
+futures margin is back home by hour 170.22. Nobody loses anything, but nobody trades. At +10 years the equity
+trade waits 351 hours and the futures are suspended.
+
+
+\end{document}

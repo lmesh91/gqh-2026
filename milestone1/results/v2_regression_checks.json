@@ -1,0 +1,37 @@
+{
+  "allocated_backbone_originations_per_rolling_day": 594,
+  "records_per_payload": {
+    "ORDER": 6,
+    "PAY_REQUEST": 4,
+    "PAYMENT": 5,
+    "DELIVERY": 5,
+    "RECEIVED": 7,
+    "CONTROL": 7,
+    "TRANSFER": 6,
+    "PRICE": 4,
+    "CONTRACT_INSTRUCTION": 3,
+    "OPENED": 7
+  },
+  "earth_mars": {
+    "conserved_event_rows": 6,
+    "physical_launches": 45,
+    "backbone_originations": 5
+  },
+  "earth_ceres": {
+    "conserved_event_rows": 6,
+    "physical_launches": 45,
+    "backbone_originations": 5
+  },
+  "jupiter_mars": {
+    "conserved_event_rows": 6,
+    "physical_launches": 45,
+    "backbone_originations": 5
+  },
+  "neptune_mars": {
+    "conserved_event_rows": 6,
+    "physical_launches": 45,
+    "backbone_originations": 5
+  },
+  "passed": true,
+  "scope": "Conditional no-loss traces and bounded financial model; no full stochastic transport or derivative packet execution"
+}

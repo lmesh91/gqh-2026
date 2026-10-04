@@ -1,0 +1,10 @@
+hour,actor,action,local_knowledge,state
+0.0002777777777777778,Earth exchange,RESERVE_LOCAL,Buyer requested funding locally,Buyer cash $100000 encumbered on Earth
+1.6965663932827442,Mars clearer,RESERVATION_RECEIVED,Earth official reservation present,Funded order eligible once client instruction arrives
+1.6965663932827442,Mars clearer,MATCH,Order and official cash reservation received; seller inventory reserved,Earth $100000 and Mars 1000 shares locked; no spendable proceeds
+2.262180124517222,Earth exchange,PREPARED,Exact trade digest agrees with cash reservation,Earth reservation irreversibly prepared; cannot time out
+2.8278651954145424,Mars clearer,COMMIT,Both local Mars and Earth prepared records known,Immutable commit; Mars debits seller shares into staged Earth custody; both outputs blocked
+3.3934444407398243,Earth exchange,APPLIED,Authoritative commit received,"Earth debits $100000; stages 1000 share entitlement; export cash is in transit, not new money"
+3.9590950277829404,Mars clearer,RELEASE,All debit/apply certificates present,Mars seller cash spendable; Earth share release in flight; discharge and backed claims recorded
+4.524639823906794,Earth exchange,RELEASED,All-participant applied certificate received,Earth 1000 shares spendable in exclusive local custody; trade complete
+5.09025596378888,Mars clearer,COMPLETE_KNOWN,Both release receipts known,Clearer knows both local balances are spendable

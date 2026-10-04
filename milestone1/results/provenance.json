@@ -1,0 +1,15 @@
+{
+  "source_precedence": "brief.pdf plus supplied data.zip; user proposal and exported CSV secondary",
+  "files": {
+    "info/architecture.pdf": "06cb065c925bb5e8c68ce93cc780c0964b7a7f62611c15681eabc8406574c6e6",
+    "info/brief.pdf": "08dfc9ae428d1283a658b69c82432ba76f2f043d0bd4b0deb8b4c8238c9fbe40",
+    "info/data.zip": "7e18b49ec64fa9d3365b6f70c3f1c11cf38c179ec39ceb197ddf1da1bc6c39d0",
+    "info/research_prompt.txt": "2522c9f71d5a638b06f8ffb138f2e67fab7166d50f46a6d067f9f477aaa9493b",
+    "info/idea.txt": "d3bdc455ff8b2327730df3a80fb24e65ffbc81aecc10a5c700d26526b812c1ea",
+    "info/Solar_System_positions_2026-09-22_to_2226-10-01_daily.csv": "e5851b2cfda4591e56a6d406329b0f99d2dd6f4dd0b2531d4bc1e32e7e550418",
+    "milestone1/verify.py": "b6912e34d6fe022ba1560be87f7d6b063ddf1f187e2a65a8e414cceda5cf67f6",
+    "milestone1/checks.py": "8bfcd3f3300ce11846f12988a78c101848eef4b0bb95e24ad39b15a87ef62b38",
+    "milestone1/model.py": "29042058cf666973af5d36df33a8dd879ca9a7eaeb2bf507654ac1726cca21ae"
+  },
+  "evidence_scope": "Milestone 1 design, geometry, conditional no-loss packet traces, abstract safety, isolated-hop probes; not full lossy transport"
+}

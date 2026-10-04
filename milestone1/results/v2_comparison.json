@@ -1,0 +1,177 @@
+{
+  "cases": [
+    {
+      "design_version": 2,
+      "scenario": "earth_mars",
+      "buyer_home": "Earth",
+      "market": "Mars",
+      "reset": "Original opening book; relocate Alice only for S3 non-Earth buyer cases",
+      "conditions": "No random loss; cold on-demand session; no closure encountered; no batching",
+      "backbone_originations": 5,
+      "originations_by_institution": {
+        "Mars": 3,
+        "Earth": 2
+      },
+      "backbone_launches": 44,
+      "direct_launches": 1,
+      "total_launches": 45,
+      "direct_order_success_probability": 0.8710726646839535,
+      "backed_claim_hour": 1.936176915218368,
+      "discharge_hour": 2.501871929949106,
+      "seller_spendable_hour": 2.501871929949106,
+      "buyer_spendable_hour": 3.067461109131703,
+      "complete_hour": 3.067461109131703,
+      "complete_known_hour": 3.633121629441456,
+      "cash_asset_hours": 250159.41521713283,
+      "share_asset_hours": 3067.183331353925,
+      "peak_cash_encumbered": 100000,
+      "peak_trade_shares_encumbered": 1000,
+      "capital_utilization": 0.2,
+      "capital_efficiency": 1,
+      "types": {
+        "SYN": 2,
+        "HOP_RECEIPT": 22,
+        "SYN_ACK": 2,
+        "ACK": 2,
+        "PAY_REQUEST": 2,
+        "DATA_ACK": 8,
+        "PAYMENT": 2,
+        "DELIVERY": 2,
+        "RECEIVED": 2
+      }
+    },
+    {
+      "design_version": 2,
+      "scenario": "earth_ceres",
+      "buyer_home": "Earth",
+      "market": "Ceres",
+      "reset": "Original opening book; relocate Alice only for S3 non-Earth buyer cases",
+      "conditions": "No random loss; cold on-demand session; no closure encountered; no batching",
+      "backbone_originations": 5,
+      "originations_by_institution": {
+        "Ceres": 3,
+        "Earth": 2
+      },
+      "backbone_launches": 44,
+      "direct_launches": 1,
+      "total_launches": 45,
+      "direct_order_success_probability": 0.8024973804778736,
+      "backed_claim_hour": 2.051303163708356,
+      "discharge_hour": 2.607968613816215,
+      "seller_spendable_hour": 2.607968613816215,
+      "buyer_spendable_hour": 3.164517901854788,
+      "complete_hour": 3.164517901854788,
+      "complete_known_hour": 3.7211090883208766,
+      "cash_asset_hours": 260769.0836038437,
+      "share_asset_hours": 3164.2401240770105,
+      "peak_cash_encumbered": 100000,
+      "peak_trade_shares_encumbered": 1000,
+      "capital_utilization": 0.2,
+      "capital_efficiency": 1,
+      "types": {
+        "SYN": 2,
+        "HOP_RECEIPT": 22,
+        "SYN_ACK": 2,
+        "ACK": 2,
+        "PAY_REQUEST": 2,
+        "DATA_ACK": 8,
+        "PAYMENT": 2,
+        "DELIVERY": 2,
+        "RECEIVED": 2
+      }
+    },
+    {
+      "design_version": 2,
+      "scenario": "jupiter_mars",
+      "buyer_home": "Jupiter",
+      "market": "Mars",
+      "reset": "Original opening book; relocate Alice only for S3 non-Earth buyer cases",
+      "conditions": "No random loss; cold on-demand session; no closure encountered; no batching",
+      "backbone_originations": 5,
+      "originations_by_institution": {
+        "Mars": 3,
+        "Jupiter": 2
+      },
+      "backbone_launches": 44,
+      "direct_launches": 1,
+      "total_launches": 45,
+      "direct_order_success_probability": 0.6999250898282664,
+      "backed_claim_hour": 2.615045348455261,
+      "discharge_hour": 3.2805757742033443,
+      "seller_spendable_hour": 3.2805757742033443,
+      "buyer_spendable_hour": 3.9461305008036884,
+      "complete_hour": 3.9461305008036884,
+      "complete_known_hour": 4.611609347009334,
+      "cash_asset_hours": 328029.79964255664,
+      "share_asset_hours": 3945.8527230259106,
+      "peak_cash_encumbered": 100000,
+      "peak_trade_shares_encumbered": 1000,
+      "capital_utilization": 0.2,
+      "capital_efficiency": 1,
+      "types": {
+        "SYN": 2,
+        "HOP_RECEIPT": 22,
+        "SYN_ACK": 2,
+        "ACK": 2,
+        "PAY_REQUEST": 2,
+        "DATA_ACK": 8,
+        "PAYMENT": 2,
+        "DELIVERY": 2,
+        "RECEIVED": 2
+      }
+    },
+    {
+      "design_version": 2,
+      "scenario": "neptune_mars",
+      "buyer_home": "Neptune",
+      "market": "Mars",
+      "reset": "Original opening book; relocate Alice only for S3 non-Earth buyer cases",
+      "conditions": "No random loss; cold on-demand session; no closure encountered; no batching",
+      "backbone_originations": 5,
+      "originations_by_institution": {
+        "Mars": 3,
+        "Neptune": 2
+      },
+      "backbone_launches": 44,
+      "direct_launches": 1,
+      "total_launches": 45,
+      "direct_order_success_probability": 0.09364013514337875,
+      "backed_claim_hour": 16.448862544226067,
+      "discharge_hour": 20.564853117699386,
+      "seller_spendable_hour": 20.564853117699386,
+      "buyer_spendable_hour": 24.68083909157734,
+      "complete_hour": 24.68083909157734,
+      "complete_known_hour": 28.79749738335825,
+      "cash_asset_hours": 2056457.5339921606,
+      "share_asset_hours": 24680.56131379956,
+      "peak_cash_encumbered": 100000,
+      "peak_trade_shares_encumbered": 1000,
+      "capital_utilization": 0.2,
+      "capital_efficiency": 1,
+      "types": {
+        "SYN": 2,
+        "HOP_RECEIPT": 22,
+        "SYN_ACK": 2,
+        "ACK": 2,
+        "PAY_REQUEST": 2,
+        "DATA_ACK": 8,
+        "PAYMENT": 2,
+        "DELIVERY": 2,
+        "RECEIVED": 2
+      }
+    }
+  ],
+  "old_protocol_examples": {
+    "earth_mars": {
+      "total_launches": 69,
+      "originations": 8,
+      "complete_hour": 4.524639823906794
+    },
+    "earth_ceres_via_mars": {
+      "total_launches": 149,
+      "originations": 17,
+      "complete_hour": 4.99350402209501
+    }
+  },
+  "note": "Same opening funding and local-spendability requirement; previous examples used early session setup, v2 starts its session only after direct order receipt. Both no-loss and unbatched."
+}

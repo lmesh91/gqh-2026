@@ -1,0 +1,11 @@
+{
+  "unit_tests": 27,
+  "passed": true,
+  "failures": 0,
+  "errors": 0,
+  "exploration": {
+    "states": 19,
+    "transitions": 190
+  },
+  "scope": "Bounded financial model; not full transport or malicious-operator verification"
+}

@@ -1,0 +1,154 @@
+{
+ "S1a": {
+  "title": "Earth-Mars equity: Alice buys 1,000 Ares from Bob",
+  "launches": 47,
+  "backbone": 44,
+  "direct": 3,
+  "transport": 1,
+  "ledger": 23
+ },
+ "S1b": {
+  "title": "Earth-Ceres equity: Alice buys 1,000 Belt from Cara",
+  "launches": 47,
+  "backbone": 44,
+  "direct": 3,
+  "transport": 1,
+  "ledger": 23
+ },
+ "S1c": {
+  "title": "Uranus-Earth equity: Eve buys 400 Terra from Fin",
+  "launches": 52,
+  "backbone": 44,
+  "direct": 8,
+  "transport": 1,
+  "ledger": 33
+ },
+ "S1d": {
+  "title": "Capped futures, rising path (Q = 2,000)",
+  "launches": 141,
+  "backbone": 136,
+  "direct": 5,
+  "transport": 4,
+  "ledger": 46
+ },
+ "S1e": {
+  "title": "Capped futures, falling path (Q = 2,000)",
+  "launches": 141,
+  "backbone": 136,
+  "direct": 5,
+  "transport": 4,
+  "ledger": 46
+ },
+ "S1f": {
+  "title": "Boundary variant Q = 2,500 (rising)",
+  "launches": 141,
+  "backbone": 136,
+  "direct": 5,
+  "transport": 4,
+  "ledger": 46
+ },
+ "S1g": {
+  "title": "Binding variant Q = 2,501 (rejected)",
+  "launches": 66,
+  "backbone": 60,
+  "direct": 6,
+  "transport": 1,
+  "ledger": 29
+ },
+ "S1h": {
+  "title": "Binding variant Q = 4,000 (rejected)",
+  "launches": 0,
+  "backbone": 0,
+  "direct": 0,
+  "transport": 0,
+  "ledger": 4
+ },
+ "S1i": {
+  "title": "Repeat trading on a $10,000 Mars account",
+  "launches": 59,
+  "backbone": 44,
+  "direct": 15,
+  "transport": 1,
+  "ledger": 64
+ },
+ "S3_reloc_Mercury": {
+  "title": "S1a with Alice relocated to Mercury",
+  "launches": 47,
+  "backbone": 44,
+  "direct": 3,
+  "transport": 1,
+  "ledger": 23
+ },
+ "S3_reloc_Venus": {
+  "title": "S1a with Alice relocated to Venus",
+  "launches": 47,
+  "backbone": 44,
+  "direct": 3,
+  "transport": 1,
+  "ledger": 23
+ },
+ "S3_reloc_Earth": {
+  "title": "S1a with Alice relocated to Earth",
+  "launches": 47,
+  "backbone": 44,
+  "direct": 3,
+  "transport": 1,
+  "ledger": 23
+ },
+ "S3_reloc_Mars": {
+  "title": "S1a with Alice relocated to Mars",
+  "launches": 0,
+  "backbone": 0,
+  "direct": 0,
+  "transport": 0,
+  "ledger": 6
+ },
+ "S3_reloc_Ceres": {
+  "title": "S1a with Alice relocated to Ceres",
+  "launches": 46,
+  "backbone": 44,
+  "direct": 2,
+  "transport": 1,
+  "ledger": 21
+ },
+ "S3_reloc_Jupiter": {
+  "title": "S1a with Alice relocated to Jupiter",
+  "launches": 48,
+  "backbone": 44,
+  "direct": 4,
+  "transport": 1,
+  "ledger": 25
+ },
+ "S3_reloc_Saturn": {
+  "title": "S1a with Alice relocated to Saturn",
+  "launches": 51,
+  "backbone": 44,
+  "direct": 7,
+  "transport": 1,
+  "ledger": 31
+ },
+ "S3_reloc_Uranus": {
+  "title": "S1a with Alice relocated to Uranus",
+  "launches": 52,
+  "backbone": 44,
+  "direct": 8,
+  "transport": 1,
+  "ledger": 33
+ },
+ "S3_reloc_Neptune": {
+  "title": "S1a with Alice relocated to Neptune",
+  "launches": 52,
+  "backbone": 44,
+  "direct": 8,
+  "transport": 1,
+  "ledger": 33
+ },
+ "S2_reset_Mars": {
+  "title": "S1d (rising) with the S2 incident: endpoint reset of Mars at hour 0.75",
+  "launches": 197,
+  "backbone": 192,
+  "direct": 5,
+  "transport": 22,
+  "ledger": 47
+ }
+}

@@ -1,0 +1,17 @@
+{
+  "design_version": 3,
+  "files": {
+    "info/brief.pdf": "08dfc9ae428d1283a658b69c82432ba76f2f043d0bd4b0deb8b4c8238c9fbe40",
+    "info/data.zip": "7e18b49ec64fa9d3365b6f70c3f1c11cf38c179ec39ceb197ddf1da1bc6c39d0",
+    "milestone1/DESIGN.md": "6a5b27ac86bda955c2ef7681bb837b80b3cd464de5e7666f8178d8ae2b2345b0",
+    "milestone1/IMPLEMENTATION.md": "a4a9c88ed91b54d9388e1bfc0edeed10e8f4741ae345d2cfc48b7dff8e476584",
+    "milestone1/README.md": "5e565615a44fdb442d4b512a8a49c0cb6f62d22347de85dd60cbab0668b35709",
+    "milestone1/SIMPLIFICATION.md": "bb062c7d371690809a49d9661e3d6b0ebb541386346a8ad35bfefc10225745e7",
+    "milestone1/checks_v3.py": "126595e80df93f6eed0164def407c4e269b6a533c72ac39fe5dabb5d6720833c",
+    "milestone1/prefunded_accounts.py": "6872f24fdfa41e66dd44c411ffeda2d4f982c215d27c277828ff8480f2a15ce8",
+    "milestone1/results/v3_account_example.csv": "272b036183f64ffcb236de060df0adea4ff8a32679c26ddebc7ef6cf2bf270a0",
+    "milestone1/results/v3_safety_checks.json": "211afbf00ed25d4c949a6bf2963d170cdeebd8be947c3c3dff0f79a5e1ef0b82",
+    "milestone1/test_prefunded_accounts.py": "0521ec952e918f457a1cf048e70f6c82e94971fa4e1d0d915b33aa08dc1b9c2e"
+  },
+  "scope": "Bounded financial ledger and payoff arithmetic; no full matching, close/compaction, durable storage implementation, codec or transport simulation"
+}

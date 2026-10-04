@@ -1,0 +1,1411 @@
+{
+ "difficult": {
+  "close_h": 12446.027099609375,
+  "reopen_h": 13713.0,
+  "start_h": 12470.027099609375
+ },
+ "rows": {
+  "+1 year|S1a": {
+   "epoch": "+1 year",
+   "t0_h": 8766.0,
+   "scenario": "S1a",
+   "policy": null,
+   "noloss": {
+    "comp": 4.21860601765828,
+    "times": {
+     "EQ:funding_imported_at_host": 2.3605086722732005,
+     "EQ:funding_receipt_at_home": 3.147639776576931,
+     "EQ:order_sent": 3.147917554354709,
+     "EQ:first_fill": 3.4319454008340835,
+     "EQ:host_final_fill": 3.4319454008340835,
+     "EQ:seller_spendable": 3.4319454008340835,
+     "EQ:buyer_spendable": 4.21860601765828
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 5.759274251554161,
+    "p99": 11.375068420809963,
+    "mean_total": 50.736666666666665
+   }
+  },
+  "+1 year|S1b": {
+   "epoch": "+1 year",
+   "t0_h": 8766.0,
+   "scenario": "S1b",
+   "policy": null,
+   "noloss": {
+    "comp": 4.377864031710972,
+    "times": {
+     "EQB:funding_imported_at_host": 2.3316567875631153,
+     "EQB:funding_receipt_at_home": 3.1091338843552188,
+     "EQB:order_sent": 3.1094116621329966,
+     "EQB:first_fill": 3.6009191410698826,
+     "EQB:host_final_fill": 3.6009191410698826,
+     "EQB:seller_spendable": 3.6009191410698826,
+     "EQB:buyer_spendable": 4.377864031710972
+    },
+    "packets": 48,
+    "bb": 44,
+    "direct": 4,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 5.898945742533025,
+    "p99": 12.915345987201409,
+    "mean_total": 51.82
+   }
+  },
+  "+1 year|S1c": {
+   "epoch": "+1 year",
+   "t0_h": 8766.0,
+   "scenario": "S1c",
+   "policy": null,
+   "noloss": {
+    "comp": 17.419845754943996,
+    "times": {
+     "EQT:funding_imported_at_host": 8.870268433244071,
+     "EQT:funding_receipt_at_home": 11.827207060283463,
+     "EQT:order_sent": 11.827484838061242,
+     "EQT:first_fill": 14.463505608849227,
+     "EQT:host_final_fill": 14.463505608849227,
+     "EQT:seller_spendable": 14.463505608849227,
+     "EQT:buyer_spendable": 17.419845754943996
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 34.61122019214142,
+    "p99": 87.8151597525505,
+    "mean_total": 71.46333333333334
+   }
+  },
+  "+1 year|S1d": {
+   "epoch": "+1 year",
+   "t0_h": 8766.0,
+   "scenario": "S1d",
+   "policy": null,
+   "noloss": {
+    "comp": 329.8663118702701,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 2.12660717766732,
+     "F1:Cara:instr_sent": 2.1268849554450977,
+     "F1:Cara:report_HELD": 3.037470215232008,
+     "F1:Alice:funding_receipt_at_home": 3.147639776576931,
+     "F1:Alice:instr_sent": 3.147917554354709,
+     "F1:open": 3.4319454008340835,
+     "F1:maturity": 303.4319454008341,
+     "F1:Cara:report_OPEN": 3.963800652892225,
+     "F1:Alice:report_OPEN": 4.218883795436057,
+     "F1:discharge": 327.4319454008341,
+     "F1:backed_claim": 327.4319454008341,
+     "F1:Cara:payout_spendable": 329.0656370531271,
+     "F1:Alice:payout_spendable": 329.8663118702701
+    },
+    "packets": 142,
+    "bb": 136,
+    "direct": 6,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 331.913815114882,
+    "p99": 337.588595337657,
+    "mean_total": 152.66
+   }
+  },
+  "+1 year|S1e": {
+   "epoch": "+1 year",
+   "t0_h": 8766.0,
+   "scenario": "S1e",
+   "policy": null,
+   "noloss": {
+    "comp": 329.8663118702701,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 2.12660717766732,
+     "F1:Cara:instr_sent": 2.1268849554450977,
+     "F1:Cara:report_HELD": 3.037470215232008,
+     "F1:Alice:funding_receipt_at_home": 3.147639776576931,
+     "F1:Alice:instr_sent": 3.147917554354709,
+     "F1:open": 3.4319454008340835,
+     "F1:maturity": 303.4319454008341,
+     "F1:Cara:report_OPEN": 3.963800652892225,
+     "F1:Alice:report_OPEN": 4.218883795436057,
+     "F1:discharge": 327.4319454008341,
+     "F1:backed_claim": 327.4319454008341,
+     "F1:Cara:payout_spendable": 329.0656370531271,
+     "F1:Alice:payout_spendable": 329.8663118702701
+    },
+    "packets": 142,
+    "bb": 136,
+    "direct": 6,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 331.913815114882,
+    "p99": 337.588595337657,
+    "mean_total": 152.66
+   }
+  },
+  "+1 year, without O2|S1a": {
+   "epoch": "+1 year, without O2",
+   "t0_h": 8766.0,
+   "scenario": "S1a",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 4.21860601765828,
+    "times": {
+     "EQ:funding_imported_at_host": 2.3605086722732005,
+     "EQ:funding_receipt_at_home": 3.147639776576931,
+     "EQ:order_sent": 3.147917554354709,
+     "EQ:first_fill": 3.4319454008340835,
+     "EQ:host_final_fill": 3.4319454008340835,
+     "EQ:seller_spendable": 3.4319454008340835,
+     "EQ:buyer_spendable": 4.21860601765828
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 5.759274251554161,
+    "p99": 11.375068420809963,
+    "mean_total": 50.736666666666665
+   }
+  },
+  "+1 year, without O2|S1b": {
+   "epoch": "+1 year, without O2",
+   "t0_h": 8766.0,
+   "scenario": "S1b",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 4.377864031710972,
+    "times": {
+     "EQB:funding_imported_at_host": 2.3316567875631153,
+     "EQB:funding_receipt_at_home": 3.1091338843552188,
+     "EQB:order_sent": 3.1094116621329966,
+     "EQB:first_fill": 3.6009191410698826,
+     "EQB:host_final_fill": 3.6009191410698826,
+     "EQB:seller_spendable": 3.6009191410698826,
+     "EQB:buyer_spendable": 4.377864031710972
+    },
+    "packets": 48,
+    "bb": 44,
+    "direct": 4,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 5.898945742533025,
+    "p99": 12.915345987201409,
+    "mean_total": 51.82
+   }
+  },
+  "+1 year, without O2|S1c": {
+   "epoch": "+1 year, without O2",
+   "t0_h": 8766.0,
+   "scenario": "S1c",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 17.419845754943996,
+    "times": {
+     "EQT:funding_imported_at_host": 8.870268433244071,
+     "EQT:funding_receipt_at_home": 11.827207060283463,
+     "EQT:order_sent": 11.827484838061242,
+     "EQT:first_fill": 14.463505608849227,
+     "EQT:host_final_fill": 14.463505608849227,
+     "EQT:seller_spendable": 14.463505608849227,
+     "EQT:buyer_spendable": 17.419845754943996
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 34.61122019214142,
+    "p99": 87.8151597525505,
+    "mean_total": 71.46333333333334
+   }
+  },
+  "+1 year, without O2|S1d": {
+   "epoch": "+1 year, without O2",
+   "t0_h": 8766.0,
+   "scenario": "S1d",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 329.8663118702701,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 2.12660717766732,
+     "F1:Cara:instr_sent": 2.1268849554450977,
+     "F1:Cara:report_HELD": 3.037470215232008,
+     "F1:Alice:funding_receipt_at_home": 3.147639776576931,
+     "F1:Alice:instr_sent": 3.147917554354709,
+     "F1:open": 3.4319454008340835,
+     "F1:maturity": 303.4319454008341,
+     "F1:Cara:report_OPEN": 3.963800652892225,
+     "F1:Alice:report_OPEN": 4.218883795436057,
+     "F1:discharge": 327.4319454008341,
+     "F1:backed_claim": 327.4319454008341,
+     "F1:Cara:payout_spendable": 329.0656370531271,
+     "F1:Alice:payout_spendable": 329.8663118702701
+    },
+    "packets": 142,
+    "bb": 136,
+    "direct": 6,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 331.913815114882,
+    "p99": 337.588595337657,
+    "mean_total": 152.66
+   }
+  },
+  "+1 year, without O2|S1e": {
+   "epoch": "+1 year, without O2",
+   "t0_h": 8766.0,
+   "scenario": "S1e",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 329.8663118702701,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 2.12660717766732,
+     "F1:Cara:instr_sent": 2.1268849554450977,
+     "F1:Cara:report_HELD": 3.037470215232008,
+     "F1:Alice:funding_receipt_at_home": 3.147639776576931,
+     "F1:Alice:instr_sent": 3.147917554354709,
+     "F1:open": 3.4319454008340835,
+     "F1:maturity": 303.4319454008341,
+     "F1:Cara:report_OPEN": 3.963800652892225,
+     "F1:Alice:report_OPEN": 4.218883795436057,
+     "F1:discharge": 327.4319454008341,
+     "F1:backed_claim": 327.4319454008341,
+     "F1:Cara:payout_spendable": 329.0656370531271,
+     "F1:Alice:payout_spendable": 329.8663118702701
+    },
+    "packets": 142,
+    "bb": 136,
+    "direct": 6,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 331.913815114882,
+    "p99": 337.588595337657,
+    "mean_total": 152.66
+   }
+  },
+  "+10 years|S1a": {
+   "epoch": "+10 years",
+   "t0_h": 87660.0,
+   "scenario": "S1a",
+   "policy": null,
+   "noloss": {
+    "comp": 3.8740620986620584,
+    "times": {
+     "EQ:funding_imported_at_host": 2.098498103585508,
+     "EQ:funding_receipt_at_home": 2.798172022253275,
+     "EQ:order_sent": 2.7984498000310527,
+     "EQ:first_fill": 3.174939036750131,
+     "EQ:host_final_fill": 3.174939036750131,
+     "EQ:seller_spendable": 3.174939036750131,
+     "EQ:buyer_spendable": 3.8740620986620584
+    },
+    "packets": 49,
+    "bb": 44,
+    "direct": 5,
+    "audits": 8,
+    "relays": [
+     "Mercury"
+    ],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 3.8907290339966614,
+    "p99": 10.681815489215971,
+    "mean_total": 52.39666666666667
+   }
+  },
+  "+10 years|S1b": {
+   "epoch": "+10 years",
+   "t0_h": 87660.0,
+   "scenario": "S1b",
+   "policy": null,
+   "noloss": {
+    "comp": 3.855109838081731,
+    "times": {
+     "EQB:funding_imported_at_host": 2.0256714667545426,
+     "EQB:funding_receipt_at_home": 2.7010591281950473,
+     "EQB:order_sent": 2.701336905972825,
+     "EQB:first_fill": 3.180301424331135,
+     "EQB:host_final_fill": 3.180301424331135,
+     "EQB:seller_spendable": 3.180301424331135,
+     "EQB:buyer_spendable": 3.855109838081731
+    },
+    "packets": 48,
+    "bb": 44,
+    "direct": 4,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 3.871775709225072,
+    "p99": 10.038776584235658,
+    "mean_total": 51.346666666666664
+   }
+  },
+  "+10 years|S1c": {
+   "epoch": "+10 years",
+   "t0_h": 87660.0,
+   "scenario": "S1c",
+   "policy": null,
+   "noloss": {
+    "comp": 15.869667465272878,
+    "times": {
+     "EQT:funding_imported_at_host": 7.937523688524961,
+     "EQT:funding_receipt_at_home": 10.583181786040464,
+     "EQT:order_sent": 10.583459563818243,
+     "EQT:first_fill": 13.225114988154836,
+     "EQT:host_final_fill": 13.225114988154836,
+     "EQT:seller_spendable": 13.225114988154836,
+     "EQT:buyer_spendable": 15.869667465272878
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 26.94602818875677,
+    "p99": 74.66703039252974,
+    "mean_total": 68.75333333333333
+   }
+  },
+  "+10 years|S1d": {
+   "epoch": "+10 years",
+   "t0_h": 87660.0,
+   "scenario": "S1d",
+   "policy": null,
+   "noloss": {
+    "comp": 329.2748583240145,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 1.256565854019589,
+     "F1:Cara:instr_sent": 1.2568436317973666,
+     "F1:Cara:report_HELD": 1.7579473987387286,
+     "F1:Alice:funding_receipt_at_home": 2.798172022253275,
+     "F1:Alice:instr_sent": 2.7984498000310527,
+     "F1:open": 3.174939036750131,
+     "F1:maturity": 303.1749390367501,
+     "F1:Cara:report_OPEN": 3.4892239131033422,
+     "F1:Alice:report_OPEN": 3.8743398764398362,
+     "F1:discharge": 327.1749390367501,
+     "F1:backed_claim": 327.1749390367501,
+     "F1:Cara:payout_spendable": 328.12588480042086,
+     "F1:Alice:payout_spendable": 329.2748583240145
+    },
+    "packets": 144,
+    "bb": 136,
+    "direct": 8,
+    "audits": 13,
+    "relays": [
+     "Mercury"
+    ],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 331.3237077189402,
+    "p99": 340.2089417826894,
+    "mean_total": 151.70666666666668
+   }
+  },
+  "+10 years|S1e": {
+   "epoch": "+10 years",
+   "t0_h": 87660.0,
+   "scenario": "S1e",
+   "policy": null,
+   "noloss": {
+    "comp": 329.2748583240145,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 1.256565854019589,
+     "F1:Cara:instr_sent": 1.2568436317973666,
+     "F1:Cara:report_HELD": 1.7579473987387286,
+     "F1:Alice:funding_receipt_at_home": 2.798172022253275,
+     "F1:Alice:instr_sent": 2.7984498000310527,
+     "F1:open": 3.174939036750131,
+     "F1:maturity": 303.1749390367501,
+     "F1:Cara:report_OPEN": 3.4892239131033422,
+     "F1:Alice:report_OPEN": 3.8743398764398362,
+     "F1:discharge": 327.1749390367501,
+     "F1:backed_claim": 327.1749390367501,
+     "F1:Cara:payout_spendable": 328.12588480042086,
+     "F1:Alice:payout_spendable": 329.2748583240145
+    },
+    "packets": 144,
+    "bb": 136,
+    "direct": 8,
+    "audits": 13,
+    "relays": [
+     "Mercury"
+    ],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 331.3237077189402,
+    "p99": 340.2089417826894,
+    "mean_total": 151.70666666666668
+   }
+  },
+  "+10 years, without O2|S1a": {
+   "epoch": "+10 years, without O2",
+   "t0_h": 87660.0,
+   "scenario": "S1a",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 350.75062477684685,
+    "times": {
+     "EQ:deferred_for_access": 0.0,
+     "EQ:funding_imported_at_host": 348.98457543247275,
+     "EQ:funding_receipt_at_home": 349.6847885292106,
+     "EQ:order_sent": 349.6850663069884,
+     "EQ:first_fill": 350.0509686582287,
+     "EQ:host_final_fill": 350.0509686582287,
+     "EQ:seller_spendable": 350.0509686582287,
+     "EQ:buyer_spendable": 350.75062477684685
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 1,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 352.1006102505492,
+    "p99": 356.1964868152027,
+    "mean_total": 50.29333333333334
+   }
+  },
+  "+10 years, without O2|S1b": {
+   "epoch": "+10 years, without O2",
+   "t0_h": 87660.0,
+   "scenario": "S1b",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 3.855109838081731,
+    "times": {
+     "EQB:funding_imported_at_host": 2.0256714667545426,
+     "EQB:funding_receipt_at_home": 2.7010591281950473,
+     "EQB:order_sent": 2.701336905972825,
+     "EQB:first_fill": 3.180301424331135,
+     "EQB:host_final_fill": 3.180301424331135,
+     "EQB:seller_spendable": 3.180301424331135,
+     "EQB:buyer_spendable": 3.855109838081731
+    },
+    "packets": 48,
+    "bb": 44,
+    "direct": 4,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 3.871775709225072,
+    "p99": 10.038776584235658,
+    "mean_total": 51.346666666666664
+   }
+  },
+  "+10 years, without O2|S1c": {
+   "epoch": "+10 years, without O2",
+   "t0_h": 87660.0,
+   "scenario": "S1c",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 15.869667465272878,
+    "times": {
+     "EQT:funding_imported_at_host": 7.937523688524961,
+     "EQT:funding_receipt_at_home": 10.583181786040464,
+     "EQT:order_sent": 10.583459563818243,
+     "EQT:first_fill": 13.225114988154836,
+     "EQT:host_final_fill": 13.225114988154836,
+     "EQT:seller_spendable": 13.225114988154836,
+     "EQT:buyer_spendable": 15.869667465272878
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 26.94602818875677,
+    "p99": 74.66703039252974,
+    "mean_total": 68.75333333333333
+   }
+  },
+  "+10 years, without O2|S1d": {
+   "epoch": "+10 years, without O2",
+   "t0_h": 87660.0,
+   "scenario": "S1d",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": null,
+    "times": {
+     "F1:Alice:suspended_no_access": 0.0,
+     "F1:Cara:funding_receipt_at_home": 1.256565854019589,
+     "F1:Cara:instr_sent": 1.2568436317973666,
+     "F1:Cara:report_HELD": 1.7579473987387286,
+     "F1:rejected_at_deadline": 168.0,
+     "F1:Cara:report_REJECTED_DEADLINE": 168.3152638391157,
+     "F1:Cara:returned_home": 169.50703492669595
+    },
+    "packets": 66,
+    "bb": 60,
+    "direct": 6,
+    "audits": 7,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 1
+   },
+   "mc": {
+    "n": 300,
+    "completed": 0,
+    "p50": NaN,
+    "p99": NaN,
+    "mean_total": 67.94666666666667
+   }
+  },
+  "+10 years, without O2|S1e": {
+   "epoch": "+10 years, without O2",
+   "t0_h": 87660.0,
+   "scenario": "S1e",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": null,
+    "times": {
+     "F1:Alice:suspended_no_access": 0.0,
+     "F1:Cara:funding_receipt_at_home": 1.256565854019589,
+     "F1:Cara:instr_sent": 1.2568436317973666,
+     "F1:Cara:report_HELD": 1.7579473987387286,
+     "F1:rejected_at_deadline": 168.0,
+     "F1:Cara:report_REJECTED_DEADLINE": 168.3152638391157,
+     "F1:Cara:returned_home": 169.50703492669595
+    },
+    "packets": 66,
+    "bb": 60,
+    "direct": 6,
+    "audits": 7,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 1
+   },
+   "mc": {
+    "n": 300,
+    "completed": 0,
+    "p50": NaN,
+    "p99": NaN,
+    "mean_total": 67.94666666666667
+   }
+  },
+  "+100 years|S1a": {
+   "epoch": "+100 years",
+   "t0_h": 876600.0,
+   "scenario": "S1a",
+   "policy": null,
+   "noloss": {
+    "comp": 3.517246270444658,
+    "times": {
+     "EQ:funding_imported_at_host": 1.9260830385155148,
+     "EQ:funding_receipt_at_home": 2.568175551229053,
+     "EQ:order_sent": 2.568453329006831,
+     "EQ:first_fill": 2.8757789805200367,
+     "EQ:host_final_fill": 2.8757789805200367,
+     "EQ:seller_spendable": 2.8757789805200367,
+     "EQ:buyer_spendable": 3.517246270444658
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 3.533911089102427,
+    "p99": 7.425643390107155,
+    "mean_total": 49.98
+   }
+  },
+  "+100 years|S1b": {
+   "epoch": "+100 years",
+   "t0_h": 876600.0,
+   "scenario": "S1b",
+   "policy": null,
+   "noloss": {
+    "comp": 3.728320080041885,
+    "times": {
+     "EQB:funding_imported_at_host": 2.052892620166143,
+     "EQB:funding_receipt_at_home": 2.737307823896408,
+     "EQB:order_sent": 2.7375856016741857,
+     "EQB:first_fill": 3.0445073640346525,
+     "EQB:host_final_fill": 3.0445073640346525,
+     "EQB:seller_spendable": 3.0445073640346525,
+     "EQB:buyer_spendable": 3.728320080041885
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 5.284268877108892,
+    "p99": 8.904146749757395,
+    "mean_total": 50.223333333333336
+   }
+  },
+  "+100 years|S1c": {
+   "epoch": "+100 years",
+   "t0_h": 876600.0,
+   "scenario": "S1c",
+   "policy": null,
+   "noloss": {
+    "comp": 15.897773591677348,
+    "times": {
+     "EQT:funding_imported_at_host": 7.9752386066648695,
+     "EQT:funding_receipt_at_home": 10.633688887092802,
+     "EQT:order_sent": 10.63396666487058,
+     "EQT:first_fill": 13.240118954049217,
+     "EQT:host_final_fill": 13.240118954049217,
+     "EQT:seller_spendable": 13.240118954049217,
+     "EQT:buyer_spendable": 15.897773591677348
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 26.684226690265866,
+    "p99": 67.17497113514338,
+    "mean_total": 68.80333333333333
+   }
+  },
+  "+100 years|S1d": {
+   "epoch": "+100 years",
+   "t0_h": 876600.0,
+   "scenario": "S1d",
+   "policy": null,
+   "noloss": {
+    "comp": 330.4846709616979,
+    "times": {
+     "F1:Alice:funding_receipt_at_home": 2.568175551229053,
+     "F1:Alice:instr_sent": 2.568453329006831,
+     "F1:Cara:funding_receipt_at_home": 3.335022692018085,
+     "F1:Cara:instr_sent": 3.335300469795863,
+     "F1:Alice:report_HELD": 3.5175240482224357,
+     "F1:open": 3.944794608619478,
+     "F1:maturity": 303.9447946086195,
+     "F1:Alice:report_OPEN": 4.586461210383309,
+     "F1:Cara:report_OPEN": 4.778472761975395,
+     "F1:discharge": 327.9447946086195,
+     "F1:backed_claim": 327.9447946086195,
+     "F1:Alice:payout_spendable": 329.7972463014391,
+     "F1:Cara:payout_spendable": 330.4846709616979
+    },
+    "packets": 143,
+    "bb": 136,
+    "direct": 7,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 332.36867376016244,
+    "p99": 340.2506983215001,
+    "mean_total": 154.66
+   }
+  },
+  "+100 years|S1e": {
+   "epoch": "+100 years",
+   "t0_h": 876600.0,
+   "scenario": "S1e",
+   "policy": null,
+   "noloss": {
+    "comp": 330.4846709616979,
+    "times": {
+     "F1:Alice:funding_receipt_at_home": 2.568175551229053,
+     "F1:Alice:instr_sent": 2.568453329006831,
+     "F1:Cara:funding_receipt_at_home": 3.335022692018085,
+     "F1:Cara:instr_sent": 3.335300469795863,
+     "F1:Alice:report_HELD": 3.5175240482224357,
+     "F1:open": 3.944794608619478,
+     "F1:maturity": 303.9447946086195,
+     "F1:Alice:report_OPEN": 4.586461210383309,
+     "F1:Cara:report_OPEN": 4.778472761975395,
+     "F1:discharge": 327.9447946086195,
+     "F1:backed_claim": 327.9447946086195,
+     "F1:Alice:payout_spendable": 329.7972463014391,
+     "F1:Cara:payout_spendable": 330.4846709616979
+    },
+    "packets": 143,
+    "bb": 136,
+    "direct": 7,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 332.36867376016244,
+    "p99": 340.2506983215001,
+    "mean_total": 154.66
+   }
+  },
+  "+100 years, without O2|S1a": {
+   "epoch": "+100 years, without O2",
+   "t0_h": 876600.0,
+   "scenario": "S1a",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 3.517246270444658,
+    "times": {
+     "EQ:funding_imported_at_host": 1.9260830385155148,
+     "EQ:funding_receipt_at_home": 2.568175551229053,
+     "EQ:order_sent": 2.568453329006831,
+     "EQ:first_fill": 2.8757789805200367,
+     "EQ:host_final_fill": 2.8757789805200367,
+     "EQ:seller_spendable": 2.8757789805200367,
+     "EQ:buyer_spendable": 3.517246270444658
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 3.533911089102427,
+    "p99": 7.425643390107155,
+    "mean_total": 49.98
+   }
+  },
+  "+100 years, without O2|S1b": {
+   "epoch": "+100 years, without O2",
+   "t0_h": 876600.0,
+   "scenario": "S1b",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 3.728320080041885,
+    "times": {
+     "EQB:funding_imported_at_host": 2.052892620166143,
+     "EQB:funding_receipt_at_home": 2.737307823896408,
+     "EQB:order_sent": 2.7375856016741857,
+     "EQB:first_fill": 3.0445073640346525,
+     "EQB:host_final_fill": 3.0445073640346525,
+     "EQB:seller_spendable": 3.0445073640346525,
+     "EQB:buyer_spendable": 3.728320080041885
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 5.284268877108892,
+    "p99": 8.904146749757395,
+    "mean_total": 50.223333333333336
+   }
+  },
+  "+100 years, without O2|S1c": {
+   "epoch": "+100 years, without O2",
+   "t0_h": 876600.0,
+   "scenario": "S1c",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 15.897773591677348,
+    "times": {
+     "EQT:funding_imported_at_host": 7.9752386066648695,
+     "EQT:funding_receipt_at_home": 10.633688887092802,
+     "EQT:order_sent": 10.63396666487058,
+     "EQT:first_fill": 13.240118954049217,
+     "EQT:host_final_fill": 13.240118954049217,
+     "EQT:seller_spendable": 13.240118954049217,
+     "EQT:buyer_spendable": 15.897773591677348
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 26.684226690265866,
+    "p99": 67.17497113514338,
+    "mean_total": 68.80333333333333
+   }
+  },
+  "+100 years, without O2|S1d": {
+   "epoch": "+100 years, without O2",
+   "t0_h": 876600.0,
+   "scenario": "S1d",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 330.4846709616979,
+    "times": {
+     "F1:Alice:funding_receipt_at_home": 2.568175551229053,
+     "F1:Alice:instr_sent": 2.568453329006831,
+     "F1:Cara:funding_receipt_at_home": 3.335022692018085,
+     "F1:Cara:instr_sent": 3.335300469795863,
+     "F1:Alice:report_HELD": 3.5175240482224357,
+     "F1:open": 3.944794608619478,
+     "F1:maturity": 303.9447946086195,
+     "F1:Alice:report_OPEN": 4.586461210383309,
+     "F1:Cara:report_OPEN": 4.778472761975395,
+     "F1:discharge": 327.9447946086195,
+     "F1:backed_claim": 327.9447946086195,
+     "F1:Alice:payout_spendable": 329.7972463014391,
+     "F1:Cara:payout_spendable": 330.4846709616979
+    },
+    "packets": 143,
+    "bb": 136,
+    "direct": 7,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 332.36867376016244,
+    "p99": 340.2506983215001,
+    "mean_total": 154.66
+   }
+  },
+  "+100 years, without O2|S1e": {
+   "epoch": "+100 years, without O2",
+   "t0_h": 876600.0,
+   "scenario": "S1e",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 330.4846709616979,
+    "times": {
+     "F1:Alice:funding_receipt_at_home": 2.568175551229053,
+     "F1:Alice:instr_sent": 2.568453329006831,
+     "F1:Cara:funding_receipt_at_home": 3.335022692018085,
+     "F1:Cara:instr_sent": 3.335300469795863,
+     "F1:Alice:report_HELD": 3.5175240482224357,
+     "F1:open": 3.944794608619478,
+     "F1:maturity": 303.9447946086195,
+     "F1:Alice:report_OPEN": 4.586461210383309,
+     "F1:Cara:report_OPEN": 4.778472761975395,
+     "F1:discharge": 327.9447946086195,
+     "F1:backed_claim": 327.9447946086195,
+     "F1:Alice:payout_spendable": 329.7972463014391,
+     "F1:Cara:payout_spendable": 330.4846709616979
+    },
+    "packets": 143,
+    "bb": 136,
+    "direct": 7,
+    "audits": 13,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 332.36867376016244,
+    "p99": 340.2506983215001,
+    "mean_total": 154.66
+   }
+  },
+  "Mars conjunction|S1a": {
+   "epoch": "Mars conjunction",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1a",
+   "policy": null,
+   "noloss": {
+    "comp": 4.545158685801757,
+    "times": {
+     "EQ:funding_imported_at_host": 2.512526859059516,
+     "EQ:funding_receipt_at_home": 3.3502229931867786,
+     "EQ:order_sent": 3.3505007709645565,
+     "EQ:first_fill": 3.7080227472343377,
+     "EQ:host_final_fill": 3.7080227472343377,
+     "EQ:seller_spendable": 3.7080227472343377,
+     "EQ:buyer_spendable": 4.545158685801757
+    },
+    "packets": 49,
+    "bb": 44,
+    "direct": 5,
+    "audits": 8,
+    "relays": [
+     "Mercury"
+    ],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 6.055822446693977,
+    "p99": 11.032790694613734,
+    "mean_total": 53.16
+   }
+  },
+  "Mars conjunction|S1b": {
+   "epoch": "Mars conjunction",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1b",
+   "policy": null,
+   "noloss": {
+    "comp": 3.408552063604196,
+    "times": {
+     "EQB:funding_imported_at_host": 1.859712215612332,
+     "EQB:funding_receipt_at_home": 2.4797893329978815,
+     "EQB:order_sent": 2.4800671107756593,
+     "EQB:first_fill": 2.789020283780992,
+     "EQB:host_final_fill": 2.789020283780992,
+     "EQB:seller_spendable": 2.789020283780992,
+     "EQB:buyer_spendable": 3.408552063604196
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 3.4252177375265296,
+    "p99": 11.83996640528311,
+    "mean_total": 50.03333333333333
+   }
+  },
+  "Mars conjunction|S1c": {
+   "epoch": "Mars conjunction",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1c",
+   "policy": null,
+   "noloss": {
+    "comp": 17.314892200813112,
+    "times": {
+     "EQT:funding_imported_at_host": 8.781548123808784,
+     "EQT:funding_receipt_at_home": 11.709144248467766,
+     "EQT:order_sent": 11.709422026245544,
+     "EQT:first_fill": 14.387525664309246,
+     "EQT:host_final_fill": 14.387525664309246,
+     "EQT:seller_spendable": 14.387525664309246,
+     "EQT:buyer_spendable": 17.314892200813112
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 36.34865406222538,
+    "p99": 79.05708987260583,
+    "mean_total": 72.59666666666666
+   }
+  },
+  "Mars conjunction|S1d": {
+   "epoch": "Mars conjunction",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1d",
+   "policy": null,
+   "noloss": {
+    "comp": 330.2260477969423,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 2.77142934191972,
+     "F1:Cara:instr_sent": 2.771707119697498,
+     "F1:Alice:funding_receipt_at_home": 3.3502229931867786,
+     "F1:Alice:instr_sent": 3.3505007709645565,
+     "F1:open": 3.7080227472343377,
+     "F1:maturity": 303.70802274723434,
+     "F1:Cara:report_HELD": 3.982018857476198,
+     "F1:Cara:report_OPEN": 4.400807804142436,
+     "F1:Alice:report_OPEN": 4.545436463579535,
+     "F1:discharge": 327.70802274723434,
+     "F1:backed_claim": 327.70802274723434,
+     "F1:Cara:payout_spendable": 329.82551818745833,
+     "F1:Alice:payout_spendable": 330.2260477969423
+    },
+    "packets": 145,
+    "bb": 136,
+    "direct": 9,
+    "audits": 13,
+    "relays": [
+     "Mercury"
+    ],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 332.7877315776495,
+    "p99": 340.52440841994803,
+    "mean_total": 157.17333333333335
+   }
+  },
+  "Mars conjunction|S1e": {
+   "epoch": "Mars conjunction",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1e",
+   "policy": null,
+   "noloss": {
+    "comp": 330.2260477969423,
+    "times": {
+     "F1:Cara:funding_receipt_at_home": 2.77142934191972,
+     "F1:Cara:instr_sent": 2.771707119697498,
+     "F1:Alice:funding_receipt_at_home": 3.3502229931867786,
+     "F1:Alice:instr_sent": 3.3505007709645565,
+     "F1:open": 3.7080227472343377,
+     "F1:maturity": 303.70802274723434,
+     "F1:Cara:report_HELD": 3.982018857476198,
+     "F1:Cara:report_OPEN": 4.400807804142436,
+     "F1:Alice:report_OPEN": 4.545436463579535,
+     "F1:discharge": 327.70802274723434,
+     "F1:backed_claim": 327.70802274723434,
+     "F1:Cara:payout_spendable": 329.82551818745833,
+     "F1:Alice:payout_spendable": 330.2260477969423
+    },
+    "packets": 145,
+    "bb": 136,
+    "direct": 9,
+    "audits": 13,
+    "relays": [
+     "Mercury"
+    ],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 332.7877315776495,
+    "p99": 340.52440841994803,
+    "mean_total": 157.17333333333335
+   }
+  },
+  "Mars conjunction, without O2|S1a": {
+   "epoch": "Mars conjunction, without O2",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1a",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": null,
+    "times": {
+     "EQ:deferred_for_access": 0.0,
+     "EQ:funding_imported_at_host": 1247.4177696623074,
+     "EQ:funding_receipt_at_home": 1248.2583893412288,
+     "EQ:order_sent": 1248.2586671190068
+    },
+    "packets": 91,
+    "bb": 28,
+    "direct": 63,
+    "audits": 7,
+    "relays": [],
+    "deferred": 1,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 0,
+    "p50": NaN,
+    "p99": NaN,
+    "mean_total": 93.59
+   }
+  },
+  "Mars conjunction, without O2|S1b": {
+   "epoch": "Mars conjunction, without O2",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1b",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 3.408552063604196,
+    "times": {
+     "EQB:funding_imported_at_host": 1.859712215612332,
+     "EQB:funding_receipt_at_home": 2.4797893329978815,
+     "EQB:order_sent": 2.4800671107756593,
+     "EQB:first_fill": 2.789020283780992,
+     "EQB:host_final_fill": 2.789020283780992,
+     "EQB:seller_spendable": 2.789020283780992,
+     "EQB:buyer_spendable": 3.408552063604196
+    },
+    "packets": 47,
+    "bb": 44,
+    "direct": 3,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 3.4252177375265296,
+    "p99": 11.83996640528311,
+    "mean_total": 50.03333333333333
+   }
+  },
+  "Mars conjunction, without O2|S1c": {
+   "epoch": "Mars conjunction, without O2",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1c",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": 17.314892200813112,
+    "times": {
+     "EQT:funding_imported_at_host": 8.781548123808784,
+     "EQT:funding_receipt_at_home": 11.709144248467766,
+     "EQT:order_sent": 11.709422026245544,
+     "EQT:first_fill": 14.387525664309246,
+     "EQT:host_final_fill": 14.387525664309246,
+     "EQT:seller_spendable": 14.387525664309246,
+     "EQT:buyer_spendable": 17.314892200813112
+    },
+    "packets": 52,
+    "bb": 44,
+    "direct": 8,
+    "audits": 8,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 0
+   },
+   "mc": {
+    "n": 300,
+    "completed": 300,
+    "p50": 36.34865406222538,
+    "p99": 79.05708987260583,
+    "mean_total": 72.59666666666666
+   }
+  },
+  "Mars conjunction, without O2|S1d": {
+   "epoch": "Mars conjunction, without O2",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1d",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": null,
+    "times": {
+     "F1:Alice:suspended_no_access": 0.0,
+     "F1:Cara:funding_receipt_at_home": 2.77142934191972,
+     "F1:Cara:instr_sent": 2.771707119697498,
+     "F1:Cara:report_HELD": 3.982018857476198,
+     "F1:rejected_at_deadline": 168.0,
+     "F1:Cara:report_REJECTED_DEADLINE": 168.69944404640958,
+     "F1:Cara:returned_home": 170.22207447110986
+    },
+    "packets": 68,
+    "bb": 60,
+    "direct": 8,
+    "audits": 7,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 1
+   },
+   "mc": {
+    "n": 300,
+    "completed": 0,
+    "p50": NaN,
+    "p99": NaN,
+    "mean_total": 72.74666666666667
+   }
+  },
+  "Mars conjunction, without O2|S1e": {
+   "epoch": "Mars conjunction, without O2",
+   "t0_h": 12470.027099609375,
+   "scenario": "S1e",
+   "policy": {
+    "agent_relay": false
+   },
+   "noloss": {
+    "comp": null,
+    "times": {
+     "F1:Alice:suspended_no_access": 0.0,
+     "F1:Cara:funding_receipt_at_home": 2.77142934191972,
+     "F1:Cara:instr_sent": 2.771707119697498,
+     "F1:Cara:report_HELD": 3.982018857476198,
+     "F1:rejected_at_deadline": 168.0,
+     "F1:Cara:report_REJECTED_DEADLINE": 168.69944404640958,
+     "F1:Cara:returned_home": 170.22207447110986
+    },
+    "packets": 68,
+    "bb": 60,
+    "direct": 8,
+    "audits": 7,
+    "relays": [],
+    "deferred": 0,
+    "suspended": 1
+   },
+   "mc": {
+    "n": 300,
+    "completed": 0,
+    "p50": NaN,
+    "p99": NaN,
+    "mean_total": 72.74666666666667
+   }
+  }
+ }
+}

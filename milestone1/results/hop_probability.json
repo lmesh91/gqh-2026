@@ -1,0 +1,154 @@
+[
+  {
+    "sender": "Earth",
+    "receiver": "Relay A",
+    "no_closure_no_queue_assumption": true,
+    "attempts": [
+      {
+        "attempt": 1,
+        "emission_s": 1.0,
+        "p_forward": 0.04411231297710194,
+        "p_receipt": 0.04410462874662713,
+        "no_receipt_probability": 0.08627138453671901
+      },
+      {
+        "attempt": 2,
+        "emission_s": 5853.321495503984,
+        "p_forward": 0.0440966095239087,
+        "p_receipt": 0.04408893188861618,
+        "no_receipt_probability": 0.08624136899870638
+      },
+      {
+        "attempt": 3,
+        "emission_s": 11704.823200884986,
+        "p_forward": 0.04408091598320418,
+        "p_receipt": 0.04407324494930387,
+        "no_receipt_probability": 0.08621137192479056
+      },
+      {
+        "attempt": 4,
+        "emission_s": 17555.505647073573,
+        "p_forward": 0.04406523237363136,
+        "p_receipt": 0.044057567947326404,
+        "no_receipt_probability": 0.08618139335154174
+      }
+    ],
+    "abandonment_upper_bound": 5.527903811244857e-05,
+    "data_never_arrives_probability": 3.7784328129567755e-06,
+    "expected_forward_launches_upper": 1.0943529734444832
+  },
+  {
+    "sender": "Relay A",
+    "receiver": "Mars",
+    "no_closure_no_queue_assumption": true,
+    "attempts": [
+      {
+        "attempt": 1,
+        "emission_s": 1.0,
+        "p_forward": 0.035660195671035844,
+        "p_receipt": 0.035658135479167186,
+        "no_receipt_probability": 0.07004675506175162
+      },
+      {
+        "attempt": 2,
+        "emission_s": 5414.019086161369,
+        "p_forward": 0.035668460178603145,
+        "p_receipt": 0.03566639896563217,
+        "no_receipt_probability": 0.07006269361301554
+      },
+      {
+        "attempt": 3,
+        "emission_s": 10827.465840269255,
+        "p_forward": 0.03567672687500323,
+        "p_receipt": 0.035674664641171305,
+        "no_receipt_probability": 0.07007863624941413
+      },
+      {
+        "attempt": 4,
+        "emission_s": 16241.340379257035,
+        "p_forward": 0.03568499575735273,
+        "p_receipt": 0.035682932502901665,
+        "no_receipt_probability": 0.07009458296527848
+      }
+    ],
+    "abandonment_upper_bound": 2.410709888341546e-05,
+    "data_never_arrives_probability": 1.6193425814588177e-06,
+    "expected_forward_launches_upper": 1.0752983418242394
+  },
+  {
+    "sender": "Neptune",
+    "receiver": "Relay A",
+    "no_closure_no_queue_assumption": true,
+    "attempts": [
+      {
+        "attempt": 1,
+        "emission_s": 1.0,
+        "p_forward": 0.42715521324290984,
+        "p_receipt": 0.42715432946374987,
+        "no_receipt_probability": 0.6718483440169395
+      },
+      {
+        "attempt": 2,
+        "emission_s": 31404.424094303173,
+        "p_forward": 0.42718505279387264,
+        "p_receipt": 0.4271841679444264,
+        "no_receipt_probability": 0.6718825294022527
+      },
+      {
+        "attempt": 3,
+        "emission_s": 62810.44765724147,
+        "p_forward": 0.4272149321542512,
+        "p_receipt": 0.42721404623589054,
+        "no_receipt_probability": 0.6719167586121326
+      },
+      {
+        "attempt": 4,
+        "emission_s": 94219.07429249534,
+        "p_forward": 0.42724485127097045,
+        "p_receipt": 0.4272439642850694,
+        "no_receipt_probability": 0.6719510315786456
+      }
+    ],
+    "abandonment_upper_bound": 0.2038063436812754,
+    "data_never_arrives_probability": 0.033306195048949605,
+    "expected_forward_launches_upper": 2.4265568600577265
+  },
+  {
+    "sender": "Relay A",
+    "receiver": "Neptune",
+    "no_closure_no_queue_assumption": true,
+    "attempts": [
+      {
+        "attempt": 1,
+        "emission_s": 1.0,
+        "p_forward": 0.4271411325335135,
+        "p_receipt": 0.42716841794002425,
+        "no_receipt_probability": 0.6718483486520865
+      },
+      {
+        "attempt": 2,
+        "emission_s": 31403.197502142553,
+        "p_forward": 0.42717095206545264,
+        "p_receipt": 0.4271982740950887,
+        "no_receipt_probability": 0.6718825326946241
+      },
+      {
+        "attempt": 3,
+        "emission_s": 62807.99266506718,
+        "p_forward": 0.4272008114264645,
+        "p_receipt": 0.42722817003199787,
+        "no_receipt_probability": 0.6719167605565493
+      },
+      {
+        "attempt": 4,
+        "emission_s": 94215.38909389303,
+        "p_forward": 0.42723071056351136,
+        "p_receipt": 0.42725810569764633,
+        "no_receipt_probability": 0.6719510321699325
+      }
+    ],
+    "abandonment_upper_bound": 0.20380634685517338,
+    "data_never_arrives_probability": 0.03330179475886508,
+    "expected_forward_launches_upper": 2.4265568744756334
+  }
+]

@@ -1,0 +1,7 @@
+hour,actor,event,financial_state
+0.0002777777777777778,Jupiter,RESERVED,Local buyer reservation; seller standing sell order already reserves 1000 shares
+0.6190324158792,Mars,PROVISIONAL_MATCH,Seller shares promised for this request; backing not yet verified
+2.615045348455261,Jupiter,PAYMENT_RECORDED,Single-use reservation consumed; payment exported; buyer holds backed delivery claim
+3.2805757742033443,Mars,SPENDABLE_SELLER,"Atomic payment import, seller credit and share debit/export; payment obligation discharged"
+3.9461305008036884,Jupiter,SPENDABLE_BUYER,Matching cash debit and share export recorded; buyer receives local custody
+4.611609347009334,Mars,COMPLETE_KNOWN,Authoritative home receipt confirms buyer spendability; close recovery work

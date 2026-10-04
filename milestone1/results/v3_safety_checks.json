@@ -1,0 +1,18 @@
+{
+  "design_version": 3,
+  "passed": true,
+  "tests": 23,
+  "serialized_race_permutations": 6,
+  "example_event_rows": 8,
+  "backbone_allocated": 594,
+  "records_per_payload": {
+    "TRANSFER": 5,
+    "RECEIVED": 7,
+    "ORDER": 7,
+    "CONTROL": 7,
+    "REPORT": 5,
+    "CONTRACT_INSTRUCTION": 3,
+    "PRICE": 4
+  },
+  "scope": "Bounded financial ledger and payoff arithmetic; no full matching, close/compaction, durable storage implementation, codec or transport simulation"
+}

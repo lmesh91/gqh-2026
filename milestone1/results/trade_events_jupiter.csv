@@ -1,0 +1,10 @@
+hour,actor,action,local_knowledge,state
+0.0002777777777777778,Jupiter exchange,RESERVE_LOCAL,Buyer requested funding locally,Buyer cash $100000 encumbered on Jupiter
+1.9963125861947462,Mars clearer,RESERVATION_RECEIVED,Jupiter official reservation present,Funded order eligible once client instruction arrives
+1.9963125861947462,Mars clearer,MATCH,Order and official cash reservation received; seller inventory reserved,Jupiter $100000 and Mars 1000 shares locked; no spendable proceeds
+2.66191709878801,Jupiter exchange,PREPARED,Exact trade digest agrees with cash reservation,Jupiter reservation irreversibly prepared; cannot time out
+3.327445707962739,Mars clearer,COMMIT,Both local Mars and Jupiter prepared records known,Immutable commit; Mars debits seller shares into staged Jupiter custody; both outputs blocked
+3.9929986178981633,Jupiter exchange,APPLIED,Authoritative commit received,"Jupiter debits $100000; stages 1000 share entitlement; export cash is in transit, not new money"
+4.658475648279208,Mars clearer,RELEASE,All debit/apply certificates present,Mars seller cash spendable; Jupiter share release in flight; discharge and backed claims recorded
+5.323976976818441,Jupiter exchange,RELEASED,All-participant applied certificate received,Jupiter 1000 shares spendable in exclusive local custody; trade complete
+5.989402449668522,Mars clearer,COMPLETE_KNOWN,Both release receipts known,Clearer knows both local balances are spendable

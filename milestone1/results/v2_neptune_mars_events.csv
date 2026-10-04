@@ -1,0 +1,7 @@
+hour,actor,event,financial_state
+0.0002777777777777778,Neptune,RESERVED,Local buyer reservation; seller standing sell order already reserves 1000 shares
+4.104399882984659,Mars,PROVISIONAL_MATCH,Seller shares promised for this request; backing not yet verified
+16.448862544226067,Neptune,PAYMENT_RECORDED,Single-use reservation consumed; payment exported; buyer holds backed delivery claim
+20.564853117699386,Mars,SPENDABLE_SELLER,"Atomic payment import, seller credit and share debit/export; payment obligation discharged"
+24.68083909157734,Neptune,SPENDABLE_BUYER,Matching cash debit and share export recorded; buyer receives local custody
+28.79749738335825,Mars,COMPLETE_KNOWN,Authoritative home receipt confirms buyer spendability; close recovery work

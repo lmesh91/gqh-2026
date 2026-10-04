@@ -1,0 +1,68 @@
+[
+  {
+    "sender": "Earth",
+    "receiver": "Relay A",
+    "incident_hours": 6,
+    "attempts": [
+      {
+        "attempt": 1,
+        "emission_hour": 0.0002777777777777778,
+        "nominal_arrival_hour": 0.31296131881999784,
+        "forced_loss": true
+      },
+      {
+        "attempt": 2,
+        "emission_hour": 1.6259226376399956,
+        "nominal_arrival_hour": 1.9384923189429126,
+        "forced_loss": true
+      },
+      {
+        "attempt": 3,
+        "emission_hour": 3.2513397780236075,
+        "nominal_arrival_hour": 3.5637956733275775,
+        "forced_loss": true
+      },
+      {
+        "attempt": 4,
+        "emission_hour": 4.876529346409326,
+        "nominal_arrival_hour": 5.18887152958627,
+        "forced_loss": true
+      }
+    ],
+    "abandoned_hour": 6.501213712763214,
+    "financial_consequence": "delivery unknown; keep prepared assets locked; application/session recovery required"
+  },
+  {
+    "sender": "Neptune",
+    "receiver": "Relay A",
+    "incident_hours": 72,
+    "attempts": [
+      {
+        "attempt": 1,
+        "emission_hour": 0.0002777777777777778,
+        "nominal_arrival_hour": 3.8617255686532186,
+        "forced_loss": true
+      },
+      {
+        "attempt": 2,
+        "emission_hour": 8.723451137306437,
+        "nominal_arrival_hour": 12.585259965492313,
+        "forced_loss": true
+      },
+      {
+        "attempt": 3,
+        "emission_hour": 17.447346571455963,
+        "nominal_arrival_hour": 21.309516937463446,
+        "forced_loss": true
+      },
+      {
+        "attempt": 4,
+        "emission_hour": 26.171965081248704,
+        "nominal_arrival_hour": 30.03449748502406,
+        "forced_loss": true
+      }
+    ],
+    "abandoned_hour": 34.897029888799416,
+    "financial_consequence": "delivery unknown; keep prepared assets locked; application/session recovery required"
+  }
+]

@@ -1,0 +1,52 @@
+/* Print stylesheet for the design paper and evidence appendix.
+   US Letter, 1 inch margins on every side, no text below 10 pt (brief Section 8). */
+@page { size: 8.5in 11in; margin: 1in; }
+@page { @bottom-center { content: counter(page); font: 10pt "Bitstream Charter", serif; color: #555; } }
+
+:root { --ink: #1d1d1f; --muted: #555; --rule: #c9c9c9; --accent: #9b3b24; --soft: #f5f1ec; --blue: #2f6db5; }
+html { font-size: 10.5pt; }
+body { margin: 0; color: var(--ink); background: #fff; font-family: "Bitstream Charter", "Charter", "Nimbus Roman", serif;
+       line-height: 1.32; -webkit-print-color-adjust: exact; print-color-adjust: exact; hyphens: auto; }
+h1, h2, h3, h4, .sans, th, figcaption, .tag, .kicker { font-family: "Noto Sans", "Liberation Sans", sans-serif; }
+h1 { font-size: 17pt; line-height: 1.15; margin: 0 0 3pt; letter-spacing: -0.01em; }
+h2 { font-size: 12.5pt; margin: 11pt 0 3pt; color: var(--accent); break-after: avoid; }
+h3 { font-size: 10.5pt; margin: 7pt 0 2pt; break-after: avoid; }
+h2 + h3 { margin-top: 3pt; }
+p { margin: 0 0 5pt; text-align: justify; }
+ul, ol { margin: 0 0 5pt; padding-left: 15pt; }
+li { margin: 0 0 2pt; }
+a { color: inherit; text-decoration: none; }
+.kicker { font-size: 10pt; color: var(--muted); margin-bottom: 6pt; }
+.lede { font-size: 11pt; border-left: 3pt solid var(--accent); padding: 2pt 0 2pt 8pt; margin: 6pt 0 8pt; text-align: left; }
+b, strong { font-weight: 700; }
+code, .mono { font-family: "DejaVu Sans Mono", monospace; font-size: 10pt; }
+
+table { border-collapse: collapse; width: 100%; margin: 3pt 0 7pt; font-size: 10pt; line-height: 1.2;
+        font-family: "Liberation Sans Narrow", "Nimbus Sans Narrow", "Noto Sans", sans-serif; }
+th, td { text-align: left; vertical-align: top; padding: 1.6pt 3.5pt; border-bottom: 0.5pt solid var(--rule); }
+th { font-weight: 700; border-bottom: 0.9pt solid var(--ink); font-size: 10pt;
+     font-family: "Liberation Sans Narrow", "Nimbus Sans Narrow", sans-serif; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.trace td:first-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.trace td:nth-child(7) { min-width: 1.45in; }
+table.compact td, table.compact th { padding: 1pt 3pt; }
+tr.group td { background: var(--soft); font-weight: 700; }
+caption { caption-side: top; text-align: left; font: 700 10pt "Noto Sans", sans-serif; padding-bottom: 2pt; }
+
+figure { margin: 4pt 0 8pt; break-inside: avoid; }
+figure img { width: 100%; display: block; }
+figcaption { font-size: 10pt; color: var(--muted); margin-top: 2pt; line-height: 1.25; }
+.box { background: var(--soft); padding: 5pt 7pt; margin: 4pt 0 7pt; break-inside: avoid; }
+.box p:last-child { margin-bottom: 0; }
+.tag { display: inline-block; font-size: 10pt; font-weight: 700; padding: 0 3pt; border-radius: 2pt; color: #fff;
+       background: var(--accent); }
+.tag.opt { background: var(--blue); }
+.tag.cond { background: #6a8f3a; }
+.muted { color: var(--muted); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
+.pb { break-before: page; }
+.nobreak { break-inside: avoid; }
+.small-gap { margin-bottom: 2pt; }
+.refs li { font-size: 10pt; text-align: left; }

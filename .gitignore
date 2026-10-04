@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+venv/
+.claude/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+.appendix_short.sha256
+info/*
+!info/data.zip

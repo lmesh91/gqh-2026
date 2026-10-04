@@ -1,0 +1,7 @@
+t_h,actor,event,detail
+0.000139,Alice,CLIENT_QUOTE,"{""asset"":""ARES"",""bid"":null,""ask"":null,""last"":null,""age_h"":0.0,""knowledge"":""home board, local access""}"
+0.000278,Bob,LOCAL_INSTRUCTION,"{""where"":""Mars"",""msg"":{""type"":""ORDER"",""oid"":""EQ-sell"",""asset"":""ARES"",""side"":""SELL"",""qty"":1000,""limit"":100,""tif"":""GTC"",""expiry"":2592000.0,""disp"":""AUTO""}}"
+0.000278,Mars,ORDER_ADMITTED,"{""owner"":""Bob"",""oid"":""EQ-sell"",""side"":""SELL"",""asset"":""ARES"",""qty"":1000,""limit"":100,""tif"":""GTC"",""hold"":1000,""hold_asset"":""ARES""}"
+0.000417,Alice,LOCAL_INSTRUCTION,"{""where"":""Mars"",""msg"":{""type"":""ORDER"",""oid"":""EQ-buy"",""asset"":""ARES"",""side"":""BUY"",""qty"":1000,""limit"":100,""tif"":""GTC"",""expiry"":604800.5,""disp"":""AUTO""}}"
+0.000417,Mars,ORDER_ADMITTED,"{""owner"":""Alice"",""oid"":""EQ-buy"",""side"":""BUY"",""asset"":""ARES"",""qty"":1000,""limit"":100,""tif"":""GTC"",""hold"":100000,""hold_asset"":""ND""}"
+0.000417,Mars,FILL,"{""exec_id"":""MA-F1"",""asset"":""ARES"",""qty"":1000,""price"":100,""buyer"":""Alice"",""seller"":""Bob"",""buy_oid"":""EQ-buy"",""sell_oid"":""EQ-sell"",""improvement"":0}"

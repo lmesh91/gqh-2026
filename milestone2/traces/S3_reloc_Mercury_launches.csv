@@ -1,0 +1,48 @@
+t_emit_h,t_arrive_h,src,dst,layer,kind,packet,session,copy,distance_au,p_loss,lost,killed,carries
+0.000556,0.454172,Mercury,Relay A,backbone,SYN,1,18,0,3.272454,0.063353,False,False,SYN/1.0/18
+0.45445,0.908043,Relay A,Mercury,backbone,RCPT,2,18,0,3.272284,0.06335,False,False,
+0.454728,0.706415,Relay A,Mars,backbone,SYN,1,18,1,1.815707,0.035663,False,False,SYN/1.0/18
+0.706693,0.958365,Mars,Relay A,backbone,RCPT,3,18,0,1.8156,0.035661,False,False,
+0.706971,0.958643,Mars,Relay A,backbone,SYNACK,4,18,0,1.8156,0.035661,False,False,SYNACK/2543.094287599544/18
+0.958921,1.210628,Relay A,Mars,backbone,RCPT,5,18,0,1.815851,0.035665,False,False,
+0.959199,1.41278,Relay A,Mercury,backbone,SYNACK,4,18,1,3.272198,0.063348,False,False,SYNACK/2543.094287599544/18
+1.413058,1.866641,Mercury,Relay A,backbone,RCPT,6,18,0,3.272215,0.063349,False,False,
+1.413335,1.866919,Mercury,Relay A,backbone,ACK,7,18,0,3.272215,0.063349,False,False,ACK/5086.00754742194/18
+1.413613,1.867197,Mercury,Relay A,backbone,DATA,8,18,0,3.272215,0.063349,False,False,DATA/5086.00754742194/18/0
+1.867197,2.320756,Relay A,Mercury,backbone,RCPT,9,18,0,3.272042,0.063346,False,False,
+1.867474,2.119218,Relay A,Mars,backbone,ACK,7,18,1,1.81611,0.03567,False,False,ACK/5086.00754742194/18
+1.867474,2.321034,Relay A,Mercury,backbone,RCPT,10,18,0,3.272042,0.063346,False,False,
+1.867752,2.119495,Relay A,Mars,backbone,DATA,8,18,1,1.81611,0.03567,False,False,DATA/5086.00754742194/18/0
+2.119495,2.371224,Mars,Relay A,backbone,RCPT,11,18,0,1.816003,0.035668,False,False,
+2.119773,2.371501,Mars,Relay A,backbone,RCPT,12,18,0,1.816003,0.035668,False,False,
+2.120051,2.371779,Mars,Relay A,backbone,DACK,13,18,0,1.816003,0.035668,False,False,
+2.120329,2.372057,Mars,Relay A,backbone,DATA,14,18,0,1.816003,0.035668,False,False,DATA/7630.1832718563755/18/0
+2.372057,2.62382,Relay A,Mars,backbone,RCPT,15,18,0,1.816254,0.035673,False,False,
+2.372335,2.825882,Relay A,Mercury,backbone,DACK,13,18,1,3.271955,0.063344,False,False,
+2.372335,2.624098,Relay A,Mars,backbone,RCPT,16,18,0,1.816254,0.035673,False,False,
+2.372613,2.82616,Relay A,Mercury,backbone,DATA,14,18,1,3.271955,0.063344,False,False,DATA/7630.1832718563755/18/0
+2.82616,3.27971,Mercury,Relay A,backbone,RCPT,17,18,0,3.271972,0.063344,False,False,
+2.826438,3.279988,Mercury,Relay A,backbone,RCPT,18,18,0,3.271972,0.063344,False,False,
+2.826716,3.280265,Mercury,Relay A,backbone,DACK,19,18,0,3.271971,0.063344,False,False,
+2.826993,3.10346,Mercury,Mars,direct,ORDER,,,0,1.992466,0.147342,False,False,Alice
+2.84366,3.120127,Mercury,Mars,direct,ORDER,,,1,1.992471,0.147343,False,False,Alice
+2.860327,3.136795,Mercury,Mars,direct,ORDER,,,2,1.992476,0.147343,False,False,Alice
+3.103738,3.355505,Mars,Relay A,backbone,DATA,20,18,0,1.816283,0.035674,False,False,DATA/11172.45651008947/18/1
+3.280543,3.734069,Relay A,Mercury,backbone,RCPT,21,18,0,3.271797,0.063341,False,False,
+3.280821,3.53262,Relay A,Mars,backbone,DACK,19,18,1,1.816513,0.035678,False,False,
+3.355783,3.607585,Relay A,Mars,backbone,RCPT,22,18,0,1.816534,0.035679,False,False,
+3.356061,3.809584,Relay A,Mercury,backbone,DATA,20,18,1,3.271783,0.063341,False,False,DATA/11172.45651008947/18/1
+3.532898,3.784682,Mars,Relay A,backbone,RCPT,23,18,0,1.816406,0.035676,False,False,
+3.809862,4.263388,Mercury,Relay A,backbone,RCPT,24,18,0,3.2718,0.063341,False,False,
+3.81014,4.263666,Mercury,Relay A,backbone,DACK,25,18,0,3.2718,0.063341,False,False,
+3.810418,4.263944,Mercury,Relay A,backbone,DATA,26,18,0,3.2718,0.063341,False,False,DATA/13714.503562636059/18/1
+4.263944,4.717445,Relay A,Mercury,backbone,RCPT,27,18,0,3.271623,0.063338,False,False,
+4.264221,4.516059,Relay A,Mars,backbone,DACK,25,18,1,1.816793,0.035684,False,False,
+4.264221,4.717723,Relay A,Mercury,backbone,RCPT,28,18,0,3.271623,0.063338,False,False,
+4.264499,4.516337,Relay A,Mars,backbone,DATA,26,18,1,1.816793,0.035684,False,False,DATA/13714.503562636059/18/1
+4.516337,4.76816,Mars,Relay A,backbone,RCPT,29,18,0,1.816686,0.035682,False,False,
+4.516615,4.768438,Mars,Relay A,backbone,RCPT,30,18,0,1.816686,0.035682,False,False,
+4.516893,4.768716,Mars,Relay A,backbone,DACK,31,18,0,1.816686,0.035682,False,False,
+4.768993,5.020851,Relay A,Mars,backbone,RCPT,32,18,0,1.816937,0.035686,False,False,
+4.769271,5.22276,Relay A,Mercury,backbone,DACK,31,18,1,3.271534,0.063336,False,False,
+5.223038,5.676529,Mercury,Relay A,backbone,RCPT,33,18,0,3.271551,0.063336,False,False,

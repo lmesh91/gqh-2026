@@ -1,0 +1,13 @@
+{
+  "reachable_abstract_states": 20,
+  "checked_transitions": 440,
+  "invariants": [
+    "unit conservation",
+    "no release before every debit applied",
+    "abort excludes commit",
+    "reset and packet expiry do not unlock",
+    "duplicate application request cannot execute twice",
+    "bounded payout funded for both directions"
+  ],
+  "limitations": "Abstract financial model, not proof of implementation or full transport. Explicit application recovery trace spans packet expiry at 720 h."
+}
